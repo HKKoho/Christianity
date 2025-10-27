@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface CanvasModuleCardProps {
   icon: string;
@@ -32,6 +33,7 @@ export function CanvasModuleCard({
   path,
   color
 }: CanvasModuleCardProps) {
+  const { t } = useTranslation();
   const themeColor = colorMap[color] || '#000000';
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -213,7 +215,7 @@ export function CanvasModuleCard({
             className="inline-block px-3 py-1 text-xs font-semibold bg-gray-100 rounded-full uppercase tracking-wider"
             style={{ color: themeColor }}
           >
-            For {targetAudience}
+            {t('canvas_module_card.for')} {targetAudience}
           </span>
         </div>
 
@@ -283,7 +285,7 @@ export function CanvasModuleCard({
               e.currentTarget.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
             }}
           >
-            <span style={{ position: 'relative', zIndex: 10 }}>Explore Now</span>
+            <span style={{ position: 'relative', zIndex: 10 }}>{t('canvas_module_card.explore_now')}</span>
           </Link>
         </div>
       </div>

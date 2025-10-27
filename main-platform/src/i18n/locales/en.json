@@ -11,6 +11,10 @@
     "dashboard": "Dashboard",
     "logout": "Logout"
   },
+  "canvas_module_card": {
+    "for": "For",
+    "explore_now": "Explore Now"
+  },
   "landing": {
     "brand_name": "Christian Community",
     "join_us": "Join Us",
