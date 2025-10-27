@@ -1,8 +1,11 @@
 import { Outlet, Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuthStore } from '../../auth/store';
 import { modules } from '../../config/modules';
+import { LanguageSwitcher } from '../LanguageSwitcher';
 
 export function Layout() {
+  const { t } = useTranslation();
   const { user, logout } = useAuthStore();
   const navigate = useNavigate();
 
@@ -19,7 +22,7 @@ export function Layout() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <Link to="/dashboard" className="text-xl font-bold text-gray-900">
-                Christian Platform
+                {t('layout.brand_name')}
               </Link>
             </div>
 
@@ -28,7 +31,7 @@ export function Layout() {
                 to="/dashboard"
                 className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
               >
-                Dashboard
+                {t('layout.dashboard')}
               </Link>
               {modules.map((module) => (
                 <Link
@@ -42,6 +45,7 @@ export function Layout() {
             </nav>
 
             <div className="flex items-center space-x-4">
+              <LanguageSwitcher />
               <span className="text-sm text-gray-700">
                 {user?.name || user?.email}
               </span>
@@ -49,7 +53,7 @@ export function Layout() {
                 onClick={handleLogout}
                 className="bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700"
               >
-                Logout
+                {t('layout.logout')}
               </button>
             </div>
           </div>

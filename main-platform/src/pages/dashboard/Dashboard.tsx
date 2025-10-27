@@ -1,19 +1,22 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuthStore } from '../../auth/store';
-import { modules } from '../../config/modules';
+import { getTranslatedModules } from '../../config/modules-i18n';
 
 export function Dashboard() {
+  const { t } = useTranslation();
   const user = useAuthStore((state) => state.user);
+  const modules = getTranslatedModules(t);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Welcome Section */}
       <div className="bg-white shadow rounded-lg p-6 mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Welcome back, {user?.name || 'User'}!
+          {t('dashboard.welcome', { name: user?.name || 'User' })}
         </h1>
         <p className="text-gray-600">
-          Choose a module below to get started with your Christian learning journey.
+          {t('dashboard.subtitle')}
         </p>
       </div>
 
@@ -115,7 +118,7 @@ export function Dashboard() {
                   to={module.path}
                   className={`block w-full text-center py-4 px-6 rounded-2xl bg-gradient-to-r ${color.from} ${color.to} text-white font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-500 relative overflow-hidden group/btn`}
                 >
-                  <span className="relative z-10">Launch Module</span>
+                  <span className="relative z-10">{t('dashboard.launch_module')}</span>
                   <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-500"></div>
                 </Link>
               </div>
@@ -130,21 +133,21 @@ export function Dashboard() {
       {/* Quick Stats */}
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white shadow rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Your Progress</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dashboard.your_progress')}</h3>
           <p className="text-3xl font-bold text-indigo-600">0%</p>
-          <p className="text-sm text-gray-600 mt-1">Complete your profile to track progress</p>
+          <p className="text-sm text-gray-600 mt-1">{t('dashboard.progress_hint')}</p>
         </div>
 
         <div className="bg-white shadow rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Available Modules</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dashboard.available_modules')}</h3>
           <p className="text-3xl font-bold text-indigo-600">{modules.length}</p>
-          <p className="text-sm text-gray-600 mt-1">Specialized learning tools</p>
+          <p className="text-sm text-gray-600 mt-1">{t('dashboard.specialized_tools')}</p>
         </div>
 
         <div className="bg-white shadow rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Account Type</h3>
-          <p className="text-3xl font-bold text-indigo-600">Free</p>
-          <p className="text-sm text-gray-600 mt-1">Full access to all modules</p>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dashboard.account_type')}</h3>
+          <p className="text-3xl font-bold text-indigo-600">{t('dashboard.free')}</p>
+          <p className="text-sm text-gray-600 mt-1">{t('dashboard.full_access')}</p>
         </div>
       </div>
     </div>

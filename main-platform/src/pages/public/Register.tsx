@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuthStore } from '../../auth/store';
 import { api } from '../../lib/api';
 
@@ -28,6 +29,7 @@ const WhatsAppIcon = () => (
 );
 
 export function Register() {
+  const { t } = useTranslation();
   const [viewState, setViewState] = useState<ViewState>('auth');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -47,7 +49,7 @@ export function Register() {
 
   const handleSocialAuth = (provider: string) => {
     if (!acceptedTerms) {
-      setError('Please accept the Terms of Service and Privacy Policy');
+      setError(t('register.accept_terms_error'));
       return;
     }
     // Social auth would be implemented here
@@ -59,7 +61,7 @@ export function Register() {
     setError('');
 
     if (password.length < 8) {
-      setError('Password must be at least 8 characters');
+      setError(t('register.password_length_error'));
       return;
     }
 
@@ -77,7 +79,7 @@ export function Register() {
       setViewState('success');
       setTimeout(() => navigate('/dashboard'), 2000);
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Registration failed. Please try again.');
+      setError(err.response?.data?.message || t('register.registration_failed'));
     } finally {
       setLoading(false);
     }
@@ -112,13 +114,13 @@ export function Register() {
               {/* Header */}
               <div className="text-center mb-8">
                 <div className="flex items-center justify-center mb-6">
-                  <span className="text-5xl">✝️</span>
+                  <span className="text-5xl">{t('common.cross')}</span>
                 </div>
                 <h2 className="text-3xl font-bold text-gray-800 mb-3">
-                  Join Christian Community
+                  {t('register.title')}
                 </h2>
                 <p className="text-gray-600 text-base">
-                  Create an account to explore our platform
+                  {t('register.subtitle')}
                 </p>
               </div>
 
@@ -132,7 +134,7 @@ export function Register() {
                 {/* Email Input */}
                 <div className="flex justify-center">
                   <label htmlFor="signup-email" className="sr-only">
-                    Email address
+                    {t('common.email_address')}
                   </label>
                   <input
                     type="email"
@@ -141,8 +143,8 @@ export function Register() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     className="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-base"
-                    placeholder="Enter your email"
-                    aria-label="Email address for sign up"
+                    placeholder={t('register.email_placeholder')}
+                    aria-label={t('common.email_address')}
                   />
                 </div>
 
@@ -152,7 +154,7 @@ export function Register() {
                   disabled={!acceptedTerms || !email}
                   className="w-full flex justify-center py-4 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  Continue with Email
+                  {t('register.continue_with_email')}
                 </button>
               </form>
 
@@ -162,7 +164,7 @@ export function Register() {
                   <div className="w-full border-t border-gray-300"></div>
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-4 bg-white text-gray-500">OR</span>
+                  <span className="px-4 bg-white text-gray-500">{t('common.or')}</span>
                 </div>
               </div>
 
@@ -175,7 +177,7 @@ export function Register() {
                   className="w-full flex items-center justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <GoogleIcon />
-                  <span className="ml-3">Continue with Google</span>
+                  <span className="ml-3">{t('register.continue_with_google')}</span>
                 </button>
 
                 <button
@@ -186,7 +188,7 @@ export function Register() {
                   style={{ backgroundColor: '#24292e' }}
                 >
                   <GitHubIcon />
-                  <span className="ml-3">Continue with GitHub</span>
+                  <span className="ml-3">{t('register.continue_with_github')}</span>
                 </button>
 
                 <button
@@ -197,7 +199,7 @@ export function Register() {
                   style={{ backgroundColor: '#25D366' }}
                 >
                   <WhatsAppIcon />
-                  <span className="ml-3">Continue with WhatsApp</span>
+                  <span className="ml-3">{t('register.continue_with_whatsapp')}</span>
                 </button>
               </div>
 
@@ -211,13 +213,13 @@ export function Register() {
                   className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
                 />
                 <label htmlFor="accept-terms" className="ml-3 block text-sm text-gray-600">
-                  I agree to the{' '}
+                  {t('register.accept_terms')}{' '}
                   <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Terms of Service
+                    {t('register.terms_of_service')}
                   </a>{' '}
-                  and{' '}
+                  {t('register.and')}{' '}
                   <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Privacy Policy
+                    {t('register.privacy_policy')}
                   </a>
                 </label>
               </div>
@@ -225,16 +227,16 @@ export function Register() {
               {/* Forgot Password Link */}
               <div className="mt-4 text-center">
                 <Link to="/login" className="text-sm text-indigo-600 hover:text-indigo-500">
-                  Forgot password?
+                  {t('register.forgot_password')}
                 </Link>
               </div>
 
               {/* Sign In Link */}
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
-                  Already have an account?{' '}
+                  {t('register.already_have_account')}{' '}
                   <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
-                    Sign in
+                    {t('register.sign_in')}
                   </Link>
                 </p>
               </div>
@@ -242,7 +244,7 @@ export function Register() {
               {/* Back to Home */}
               <div className="mt-4 text-center">
                 <Link to="/" className="text-sm text-gray-500 hover:text-gray-700">
-                  ← Back to home
+                  {t('common.back_to_home')}
                 </Link>
               </div>
             </div>
@@ -254,13 +256,13 @@ export function Register() {
               {/* Header */}
               <div className="text-center mb-8">
                 <div className="flex items-center justify-center mb-6">
-                  <span className="text-5xl">✝️</span>
+                  <span className="text-5xl">{t('common.cross')}</span>
                 </div>
                 <h2 className="text-2xl font-bold text-gray-800 mb-3">
-                  Complete Your Profile
+                  {t('register.complete_profile_title')}
                 </h2>
                 <p className="text-sm text-gray-600">
-                  Creating account for <strong>{email}</strong>
+                  {t('register.creating_account_for')} <strong>{email}</strong>
                 </p>
               </div>
 
@@ -274,7 +276,7 @@ export function Register() {
                 {/* Name Input */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
+                    {t('register.full_name')}
                   </label>
                   <input
                     type="text"
@@ -283,14 +285,14 @@ export function Register() {
                     onChange={(e) => setName(e.target.value)}
                     required
                     className="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-base"
-                    placeholder="Enter your full name"
+                    placeholder={t('register.full_name_placeholder')}
                   />
                 </div>
 
                 {/* Password Input */}
                 <div>
                   <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                    Password
+                    {t('register.password_label')}
                   </label>
                   <input
                     type="password"
@@ -300,10 +302,10 @@ export function Register() {
                     required
                     autoComplete="new-password"
                     className="appearance-none block w-full px-4 py-4 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-base"
-                    placeholder="Create a password (min. 8 characters)"
+                    placeholder={t('register.password_placeholder')}
                   />
                   <p className="mt-2 text-xs text-gray-500">
-                    Must be at least 8 characters
+                    {t('register.password_hint')}
                   </p>
                 </div>
 
@@ -314,7 +316,7 @@ export function Register() {
                     disabled={loading}
                     className="flex-1 flex justify-center py-4 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
-                    {loading ? 'Creating Account...' : 'Create Account'}
+                    {loading ? t('register.creating_account') : t('register.create_account')}
                   </button>
                   <button
                     type="button"
@@ -322,7 +324,7 @@ export function Register() {
                     disabled={loading}
                     className="flex-1 flex justify-center py-4 px-4 border border-gray-300 rounded-lg shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
-                    Back
+                    {t('register.back')}
                   </button>
                 </div>
               </form>
@@ -351,13 +353,13 @@ export function Register() {
                 </div>
 
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  Account Created!
+                  {t('register.account_created')}
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  Welcome to Christian Community, {name}!
+                  {t('register.welcome_message', { name })}
                 </p>
                 <p className="text-sm text-gray-500">
-                  Redirecting to your dashboard...
+                  {t('register.redirecting')}
                 </p>
 
                 {/* Loading Spinner */}

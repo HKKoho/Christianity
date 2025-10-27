@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
-import { modules } from '../../config/modules';
+import { useTranslation } from 'react-i18next';
+import { getTranslatedModules } from '../../config/modules-i18n';
 import { CanvasSymbolTransform } from '../../components/CanvasSymbolTransform';
 import { CanvasModuleCard } from '../../components/CanvasModuleCard';
 
 export function Landing() {
+  const { t } = useTranslation();
+  const modules = getTranslatedModules(t);
 
   return (
     <div className="min-h-screen bg-white">
@@ -12,7 +15,7 @@ export function Landing() {
         <nav className="container mx-auto px-6 py-5 flex justify-between items-center max-w-7xl">
           {/* Left side - Bigger brand text */}
           <div className="flex items-center" style={{ gap: '16px' }}>
-            <span className="text-6xl" style={{ fontSize: '56px' }}>✝️</span>
+            <span className="text-6xl" style={{ fontSize: '56px' }}>{t('common.cross')}</span>
             <span
               className="text-3xl font-bold tracking-tight"
               style={{
@@ -22,7 +25,7 @@ export function Landing() {
                 letterSpacing: '-0.5px'
               }}
             >
-              Christian Community
+              {t('landing.brand_name')}
             </span>
           </div>
           {/* Right side - Join Us button only */}
@@ -52,7 +55,7 @@ export function Landing() {
                 e.currentTarget.style.boxShadow = '0 4px 6px -1px rgb(255 107 107 / 0.3)';
               }}
             >
-              Join Us
+              {t('landing.join_us')}
             </Link>
           </div>
         </nav>
@@ -98,7 +101,7 @@ export function Landing() {
               textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
             }}
           >
-            Kindness. Inspiration. Fellowship.
+            {t('landing.hero_title')}
           </h1>
           <div
             className="mb-12"
@@ -122,7 +125,7 @@ export function Landing() {
                 textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)'
               }}
             >
-              A unified platform integrating powerful AI-driven tools for Christians
+              {t('landing.hero_subtitle_1')}
             </p>
             <p
               className="text-xl md:text-2xl leading-relaxed font-light"
@@ -135,7 +138,7 @@ export function Landing() {
                 textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)'
               }}
             >
-              Explore Culture. Learn Bible. Research Theology. Manage Church.
+              {t('landing.hero_subtitle_2')}
             </p>
           </div>
 
@@ -168,7 +171,7 @@ export function Landing() {
                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)'
               }}
             >
-              Begin Your Journey
+              {t('landing.hero_cta')}
             </Link>
           </div>
         </div>
@@ -200,7 +203,7 @@ export function Landing() {
                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)'
               }}
             >
-              Four Paths to Understand Christianity
+              {t('landing.modules_title')}
             </h2>
             <p
               className="text-xl max-w-3xl mx-auto font-light leading-relaxed"
@@ -209,7 +212,7 @@ export function Landing() {
                 textShadow: '1px 1px 3px rgba(0, 0, 0, 0.4)'
               }}
             >
-              Tailored AI-powered tools designed for seekers, scholars, students, and church leaders
+              {t('landing.modules_subtitle')}
             </p>
           </div>
 
@@ -245,15 +248,15 @@ export function Landing() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-6">
-              <span className="text-3xl">✝️</span>
-              <span className="text-2xl font-bold tracking-tight">Christian Community</span>
+              <span className="text-3xl">{t('common.cross')}</span>
+              <span className="text-2xl font-bold tracking-tight">{t('landing.footer_brand')}</span>
             </div>
             <p className="text-gray-300 mb-6 text-lg font-light max-w-2xl mx-auto">
-              Empowering faith, connecting hearts, transforming lives through technology and grace
+              {t('landing.footer_tagline')}
             </p>
             <div className="w-16 h-px bg-gray-700 mx-auto mb-6"></div>
             <p className="text-sm text-gray-500 font-light">
-              © 2025 Christian Community Platform. Built with love and purpose.
+              {t('landing.footer_copyright')}
             </p>
           </div>
         </div>
