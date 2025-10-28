@@ -244,42 +244,6 @@ export function Landing() {
               {t('landing.preview_modules')}
             </button>
           </div>
-
-          {/* AI Region Caution */}
-          <div className="mt-8 flex justify-center items-center">
-            <div
-              className="px-6 py-3 rounded-lg backdrop-blur-sm"
-              style={{
-                backgroundColor: 'rgba(255, 107, 107, 0.15)',
-                border: '1px solid rgba(255, 107, 107, 0.4)',
-                maxWidth: '600px'
-              }}
-            >
-              <div className="flex items-center gap-3">
-                <svg
-                  className="flex-shrink-0"
-                  style={{ width: '20px', height: '20px', color: '#ff6b6b' }}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <p
-                  className="text-sm font-medium"
-                  style={{
-                    color: '#ffffff',
-                    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.4)'
-                  }}
-                >
-                  {t('landing.ai_caution')}
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Elegant decorative elements */}
@@ -303,8 +267,9 @@ export function Landing() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="text-center" style={{ marginBottom: '80px' }}>
             <h2
-              className="text-5xl md:text-6xl font-bold mb-6 tracking-tight"
+              className="text-6xl md:text-7xl font-bold mb-8 tracking-tight"
               style={{
+                fontSize: 'clamp(48px, 8vw, 72px)',
                 color: '#ffffff',
                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)'
               }}
@@ -312,14 +277,51 @@ export function Landing() {
               {t('landing.modules_title')}
             </h2>
             <p
-              className="text-xl max-w-3xl mx-auto font-light leading-relaxed"
+              className="text-2xl md:text-3xl max-w-4xl mx-auto font-light leading-relaxed mb-8"
               style={{
+                fontSize: 'clamp(20px, 3vw, 28px)',
                 color: '#ffffff',
                 textShadow: '1px 1px 3px rgba(0, 0, 0, 0.4)'
               }}
             >
               {t('landing.modules_subtitle')}
             </p>
+
+            {/* AI Region Caution - Moved to Modules Section */}
+            <div className="flex justify-center items-center mt-6">
+              <div
+                className="px-6 py-3 rounded-lg backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'rgba(255, 107, 107, 0.15)',
+                  border: '1px solid rgba(255, 107, 107, 0.4)',
+                  maxWidth: '700px'
+                }}
+              >
+                <div className="flex items-center gap-3 justify-center">
+                  <svg
+                    className="flex-shrink-0"
+                    style={{ width: '20px', height: '20px', color: '#ff6b6b' }}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <p
+                    className="text-sm font-medium"
+                    style={{
+                      color: '#ffffff',
+                      textShadow: '1px 1px 2px rgba(0, 0, 0, 0.4)'
+                    }}
+                  >
+                    {t('landing.ai_caution')}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* 2x2 Grid with Canvas-Enhanced Cards */}
