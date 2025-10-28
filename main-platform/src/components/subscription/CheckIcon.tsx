@@ -1,15 +1,18 @@
 export function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
+  const { style, ...restProps } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-      style={{ width: '1.25em', height: '1.25em' }}
-      {...props}
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      style={{ width: '1.25em', height: '1.25em', flexShrink: 0, ...style }}
+      {...restProps}
     >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+        clipRule="evenodd"
+      />
     </svg>
   );
 }
