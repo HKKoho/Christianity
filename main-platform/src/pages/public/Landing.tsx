@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getTranslatedModules } from '../../config/modules-i18n';
 import { CanvasSymbolTransform } from '../../components/CanvasSymbolTransform';
-import { CanvasModuleCard } from '../../components/CanvasModuleCard';
+import { ModuleCarousel } from '../../components/ModuleCarousel';
 import { MockLogin } from '../../components/MockLogin';
 
 export function Landing() {
@@ -343,30 +343,8 @@ export function Landing() {
             </div>
           </div>
 
-          {/* 2x2 Grid with Canvas-Enhanced Cards */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '32px',
-              maxWidth: '1200px',
-              margin: '0 auto'
-            }}
-          >
-            {modules.map((module) => (
-              <CanvasModuleCard
-                key={module.id}
-                icon={module.icon}
-                displayName={module.displayName}
-                description={module.description}
-                features={module.features}
-                targetAudience={module.targetAudience}
-                path={module.path}
-                color={module.color}
-              />
-            ))}
-          </div>
+          {/* 3D Carousel with Module Cards */}
+          <ModuleCarousel modules={modules} />
         </div>
         <style>{`
           @keyframes fadeIn {
