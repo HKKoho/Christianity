@@ -37,7 +37,7 @@ export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
       <ul className="mt-8 space-y-4 flex-grow">
         {plan.features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <CheckIcon className="h-5 w-5 flex-shrink-0 mr-3" style={{ color: '#10b981' }} />
+            <CheckIcon className="flex-shrink-0 mr-3" style={{ color: '#10b981' }} />
             <span className="text-slate-600">{feature}</span>
           </li>
         ))}
