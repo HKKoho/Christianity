@@ -202,17 +202,19 @@ export function Landing() {
             <CanvasSymbolTransform />
           </div>
 
-          <div className="mt-6 flex justify-center items-center gap-4 flex-wrap">
+          <div className="mt-6 flex justify-center items-center gap-6 flex-wrap">
             <Link
               to="/register"
-              className="px-12 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="rounded-lg font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               style={{
                 display: 'inline-block',
                 textDecoration: 'none',
                 backgroundColor: 'transparent',
                 color: '#ffffff',
                 border: 'none',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)'
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)',
+                padding: '16px 48px',
+                fontSize: '22px'
               }}
             >
               {t('landing.hero_cta')}
@@ -220,15 +222,17 @@ export function Landing() {
 
             <button
               onClick={() => setShowMockLogin(true)}
-              className="px-12 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="rounded-lg font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               style={{
                 display: 'inline-block',
                 backgroundColor: 'rgba(255, 255, 255, 0.9)',
                 color: '#4a90e2',
-                border: '2px solid #ffffff',
+                border: '3px solid #ffffff',
                 textShadow: 'none',
                 cursor: 'pointer',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                padding: '16px 48px',
+                fontSize: '22px'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#ffffff';
