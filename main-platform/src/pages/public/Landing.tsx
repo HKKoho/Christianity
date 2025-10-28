@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getTranslatedModules } from '../../config/modules-i18n';
 import { CanvasSymbolTransform } from '../../components/CanvasSymbolTransform';
 import { CanvasModuleCard } from '../../components/CanvasModuleCard';
+import { MockLogin } from '../../components/MockLogin';
 
 export function Landing() {
   const { t, i18n } = useTranslation();
   const modules = getTranslatedModules(t);
+  const [showMockLogin, setShowMockLogin] = useState(false);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'zh-TW' ? 'en' : 'zh-TW';
@@ -199,7 +202,7 @@ export function Landing() {
             <CanvasSymbolTransform />
           </div>
 
-          <div className="mt-6 flex justify-center items-center">
+          <div className="mt-6 flex justify-center items-center gap-4 flex-wrap">
             <Link
               to="/register"
               className="px-12 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
@@ -214,6 +217,32 @@ export function Landing() {
             >
               {t('landing.hero_cta')}
             </Link>
+
+            <button
+              onClick={() => setShowMockLogin(true)}
+              className="px-12 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              style={{
+                display: 'inline-block',
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                color: '#4a90e2',
+                border: '2px solid #ffffff',
+                textShadow: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#ffffff';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              {t('landing.preview_modules')}
+            </button>
           </div>
 
           {/* AI Region Caution */}
@@ -338,6 +367,9 @@ export function Landing() {
           </div>
         </div>
       </footer>
+
+      {/* Mock Login Modal */}
+      <MockLogin isOpen={showMockLogin} onClose={() => setShowMockLogin(false)} />
     </div>
   );
 }

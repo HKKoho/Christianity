@@ -22,12 +22,20 @@
     "hero_subtitle_1": "A unified platform integrating powerful AI-driven tools for Christians",
     "hero_subtitle_2": "Explore Culture. Learn Bible. Research Theology. Manage Church.",
     "hero_cta": "Begin Your Journey",
+    "preview_modules": "Preview Modules",
     "ai_caution": "Your choices of AI may be limited to the region you located",
     "modules_title": "Four Paths to Understand Christianity",
     "modules_subtitle": "Tailored AI-powered tools designed for seekers, scholars, students, and church leaders",
     "footer_brand": "Christian Community",
     "footer_tagline": "Empowering faith, connecting hearts, transforming lives through technology and grace",
     "footer_copyright": "© 2025 Christian Community Platform. Built with love and purpose."
+  },
+  "mock_login": {
+    "title": "Explore Our Modules",
+    "subtitle": "Click on any module to explore without signing up",
+    "explore": "Open Module",
+    "notice": "This is a preview mode. Click any module card to explore the full features. No account required!",
+    "close": "Close"
   },
   "login": {
     "brand_name": "Christian Platform",
