@@ -126,5 +126,16 @@
     "church_feature_4": "課程規劃",
     "church_feature_5": "參與者評估",
     "church_target": "領袖"
+  },
+  "subscription": {
+    "title": "靈活的方案滿足所有需求",
+    "subtitle": "無論您是個人還是大型組織，我們都有適合您的方案。",
+    "individual": "個人",
+    "organization": "組織",
+    "most_popular": "最受歡迎",
+    "no_credit_card": "無需信用卡",
+    "donate_now": "立即捐款",
+    "select_plan": "選擇方案",
+    "back_to_home": "返回首頁"
   }
 }

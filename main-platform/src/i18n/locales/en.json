@@ -126,5 +126,16 @@
     "church_feature_4": "Lesson Planning",
     "church_feature_5": "Participants Review",
     "church_target": "Leaders"
+  },
+  "subscription": {
+    "title": "Flexible Plans for Everyone",
+    "subtitle": "Whether you're an individual or a large organization, we have a plan that's right for you.",
+    "individual": "Individual",
+    "organization": "Organization",
+    "most_popular": "Most Popular",
+    "no_credit_card": "No credit card required",
+    "donate_now": "Donate Now",
+    "select_plan": "Select Plan",
+    "back_to_home": "Back to Home"
   }
 }

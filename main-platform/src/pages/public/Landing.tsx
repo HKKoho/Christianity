@@ -75,7 +75,7 @@ export function Landing() {
 
             {/* Join Us Button */}
             <Link
-              to="/register"
+              to="/subscription"
               className="px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
               style={{
                 backgroundColor: '#ff6b6b',
@@ -204,7 +204,7 @@ export function Landing() {
 
           <div className="mt-6 flex justify-center items-center gap-6 flex-wrap">
             <Link
-              to="/register"
+              to="/subscription"
               className="rounded-lg font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               style={{
                 display: 'inline-block',
