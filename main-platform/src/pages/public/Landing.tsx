@@ -10,10 +10,22 @@ export function Landing() {
   const { t, i18n } = useTranslation();
   const modules = getTranslatedModules(t);
   const [showMockLogin, setShowMockLogin] = useState(false);
+  const [showModules, setShowModules] = useState(false);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'zh-TW' ? 'en' : 'zh-TW';
     i18n.changeLanguage(newLang);
+  };
+
+  const handlePreviewClick = () => {
+    setShowModules(true);
+    // Smooth scroll to modules section
+    setTimeout(() => {
+      const modulesSection = document.getElementById('modules-section');
+      if (modulesSection) {
+        modulesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   return (
@@ -221,7 +233,7 @@ export function Landing() {
             </Link>
 
             <button
-              onClick={() => setShowMockLogin(true)}
+              onClick={handlePreviewClick}
               className="rounded-lg font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               style={{
                 display: 'inline-block',
@@ -257,17 +269,20 @@ export function Landing() {
       </section>
 
       {/* Modules Section - Elegant 2x2 Grid */}
-      <section
-        className="py-20"
-        style={{
-          backgroundImage: 'url(/LoveFaithHope.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          position: 'relative',
-          paddingTop: '120px'
-        }}
-      >
+      {showModules && (
+        <section
+          id="modules-section"
+          className="py-20"
+          style={{
+            backgroundImage: 'url(/LoveFaithHope.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            position: 'relative',
+            paddingTop: '120px',
+            animation: 'fadeIn 0.5s ease-in'
+          }}
+        >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="text-center" style={{ marginBottom: '80px' }}>
             <h2
@@ -353,7 +368,20 @@ export function Landing() {
             ))}
           </div>
         </div>
+        <style>{`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
       </section>
+      )}
 
       {/* Footer - Elegant Black */}
       <footer className="bg-black text-white py-16 border-t border-gray-800">
