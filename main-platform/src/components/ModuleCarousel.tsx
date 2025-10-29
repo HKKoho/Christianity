@@ -34,6 +34,12 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
   }, [isDragging]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
+    // Don't start dragging if clicking on a card or button
+    if ((e.target as HTMLElement).closest('.module-card-content') ||
+        (e.target as HTMLElement).tagName === 'A' ||
+        (e.target as HTMLElement).closest('a')) {
+      return;
+    }
     setIsDragging(true);
     setStartX(e.clientX);
     setCurrentRotation(rotation);
@@ -54,6 +60,12 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
+    // Don't start dragging if touching a card or button
+    if ((e.target as HTMLElement).closest('.module-card-content') ||
+        (e.target as HTMLElement).tagName === 'A' ||
+        (e.target as HTMLElement).closest('a')) {
+      return;
+    }
     setIsDragging(true);
     setStartX(e.touches[0].clientX);
     setCurrentRotation(rotation);
@@ -169,7 +181,7 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
                   position: 'absolute',
                   left: '50%',
                   top: '50%',
-                  width: '350px',
+                  width: '280px',
                   height: '500px',
                   transformStyle: 'preserve-3d',
                   transform: `
@@ -181,11 +193,13 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
                 }}
               >
                 <div
+                  className="module-card-content"
                   style={{
                     width: '100%',
                     height: '100%',
                     transform: 'rotateY(0deg)',
-                    transformStyle: 'preserve-3d'
+                    transformStyle: 'preserve-3d',
+                    pointerEvents: 'auto'
                   }}
                 >
                   <CanvasModuleCard

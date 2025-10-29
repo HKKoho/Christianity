@@ -187,8 +187,10 @@ export function CanvasModuleCard({
         borderRadius: '16px',
         border: '1px solid #d1d5db',
         boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
-        padding: '24px',
-        minHeight: '380px'
+        padding: '16px',
+        minHeight: '380px',
+        width: '100%',
+        height: '100%'
       }}
     >
       {/* Canvas background layer */}
@@ -199,10 +201,10 @@ export function CanvasModuleCard({
       />
 
       {/* Card content */}
-      <div className="relative z-10 p-4">
+      <div className="relative z-10 p-2">
         {/* Icon with elegant animation */}
-        <div className="mb-6">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-black text-white text-3xl shadow-md transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+        <div className="mb-4">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-black text-white text-2xl shadow-md transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
             <span className="group-hover:scale-110 transition-transform duration-300">
               {icon}
             </span>
@@ -210,10 +212,10 @@ export function CanvasModuleCard({
         </div>
 
         {/* Target audience badge */}
-        <div className="mb-3">
+        <div className="mb-2">
           <span
-            className="inline-block px-3 py-1 text-xs font-semibold bg-gray-100 rounded-full uppercase tracking-wider"
-            style={{ color: themeColor }}
+            className="inline-block px-2 py-1 text-xs font-semibold bg-gray-100 rounded-full uppercase tracking-wider"
+            style={{ color: themeColor, fontSize: '10px' }}
           >
             {t('canvas_module_card.for')} {targetAudience}
           </span>
@@ -221,35 +223,35 @@ export function CanvasModuleCard({
 
         {/* Module title */}
         <h3
-          className="text-2xl font-bold mb-3 transition-colors duration-300"
-          style={{ color: themeColor }}
+          className="text-lg font-bold mb-2 transition-colors duration-300"
+          style={{ color: themeColor, lineHeight: '1.3' }}
         >
           {displayName}
         </h3>
 
         {/* Description */}
         <p
-          className="text-sm mb-6 leading-relaxed min-h-[3rem]"
-          style={{ color: themeColor }}
+          className="text-xs mb-4 leading-relaxed min-h-[2.5rem]"
+          style={{ color: themeColor, lineHeight: '1.4' }}
         >
           {description}
         </p>
 
         {/* Features */}
-        <div className="space-y-3 mb-4 min-h-[8rem]">
+        <div className="space-y-2 mb-4 min-h-[7rem]">
           {features.map((feature) => (
             <div key={feature} className="flex items-start">
               <div
-                className="flex-shrink-0 w-5 h-5 rounded flex items-center justify-center mr-3 transform group-hover:scale-110 transition-transform duration-300"
+                className="flex-shrink-0 w-4 h-4 rounded flex items-center justify-center mr-2 transform group-hover:scale-110 transition-transform duration-300"
                 style={{ backgroundColor: themeColor }}
               >
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
               <span
                 className="text-xs font-medium flex-1 leading-tight"
-                style={{ color: themeColor }}
+                style={{ color: themeColor, fontSize: '11px', lineHeight: '1.3' }}
               >
                 {feature}
               </span>
@@ -265,12 +267,12 @@ export function CanvasModuleCard({
             style={{
               display: 'inline-block',
               textAlign: 'center',
-              padding: '12px 32px',
+              padding: '10px 24px',
               borderRadius: '8px',
               backgroundColor: '#000000',
               color: '#ffffff',
               fontWeight: '600',
-              fontSize: '15px',
+              fontSize: '13px',
               textDecoration: 'none',
               boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
               transition: 'all 0.3s ease',
