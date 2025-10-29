@@ -286,9 +286,9 @@ export function Landing() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="text-center" style={{ marginBottom: '80px' }}>
             <h2
-              className="text-6xl md:text-7xl font-bold mb-8 tracking-tight"
+              className="text-4xl md:text-5xl font-bold mb-8 tracking-tight"
               style={{
-                fontSize: 'clamp(48px, 8vw, 72px)',
+                fontSize: 'clamp(36px, 6vw, 48px)',
                 color: '#ffffff',
                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)'
               }}

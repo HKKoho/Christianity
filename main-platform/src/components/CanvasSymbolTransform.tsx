@@ -18,8 +18,11 @@ export function CanvasSymbolTransform() {
   const particlesRef = useRef<Particle[]>([]);
   const fishBreadImgRef = useRef<HTMLImageElement | undefined>(undefined);
   const churchImgRef = useRef<HTMLImageElement | undefined>(undefined);
+  const reformationImgRef = useRef<HTMLImageElement | undefined>(undefined);
+  const chiRhoImgRef = useRef<HTMLImageElement | undefined>(undefined);
   const imagesLoadedRef = useRef(0);
   const isTransformedRef = useRef(false);
+  const currentImageIndexRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -38,6 +41,8 @@ export function CanvasSymbolTransform() {
     // Load images
     const fishBreadImg = new Image();
     const churchImg = new Image();
+    const reformationImg = new Image();
+    const chiRhoImg = new Image();
 
     fishBreadImg.onload = () => {
       imagesLoadedRef.current++;
@@ -49,8 +54,20 @@ export function CanvasSymbolTransform() {
       churchImgRef.current = churchImg;
     };
 
+    reformationImg.onload = () => {
+      imagesLoadedRef.current++;
+      reformationImgRef.current = reformationImg;
+    };
+
+    chiRhoImg.onload = () => {
+      imagesLoadedRef.current++;
+      chiRhoImgRef.current = chiRhoImg;
+    };
+
     fishBreadImg.src = '/fish-bread-pattern.png';
     churchImg.src = '/churchsymbol.png';
+    reformationImg.src = '/Reformation.png';
+    chiRhoImg.src = '/ChiRho.png';
 
     // Particle creation function
     const createParticles = (count: number, centerX: number, centerY: number) => {
@@ -78,9 +95,12 @@ export function CanvasSymbolTransform() {
     let targetImageAlpha = 0;
     let glowIntensity = 0;
 
+    // Get the current and next images based on rotation
+    const images = [fishBreadImgRef, churchImgRef, reformationImgRef, chiRhoImgRef];
+
     // Animation loop
     const animate = () => {
-      if (imagesLoadedRef.current < 2) {
+      if (imagesLoadedRef.current < 4) {
         animationRef.current = requestAnimationFrame(animate);
         return;
       }
@@ -110,15 +130,19 @@ export function CanvasSymbolTransform() {
         ctx.shadowColor = isTransformedRef.current ? '#8b5cf6' : '#10b981';
       }
 
-      // Draw fish-bread image with 360-degree rotation and scale
-      if (currentImageAlpha > 0.01 && fishBreadImgRef.current) {
+      // Get current and next image refs
+      const currentImgRef = images[currentImageIndexRef.current];
+      const nextImgRef = images[(currentImageIndexRef.current + 1) % images.length];
+
+      // Draw current image with 360-degree rotation and scale
+      if (currentImageAlpha > 0.01 && currentImgRef.current) {
         ctx.save();
         ctx.globalAlpha = currentImageAlpha;
         ctx.translate(centerX, centerY);
         ctx.rotate(transformProgress * Math.PI * 2); // Full 360-degree rotation
         ctx.scale(1 - transformProgress * 0.25, 1 - transformProgress * 0.25);
         ctx.drawImage(
-          fishBreadImgRef.current,
+          currentImgRef.current,
           -maxSize / 2,
           -maxSize / 2,
           maxSize,
@@ -127,15 +151,15 @@ export function CanvasSymbolTransform() {
         ctx.restore();
       }
 
-      // Draw church symbol with 360-degree rotation and scale
-      if (targetImageAlpha > 0.01 && churchImgRef.current) {
+      // Draw next image with 360-degree rotation and scale
+      if (targetImageAlpha > 0.01 && nextImgRef.current) {
         ctx.save();
         ctx.globalAlpha = targetImageAlpha;
         ctx.translate(centerX, centerY);
         ctx.rotate(-transformProgress * Math.PI * 2); // Full 360-degree rotation (opposite direction)
         ctx.scale(0.75 + targetImageAlpha * 0.25, 0.75 + targetImageAlpha * 0.25);
         ctx.drawImage(
-          churchImgRef.current,
+          nextImgRef.current,
           -maxSize / 2,
           -maxSize / 2,
           maxSize,
@@ -207,6 +231,10 @@ export function CanvasSymbolTransform() {
 
     const rotationInterval = setInterval(() => {
       isTransformedRef.current = !isTransformedRef.current;
+      // When we finish a complete transformation cycle (back to original), move to next image
+      if (!isTransformedRef.current) {
+        currentImageIndexRef.current = (currentImageIndexRef.current + 1) % images.length;
+      }
     }, 15000);
 
     // Handle window resize
