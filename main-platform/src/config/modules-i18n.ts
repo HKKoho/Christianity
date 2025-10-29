@@ -42,6 +42,7 @@ export function getTranslatedModules(t: TFunction): TranslatedModuleConfig[] {
             t('modules.christianity_feature_4'),
             t('modules.christianity_feature_5'),
             t('modules.christianity_feature_6'),
+            t('modules.christianity_feature_7'),
           ],
           targetAudience: t('modules.christianity_target'),
         };
