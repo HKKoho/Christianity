@@ -1,15 +1,61 @@
-# React + TypeScript + Vite
+# Christian Community Platform - Main Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A unified platform integrating powerful AI-driven tools for Christians, featuring four specialized modules for seekers, scholars, students, and church leaders.
 
-Currently, two official plugins are available:
+## Live Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Production URL:** [https://main-platform-dyy0npbfl-cklbcs-projects.vercel.app](https://main-platform-dyy0npbfl-cklbcs-projects.vercel.app)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Christian Culture Explorer** - For Seekers: Explore Christian culture through immersive sensory experiences
+- **Christian Theology & Research** - For Scholars: Advanced theological research platform with 11 LLM models
+- **Bible Knowledge & Learning** - For Students: Interactive Bible learning with Hebrew & Greek language mastery
+- **Church Administration & Ministry** - For Leaders: Comprehensive church management tools
+
+## Tech Stack
+
+- React 19.1.1 + TypeScript
+- Vite 7.1.7 for blazing fast builds
+- Tailwind CSS 4.1.15 for styling
+- React Router 7.9.4 for navigation
+- i18next for internationalization (English & Traditional Chinese)
+- Zustand for state management
+
+## Getting Started
+
+### Development
+
+```bash
+npm install
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+This project is deployed on Vercel. To deploy your own instance:
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy to production
+vercel --prod
+```
 
 ## Expanding the ESLint configuration
 
