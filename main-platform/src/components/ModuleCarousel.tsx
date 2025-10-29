@@ -145,7 +145,7 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
           perspective: '2000px',
           perspectiveOrigin: '50% 50%',
           width: '100%',
-          height: '600px',
+          height: '520px',
           position: 'relative',
           cursor: isDragging ? 'grabbing' : 'grab',
           userSelect: 'none'
@@ -182,7 +182,7 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
                   left: '50%',
                   top: '50%',
                   width: '280px',
-                  height: '500px',
+                  height: '420px',
                   transformStyle: 'preserve-3d',
                   transform: `
                     translate(-50%, -50%)

@@ -16,10 +16,10 @@ export function CanvasSymbolTransform() {
   const [isTransformed] = useState(false);
   const animationRef = useRef<number | undefined>(undefined);
   const particlesRef = useRef<Particle[]>([]);
-  const fishBreadImgRef = useRef<HTMLImageElement | undefined>(undefined);
-  const churchImgRef = useRef<HTMLImageElement | undefined>(undefined);
-  const reformationImgRef = useRef<HTMLImageElement | undefined>(undefined);
   const chiRhoImgRef = useRef<HTMLImageElement | undefined>(undefined);
+  const christianImgRef = useRef<HTMLImageElement | undefined>(undefined);
+  const reformationImgRef = useRef<HTMLImageElement | undefined>(undefined);
+  const churchImgRef = useRef<HTMLImageElement | undefined>(undefined);
   const imagesLoadedRef = useRef(0);
   const isTransformedRef = useRef(false);
   const currentImageIndexRef = useRef(0);
@@ -38,20 +38,20 @@ export function CanvasSymbolTransform() {
     canvas.height = rect.height * dpr;
     ctx.scale(dpr, dpr);
 
-    // Load images
-    const fishBreadImg = new Image();
-    const churchImg = new Image();
-    const reformationImg = new Image();
+    // Load images in rotation order: ChiRho, Christian, Reformation, churchsymbol
     const chiRhoImg = new Image();
+    const christianImg = new Image();
+    const reformationImg = new Image();
+    const churchImg = new Image();
 
-    fishBreadImg.onload = () => {
+    chiRhoImg.onload = () => {
       imagesLoadedRef.current++;
-      fishBreadImgRef.current = fishBreadImg;
+      chiRhoImgRef.current = chiRhoImg;
     };
 
-    churchImg.onload = () => {
+    christianImg.onload = () => {
       imagesLoadedRef.current++;
-      churchImgRef.current = churchImg;
+      christianImgRef.current = christianImg;
     };
 
     reformationImg.onload = () => {
@@ -59,15 +59,15 @@ export function CanvasSymbolTransform() {
       reformationImgRef.current = reformationImg;
     };
 
-    chiRhoImg.onload = () => {
+    churchImg.onload = () => {
       imagesLoadedRef.current++;
-      chiRhoImgRef.current = chiRhoImg;
+      churchImgRef.current = churchImg;
     };
 
-    fishBreadImg.src = '/fish-bread-pattern.png';
-    churchImg.src = '/churchsymbol.png';
-    reformationImg.src = '/Reformation.png';
     chiRhoImg.src = '/ChiRho.png';
+    christianImg.src = '/Christian.png';
+    reformationImg.src = '/Reformation.png';
+    churchImg.src = '/churchsymbol.png';
 
     // Particle creation function
     const createParticles = (count: number, centerX: number, centerY: number) => {
@@ -95,8 +95,8 @@ export function CanvasSymbolTransform() {
     let targetImageAlpha = 0;
     let glowIntensity = 0;
 
-    // Get the current and next images based on rotation
-    const images = [fishBreadImgRef, churchImgRef, reformationImgRef, chiRhoImgRef];
+    // Get the current and next images based on rotation: ChiRho, Christian, Reformation, churchsymbol
+    const images = [chiRhoImgRef, christianImgRef, reformationImgRef, churchImgRef];
 
     // Animation loop
     const animate = () => {
