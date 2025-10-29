@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 interface CanvasModuleCardProps {
@@ -261,8 +260,10 @@ export function CanvasModuleCard({
 
         {/* CTA Button */}
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px' }}>
-          <Link
-            to={path}
+          <a
+            href={path}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block text-center py-3 px-6 rounded-lg bg-black text-white font-semibold text-sm shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-500 relative overflow-hidden group/btn"
             style={{
               display: 'inline-block',
@@ -288,7 +289,7 @@ export function CanvasModuleCard({
             }}
           >
             <span style={{ position: 'relative', zIndex: 10 }}>{t('canvas_module_card.explore_now')}</span>
-          </Link>
+          </a>
         </div>
       </div>
 
