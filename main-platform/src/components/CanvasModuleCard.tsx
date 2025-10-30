@@ -259,7 +259,7 @@ export function CanvasModuleCard({
         </div>
 
         {/* CTA Button */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px', position: 'relative', zIndex: 20 }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px', position: 'relative', zIndex: 20 }}>
           <a
             href={path}
             target="_blank"
