@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { getTranslatedModules } from '../../config/modules-i18n';
 import { CanvasSymbolTransform } from '../../components/CanvasSymbolTransform';
 import { ModuleCarousel } from '../../components/ModuleCarousel';
+import { ModuleButtons } from '../../components/ModuleButtons';
 import { MockLogin } from '../../components/MockLogin';
 
 export function Landing() {
@@ -345,6 +346,9 @@ export function Landing() {
 
           {/* 3D Carousel with Module Cards */}
           <ModuleCarousel modules={modules} />
+
+          {/* Four Module Navigation Buttons */}
+          <ModuleButtons modules={modules} />
         </div>
         <style>{`
           @keyframes fadeIn {

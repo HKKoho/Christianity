@@ -258,41 +258,6 @@ export function CanvasModuleCard({
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px', position: 'relative', zIndex: 20 }}>
-          <a
-            href={path}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-center py-3 px-6 rounded-lg bg-black text-white font-semibold text-sm shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-500 relative overflow-hidden group/btn"
-            style={{
-              display: 'inline-block',
-              textAlign: 'center',
-              padding: '8px 20px',
-              borderRadius: '6px',
-              backgroundColor: '#000000',
-              color: '#ffffff',
-              fontWeight: '600',
-              fontSize: '14px',
-              textDecoration: 'none',
-              boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
-              transition: 'all 0.3s ease',
-              cursor: 'pointer',
-              position: 'relative',
-              zIndex: 21
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 10px 15px -3px rgb(0 0 0 / 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
-            }}
-          >
-            <span style={{ position: 'relative', zIndex: 10 }}>{t('canvas_module_card.explore_now')}</span>
-          </a>
-        </div>
       </div>
 
       {/* Elegant corner accent */}
