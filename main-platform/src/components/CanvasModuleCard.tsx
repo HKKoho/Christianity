@@ -29,7 +29,6 @@ export function CanvasModuleCard({
   description,
   features,
   targetAudience,
-  path,
   color
 }: CanvasModuleCardProps) {
   const { t } = useTranslation();
