@@ -52,7 +52,15 @@ export function ModuleButtons({ modules }: ModuleButtonsProps) {
     }
   };
 
-  const handleModuleClick = (path: string) => {
+  const isUnderConstruction = (moduleId: string): boolean => {
+    return moduleId === 'christianity';
+  };
+
+  const handleModuleClick = (moduleId: string, path: string) => {
+    if (isUnderConstruction(moduleId)) {
+      alert('This module is currently under construction. We are working hard to improve it and will have it ready in 2-3 days. Thank you for your patience!');
+      return;
+    }
     window.open(path, '_blank', 'noopener,noreferrer');
   };
 
@@ -67,21 +75,22 @@ export function ModuleButtons({ modules }: ModuleButtonsProps) {
       >
         {modules.map((module) => {
           const colors = colorMap[module.color] || colorMap.culture;
+          const underConstruction = isUnderConstruction(module.id);
 
           return (
             <button
               key={module.id}
-              onClick={() => handleModuleClick(module.path)}
+              onClick={() => handleModuleClick(module.id, module.path)}
               className="transform transition-all duration-300"
               style={{
-                backgroundColor: colors.bg,
+                backgroundColor: underConstruction ? '#999999' : colors.bg,
                 color: colors.text,
                 border: 'none',
                 borderRadius: '12px',
                 padding: '24px 20px',
                 fontSize: '24px',
                 fontWeight: '700',
-                cursor: 'pointer',
+                cursor: underConstruction ? 'not-allowed' : 'pointer',
                 textAlign: 'center',
                 boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
                 minHeight: '120px',
@@ -89,21 +98,38 @@ export function ModuleButtons({ modules }: ModuleButtonsProps) {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '8px'
+                gap: '8px',
+                opacity: underConstruction ? 0.7 : 1,
+                position: 'relative'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = colors.hoverBg;
-                e.currentTarget.style.transform = 'translateY(-6px)';
-                e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.25)';
+                if (!underConstruction) {
+                  e.currentTarget.style.backgroundColor = colors.hoverBg;
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.25)';
+                }
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = colors.bg;
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
+                if (!underConstruction) {
+                  e.currentTarget.style.backgroundColor = colors.bg;
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
+                }
               }}
             >
               <span style={{ fontSize: '40px' }}>{module.icon}</span>
               <span>{getButtonLabel(module.id)}</span>
+              {underConstruction && (
+                <span style={{
+                  fontSize: '11px',
+                  fontWeight: '600',
+                  marginTop: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  Under Construction
+                </span>
+              )}
             </button>
           );
         })}
