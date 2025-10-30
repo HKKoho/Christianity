@@ -214,7 +214,7 @@ export function CanvasModuleCard({
         <div className="mb-1">
           <span
             className="inline-block px-2 py-0.5 text-xs font-semibold bg-gray-100 rounded-full uppercase tracking-wider"
-            style={{ color: themeColor, fontSize: '9px' }}
+            style={{ color: themeColor, fontSize: '11px' }}
           >
             {t('canvas_module_card.for')} {targetAudience}
           </span>
@@ -222,7 +222,7 @@ export function CanvasModuleCard({
 
         {/* Module title */}
         <h3
-          className="text-base font-bold mb-1 transition-colors duration-300"
+          className="text-xl font-bold mb-1 transition-colors duration-300"
           style={{ color: themeColor, lineHeight: '1.2' }}
         >
           {displayName}
@@ -230,8 +230,8 @@ export function CanvasModuleCard({
 
         {/* Description */}
         <p
-          className="text-xs mb-2 leading-relaxed min-h-[2rem]"
-          style={{ color: themeColor, lineHeight: '1.3', fontSize: '10px' }}
+          className="text-sm mb-2 leading-relaxed min-h-[2rem]"
+          style={{ color: themeColor, lineHeight: '1.3', fontSize: '12px' }}
         >
           {description}
         </p>
@@ -250,7 +250,7 @@ export function CanvasModuleCard({
               </div>
               <span
                 className="text-xs font-medium flex-1 leading-tight"
-                style={{ color: themeColor, fontSize: '10px', lineHeight: '1.2' }}
+                style={{ color: themeColor, fontSize: '12px', lineHeight: '1.2' }}
               >
                 {feature}
               </span>
@@ -259,7 +259,7 @@ export function CanvasModuleCard({
         </div>
 
         {/* CTA Button */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px', position: 'relative', zIndex: 20 }}>
           <a
             href={path}
             target="_blank"
@@ -273,11 +273,13 @@ export function CanvasModuleCard({
               backgroundColor: '#000000',
               color: '#ffffff',
               fontWeight: '600',
-              fontSize: '12px',
+              fontSize: '14px',
               textDecoration: 'none',
               boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
               transition: 'all 0.3s ease',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              position: 'relative',
+              zIndex: 21
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-2px)';

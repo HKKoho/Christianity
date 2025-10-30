@@ -147,7 +147,7 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
           width: '100%',
           height: '520px',
           position: 'relative',
-          cursor: isDragging ? 'grabbing' : 'grab',
+          cursor: 'default',
           userSelect: 'none'
         }}
         onMouseDown={handleMouseDown}
