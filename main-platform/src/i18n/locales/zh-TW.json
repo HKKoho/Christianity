@@ -94,7 +94,7 @@
   },
   "modules": {
     "culture_display_name": "基督教文化探索者",
-    "culture_description": "透過我們的感官探索豐富的基督教文化，親身體驗",
+    "culture_description": "透過感官探索豐富，親身體驗基督教文化",
     "culture_feature_1": "品嚐（文化方法）",
     "culture_feature_2": "行走",
     "culture_feature_3": "聆聽",
@@ -121,7 +121,7 @@
     "bible_feature_5": "準備聖經研讀",
     "bible_target": "學生",
     "church_display_name": "教會行政與事工",
-    "church_description": "全面的教會管理，配備 AI 助手和出席點名",
+    "church_description": "全面的教會管理，配備AI助手",
     "church_feature_1": "點名系統",
     "church_feature_2": "班級管理",
     "church_feature_3": "課程規劃",

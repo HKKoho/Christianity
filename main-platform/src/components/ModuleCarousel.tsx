@@ -18,72 +18,15 @@ interface ModuleCarouselProps {
 
 export function ModuleCarousel({ modules }: ModuleCarouselProps) {
   const [rotation, setRotation] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [currentRotation, setCurrentRotation] = useState(0);
 
   // Auto-rotate every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!isDragging) {
-        setRotation((prev) => prev + 90);
-      }
+      setRotation((prev) => prev + 90);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isDragging]);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    // Don't start dragging if clicking on a card or button
-    if ((e.target as HTMLElement).closest('.module-card-content') ||
-        (e.target as HTMLElement).tagName === 'A' ||
-        (e.target as HTMLElement).closest('a')) {
-      return;
-    }
-    setIsDragging(true);
-    setStartX(e.clientX);
-    setCurrentRotation(rotation);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    const diff = e.clientX - startX;
-    const rotationDiff = diff * 0.5;
-    setRotation(currentRotation + rotationDiff);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    // Snap to nearest 90 degrees
-    const snappedRotation = Math.round(rotation / 90) * 90;
-    setRotation(snappedRotation);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    // Don't start dragging if touching a card or button
-    if ((e.target as HTMLElement).closest('.module-card-content') ||
-        (e.target as HTMLElement).tagName === 'A' ||
-        (e.target as HTMLElement).closest('a')) {
-      return;
-    }
-    setIsDragging(true);
-    setStartX(e.touches[0].clientX);
-    setCurrentRotation(rotation);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    const diff = e.touches[0].clientX - startX;
-    const rotationDiff = diff * 0.5;
-    setRotation(currentRotation + rotationDiff);
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-    // Snap to nearest 90 degrees
-    const snappedRotation = Math.round(rotation / 90) * 90;
-    setRotation(snappedRotation);
-  };
+  }, []);
 
   const handlePrevious = () => {
     setRotation((prev) => prev - 90);
@@ -145,18 +88,11 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
           perspective: '2000px',
           perspectiveOrigin: '50% 50%',
           width: '100%',
-          height: '520px',
+          height: '460px',
           position: 'relative',
           cursor: 'default',
           userSelect: 'none'
         }}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
       >
         <div
           className="carousel-track"
@@ -166,12 +102,12 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
             height: '100%',
             transformStyle: 'preserve-3d',
             transform: `rotateY(${-rotation}deg)`,
-            transition: isDragging ? 'none' : 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+            transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
           }}
         >
           {modules.map((module, index) => {
             const angle = (360 / modules.length) * index;
-            const radius = 450; // Distance from center
+            const radius = 400; // Distance from center (reduced from 450)
 
             return (
               <div
@@ -181,8 +117,8 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
                   position: 'absolute',
                   left: '50%',
                   top: '50%',
-                  width: '280px',
-                  height: '420px',
+                  width: '240px',
+                  height: '380px',
                   transformStyle: 'preserve-3d',
                   transform: `
                     translate(-50%, -50%)
