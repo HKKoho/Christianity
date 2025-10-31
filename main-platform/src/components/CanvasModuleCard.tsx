@@ -213,7 +213,7 @@ export function CanvasModuleCard({
         <div className="mb-1">
           <span
             className="inline-block px-2 py-0.5 text-xs font-semibold bg-gray-100 rounded-full uppercase tracking-wider"
-            style={{ color: themeColor, fontSize: '11px' }}
+            style={{ color: themeColor, fontSize: '13px' }}
           >
             {t('canvas_module_card.for')} {targetAudience}
           </span>
@@ -222,7 +222,7 @@ export function CanvasModuleCard({
         {/* Module title */}
         <h3
           className="text-xl font-bold mb-1 transition-colors duration-300"
-          style={{ color: themeColor, lineHeight: '1.2' }}
+          style={{ color: themeColor, lineHeight: '1.2', fontSize: '26px' }}
         >
           {displayName}
         </h3>
@@ -230,7 +230,7 @@ export function CanvasModuleCard({
         {/* Description */}
         <p
           className="text-sm mb-2 leading-relaxed min-h-[2rem]"
-          style={{ color: themeColor, lineHeight: '1.3', fontSize: '12px' }}
+          style={{ color: themeColor, lineHeight: '1.3', fontSize: '14px' }}
         >
           {description}
         </p>
@@ -249,7 +249,7 @@ export function CanvasModuleCard({
               </div>
               <span
                 className="text-xs font-medium flex-1 leading-tight"
-                style={{ color: themeColor, fontSize: '12px', lineHeight: '1.2' }}
+                style={{ color: themeColor, fontSize: '14px', lineHeight: '1.2' }}
               >
                 {feature}
               </span>

@@ -86,19 +86,19 @@ export function ModuleButtons({ modules }: ModuleButtonsProps) {
                 backgroundColor: underConstruction ? '#999999' : colors.bg,
                 color: colors.text,
                 border: 'none',
-                borderRadius: '12px',
-                padding: '24px 20px',
-                fontSize: '24px',
+                borderRadius: '10px',
+                padding: '18px 16px',
+                fontSize: '20px',
                 fontWeight: '700',
                 cursor: underConstruction ? 'not-allowed' : 'pointer',
                 textAlign: 'center',
                 boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
-                minHeight: '120px',
+                minHeight: '100px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '8px',
+                gap: '6px',
                 opacity: underConstruction ? 0.7 : 1,
                 position: 'relative'
               }}
@@ -117,13 +117,13 @@ export function ModuleButtons({ modules }: ModuleButtonsProps) {
                 }
               }}
             >
-              <span style={{ fontSize: '40px' }}>{module.icon}</span>
+              <span style={{ fontSize: '32px' }}>{module.icon}</span>
               <span>{getButtonLabel(module.id)}</span>
               {underConstruction && (
                 <span style={{
-                  fontSize: '11px',
+                  fontSize: '10px',
                   fontWeight: '600',
-                  marginTop: '4px',
+                  marginTop: '2px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px'
                 }}>
