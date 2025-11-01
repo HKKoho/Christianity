@@ -13,9 +13,10 @@ export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
   return (
     <div
       className={`
-        bg-white rounded-xl p-8
+        w-full bg-white rounded-xl p-8
         border-2 transition-all duration-300
         hover:shadow-xl hover:-translate-y-1
+        flex flex-col
         ${plan.isFeatured
           ? 'border-indigo-600 shadow-lg'
           : 'border-gray-200 shadow-md'
@@ -52,7 +53,7 @@ export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
       </div>
 
       {/* Features */}
-      <ul className="space-y-4 mb-8">
+      <ul className="space-y-4 mb-8 flex-grow">
         {plan.features.map((feature, index) => (
           <li key={index} className="flex items-start">
             <CheckIcon className="w-5 h-5 text-indigo-600 mr-3 flex-shrink-0 mt-0.5" />
