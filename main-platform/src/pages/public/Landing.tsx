@@ -402,7 +402,7 @@ export function Landing() {
               {t('landing.footer_tagline')}
             </p>
             <div className="w-16 h-px bg-gray-700 mx-auto mb-6"></div>
-            <p className="text-sm text-gray-500 font-light">
+            <p className="text-sm text-gray-500 font-light text-center">
               {t('landing.footer_copyright')}
             </p>
           </div>

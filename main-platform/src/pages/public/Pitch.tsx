@@ -432,10 +432,22 @@ export function Pitch() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-8 text-center">
-        <p className="text-gray-400">
-          {t('landing.footer_copyright')}
-        </p>
+      <footer className="bg-black text-white py-16 border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-3 mb-6">
+              <span className="text-3xl">{t('common.cross')}</span>
+              <span className="text-2xl font-bold tracking-tight">{t('landing.footer_brand')}</span>
+            </div>
+            <p className="text-gray-300 mb-6 text-lg font-light max-w-2xl mx-auto text-center">
+              {t('landing.footer_tagline')}
+            </p>
+            <div className="w-16 h-px bg-gray-700 mx-auto mb-6"></div>
+            <p className="text-sm text-gray-500 font-light text-center">
+              {t('landing.footer_copyright')}
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );
