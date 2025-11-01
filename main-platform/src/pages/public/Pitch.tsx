@@ -93,9 +93,9 @@ export function Pitch() {
               letterSpacing: '-0.025em'
             }}
           >
-            Let's Stop Making<br/>
+            {t('pitch.hero_title_1')}<br/>
             <span style={{ color: '#fbbf24', fontSize: 'clamp(2.5rem, 6vw, 6rem)' }}>
-              "Shadow Believers"
+              {t('pitch.hero_title_2')}
             </span>
           </h1>
           <p
@@ -105,9 +105,8 @@ export function Pitch() {
               color: '#ddd6fe',
               lineHeight: 1.8
             }}
-          >
-            From knowing <em>about</em> God<br />to truly <em>knowing</em> Him together.
-          </p>
+            dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }}
+          />
         </div>
       </section>
 
@@ -124,12 +123,12 @@ export function Pitch() {
               marginBottom: '1.5rem'
             }}
           >
-            The Discipleship Crisis
+            {t('pitch.crisis_title')}
           </h2>
-          <p style={{ fontSize: '2rem', color: '#57534e', marginBottom: '3rem', lineHeight: 1.8 }}>
-            Many know <em>about</em> God, but don't truly <em>know</em> Him.<br />
-            We bridge the gap from passive knowledge to active, shared faith.
-          </p>
+          <p
+            style={{ fontSize: '2rem', color: '#57534e', marginBottom: '3rem', lineHeight: 1.8 }}
+            dangerouslySetInnerHTML={{ __html: t('pitch.crisis_subtitle') }}
+          />
 
           <div
             className="p-6 rounded-xl border max-w-3xl mx-auto"
@@ -148,25 +147,25 @@ export function Pitch() {
               }}
             >
               <AlertCircle className="mr-3 flex-shrink-0" size={32} style={{ color: '#ef4444' }} />
-              The Danger of Passive Faith
+              {t('pitch.danger_title')}
             </h3>
             <div className="text-center">
               <ul className="list-none space-y-2 text-stone-600 inline-block text-left" style={{ fontSize: '1.25rem' }}>
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
-                  <span>Creates a false sense of maturity</span>
+                  <span>{t('pitch.danger_point_1')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
-                  <span>Puts passive knowledge over active faith</span>
+                  <span>{t('pitch.danger_point_2')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
-                  <span>Inoculates against Jesus' transformational call</span>
+                  <span>{t('pitch.danger_point_3')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
-                  <span>Leads to a lack of genuine relationship with Christ</span>
+                  <span>{t('pitch.danger_point_4')}</span>
                 </li>
               </ul>
             </div>
@@ -188,9 +187,8 @@ export function Pitch() {
               marginBottom: '1rem',
               lineHeight: 1.2
             }}
-          >
-            Our Vision: A Living Walk,<br />Not a Program
-          </h2>
+            dangerouslySetInnerHTML={{ __html: t('pitch.vision_title') }}
+          />
 
           <div className="mb-8">
             <blockquote
@@ -201,13 +199,13 @@ export function Pitch() {
                 fontStyle: 'italic'
               }}
             >
-              "The fear of the LORD is the beginning of wisdom, and the knowledge of the Holy One is insight."
+              "{t('pitch.vision_quote')}"
             </blockquote>
-            <p style={{ fontSize: '1.125rem', color: '#78716c', marginTop: '0.5rem' }}>— Proverbs 9:10</p>
+            <p style={{ fontSize: '1.125rem', color: '#78716c', marginTop: '0.5rem' }}>{t('pitch.vision_quote_ref')}</p>
           </div>
 
           <p style={{ fontSize: '1.875rem', color: '#57534e', marginBottom: '3rem', lineHeight: 1.8 }} className="max-w-4xl mx-auto">
-            We nurture a genuine walk with God: from knowledge, to practice, to shared experience.
+            {t('pitch.vision_subtitle')}
           </p>
 
           <div
@@ -255,7 +253,7 @@ export function Pitch() {
               marginTop: '2.5rem'
             }}
           >
-            Knowledge → Practice → Shared Experience
+            {t('pitch.vision_conclusion')}
           </p>
         </div>
       </section>
@@ -274,10 +272,10 @@ export function Pitch() {
                 marginBottom: '1rem'
               }}
             >
-              Our 8-Step Transformation Pathway
+              {t('pitch.pathway_title')}
             </h2>
             <p style={{ fontSize: '1.25rem', color: '#57534e' }} className="max-w-3xl mx-auto">
-              Guiding users from cultural curiosity to genuine discipleship.
+              {t('pitch.pathway_subtitle')}
             </p>
           </div>
 
@@ -358,10 +356,10 @@ export function Pitch() {
               marginBottom: '1.5rem'
             }}
           >
-            Join Us in This Mission
+            {t('pitch.cta_title')}
           </h2>
           <p style={{ fontSize: '1.25rem', color: '#ddd6fe', marginBottom: '2rem' }}>
-            Help us transform passive knowledge into active, vibrant faith.
+            {t('pitch.cta_subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -372,7 +370,7 @@ export function Pitch() {
                 color: '#2e1065'
               }}
             >
-              Get Started
+              {t('pitch.cta_button_1')}
             </Link>
             <Link
               to="/"
@@ -388,7 +386,7 @@ export function Pitch() {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
               }}
             >
-              Explore Modules
+              {t('pitch.cta_button_2')}
             </Link>
           </div>
         </div>
@@ -397,7 +395,7 @@ export function Pitch() {
       {/* Footer */}
       <footer className="bg-black text-white py-8 text-center">
         <p className="text-gray-400">
-          © 2025 {t('landing.brand_name')}. {t('landing.footer_tagline')}
+          {t('landing.footer_copyright')}
         </p>
       </footer>
     </div>
