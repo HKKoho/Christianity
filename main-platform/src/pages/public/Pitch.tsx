@@ -88,13 +88,13 @@ export function Pitch() {
           <h1
             className="font-bold leading-snug mb-6"
             style={{
-              fontSize: 'clamp(3rem, 7vw, 7rem)',
+              fontSize: 'clamp(2.25rem, 5vw, 5rem)',
               fontFamily: 'Georgia, serif',
               letterSpacing: '-0.025em'
             }}
           >
             Let's Stop Making<br/>
-            <span style={{ color: '#fbbf24', fontSize: 'clamp(3.5rem, 8vw, 8rem)' }}>
+            <span style={{ color: '#fbbf24', fontSize: 'clamp(2.5rem, 6vw, 6rem)' }}>
               "Shadow Believers"
             </span>
           </h1>
@@ -117,7 +117,7 @@ export function Pitch() {
           <h2
             style={{
               fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(3rem, 6vw, 6rem)',
+              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
               fontWeight: 'bold',
               color: '#4c1d95',
               letterSpacing: '-0.025em',
@@ -132,17 +132,17 @@ export function Pitch() {
           </p>
 
           <div
-            className="p-6 rounded-xl border text-left max-w-3xl mx-auto"
+            className="p-6 rounded-xl border max-w-3xl mx-auto"
             style={{
               background: 'rgba(254, 202, 202, 0.8)',
               borderColor: '#fecaca'
             }}
           >
             <h3
-              className="flex items-center mb-4"
+              className="flex items-center justify-center mb-4"
               style={{
                 fontFamily: 'Georgia, serif',
-                fontSize: '2.5rem',
+                fontSize: '1.875rem',
                 fontWeight: 'bold',
                 color: '#7f1d1d'
               }}
@@ -150,12 +150,24 @@ export function Pitch() {
               <AlertCircle className="mr-3 flex-shrink-0" size={32} style={{ color: '#ef4444' }} />
               The Danger of Passive Faith
             </h3>
-            <div className="pl-12">
-              <ul className="list-disc ml-2 space-y-2 text-stone-600" style={{ fontSize: '1.25rem' }}>
-                <li>Creates a false sense of maturity</li>
-                <li>Puts passive knowledge over active faith</li>
-                <li>Inoculates against Jesus' transformational call</li>
-                <li>Leads to a lack of genuine relationship with Christ</li>
+            <div className="text-center">
+              <ul className="list-none space-y-2 text-stone-600 inline-block text-left" style={{ fontSize: '1.25rem' }}>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Creates a false sense of maturity</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Puts passive knowledge over active faith</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Inoculates against Jesus' transformational call</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Leads to a lack of genuine relationship with Christ</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -169,7 +181,7 @@ export function Pitch() {
           <h2
             style={{
               fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(3rem, 6vw, 6rem)',
+              fontSize: 'clamp(2.25rem, 4.5vw, 4.5rem)',
               fontWeight: 'bold',
               color: '#14532d',
               letterSpacing: '-0.025em',
@@ -255,7 +267,7 @@ export function Pitch() {
             <h2
               style={{
                 fontFamily: 'Georgia, serif',
-                fontSize: 'clamp(3rem, 6vw, 6rem)',
+                fontSize: 'clamp(2.25rem, 4.5vw, 4.5rem)',
                 fontWeight: 'bold',
                 color: '#4c1d95',
                 letterSpacing: '-0.025em',

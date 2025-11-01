@@ -142,5 +142,28 @@
     "donate_now": "立即捐款",
     "select_plan": "選擇方案",
     "back_to_home": "返回首頁"
+  },
+  "pitch": {
+    "hero_title_1": "讓我們停止製造",
+    "hero_title_2": "「影子信徒」",
+    "hero_subtitle": "從<em>認識</em>神<br />到真正<em>認識</em>祂。",
+    "crisis_title": "門徒訓練危機",
+    "crisis_subtitle": "許多人<em>認識</em>神，但沒有真正<em>認識</em>祂。<br />我們彌合從被動知識到主動、共享信仰的鴻溝。",
+    "danger_title": "被動信仰的危險",
+    "danger_point_1": "產生虛假的成熟感",
+    "danger_point_2": "將被動知識置於主動信仰之上",
+    "danger_point_3": "抵抗耶穌的轉化呼召",
+    "danger_point_4": "導致缺乏與基督的真實關係",
+    "vision_title": "我們的願景：活潑的同行，<br />而非計劃",
+    "vision_quote": "敬畏耶和華是智慧的開端，認識至聖者便是聰明。",
+    "vision_quote_ref": "— 箴言 9:10",
+    "vision_subtitle": "我們培育與神的真實同行：從知識，到實踐，到共享經驗。",
+    "vision_conclusion": "知識 → 實踐 → 共享經驗",
+    "pathway_title": "我們的8步轉化路徑",
+    "pathway_subtitle": "引導使用者從文化好奇到真正的門徒訓練。",
+    "cta_title": "加入我們的使命",
+    "cta_subtitle": "幫助我們將被動知識轉化為主動、充滿活力的信仰。",
+    "cta_button_1": "開始使用",
+    "cta_button_2": "探索模組"
   }
 }
