@@ -143,10 +143,21 @@
     "organization": "Organization",
     "most_popular": "Most Popular",
     "no_credit_card": "No credit card required",
+    "free": "Free",
     "donate_now": "Donate Now",
     "select_plan": "Select Plan",
     "back_to_home": "Back to Home",
     "plans": {
+      "ind_free": {
+        "name": "Individual Free",
+        "description": "For individuals starting out with basic AI needs.",
+        "features": {
+          "0": "Basic AI Access",
+          "1": "Community Support",
+          "2": "1 Service Module",
+          "3": "Limited API Calls"
+        }
+      },
       "ind_donation": {
         "name": "Individual Supporter",
         "description": "Support the platform and get a few extra perks.",

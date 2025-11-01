@@ -143,10 +143,21 @@
     "organization": "組織",
     "most_popular": "最受歡迎",
     "no_credit_card": "無需信用卡",
+    "free": "免費",
     "donate_now": "立即捐款",
     "select_plan": "選擇方案",
     "back_to_home": "返回首頁",
     "plans": {
+      "ind_free": {
+        "name": "個人免費版",
+        "description": "適用於有基本人工智慧需求的入門級用戶。",
+        "features": {
+          "0": "基本人工智慧存取權限",
+          "1": "社群支援",
+          "2": "1 個服務模組",
+          "3": "有限的 API 呼叫次數"
+        }
+      },
       "ind_donation": {
         "name": "個人支持者",
         "description": "支持平台並獲得一些額外的福利。",

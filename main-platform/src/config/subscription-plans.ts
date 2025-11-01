@@ -4,6 +4,21 @@ import type { TFunction } from 'i18next';
 
 export const getIndividualPlans = (t: TFunction): SubscriptionPlan[] => [
   {
+    id: 'ind_free',
+    name: t('subscription.plans.ind_free.name'),
+    type: PlanType.Individual,
+    price: 0,
+    priceText: t('subscription.free'),
+    billingInterval: BillingInterval.Free,
+    description: t('subscription.plans.ind_free.description'),
+    features: [
+      t('subscription.plans.ind_free.features.0'),
+      t('subscription.plans.ind_free.features.1'),
+      t('subscription.plans.ind_free.features.2'),
+      t('subscription.plans.ind_free.features.3'),
+    ],
+  },
+  {
     id: 'ind_donation',
     name: t('subscription.plans.ind_donation.name'),
     type: PlanType.Individual,
