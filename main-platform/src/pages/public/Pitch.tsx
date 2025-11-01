@@ -219,26 +219,26 @@ export function Pitch() {
               {/* First Row */}
               <div className="flex flex-col sm:flex-row items-center justify-around text-center font-semibold flex-wrap gap-y-6">
                 <div className="flex flex-col items-center px-4">
-                  <span className="text-2xl" style={{ color: '#5b21b6' }}>SPARK KNOWLEDGE</span>
-                  <span className="text-lg text-stone-500 mt-1">Truth</span>
+                  <span className="text-2xl" style={{ color: '#5b21b6' }}>{t('pitch.vision_spark_knowledge')}</span>
+                  <span className="text-lg text-stone-500 mt-1">{t('pitch.vision_truth')}</span>
                 </div>
                 <ArrowRight className="text-stone-300 mx-4 hidden sm:block" size={28} />
                 <div className="flex flex-col items-center px-4">
-                  <span className="text-2xl" style={{ color: '#1d4ed8' }}>INSPIRE PRACTICE</span>
-                  <span className="text-lg text-stone-500 mt-1">Practice</span>
+                  <span className="text-2xl" style={{ color: '#1d4ed8' }}>{t('pitch.vision_inspire_practice')}</span>
+                  <span className="text-lg text-stone-500 mt-1">{t('pitch.vision_practice')}</span>
                 </div>
                 <ArrowRight className="text-stone-300 mx-4 hidden sm:block" size={28} />
                 <div className="flex flex-col items-center px-4">
-                  <span className="text-2xl" style={{ color: '#c2410c' }}>CULTIVATE EXPERIENCE</span>
-                  <span className="text-lg text-stone-500 mt-1">Experience</span>
+                  <span className="text-2xl" style={{ color: '#c2410c' }}>{t('pitch.vision_cultivate_experience')}</span>
+                  <span className="text-lg text-stone-500 mt-1">{t('pitch.vision_experience')}</span>
                 </div>
               </div>
 
               {/* Second Row */}
               <div className="flex flex-col items-center text-center font-semibold mt-4">
                 <div className="flex flex-col items-center">
-                  <span className="text-2xl" style={{ color: '#b91c1c' }}>DEEPEN FELLOWSHIP</span>
-                  <span className="text-lg text-stone-500 mt-1">Fellowship</span>
+                  <span className="text-2xl" style={{ color: '#b91c1c' }}>{t('pitch.vision_deepen_fellowship')}</span>
+                  <span className="text-lg text-stone-500 mt-1">{t('pitch.vision_fellowship')}</span>
                 </div>
               </div>
             </div>
@@ -388,6 +388,39 @@ export function Pitch() {
             >
               {t('pitch.cta_button_2')}
             </Link>
+          </div>
+
+          {/* Additional Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <a
+              href="/Development_Plan.pdf"
+              download
+              className="px-8 py-4 rounded-lg font-bold text-lg transition-transform transform hover:scale-105"
+              style={{
+                background: '#10b981',
+                color: 'white',
+                textDecoration: 'none'
+              }}
+            >
+              {t('pitch.download_plan')}
+            </a>
+            <a
+              href="mailto:victor.hung@aibyml.com?subject=Inquiry about Christian Platform"
+              className="px-8 py-4 rounded-lg font-bold text-lg border-2 border-white transition-all"
+              style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                color: 'white',
+                textDecoration: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}
+            >
+              {t('pitch.get_in_touch')}
+            </a>
           </div>
         </div>
       </section>

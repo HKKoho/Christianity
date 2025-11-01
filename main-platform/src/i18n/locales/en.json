@@ -158,12 +158,22 @@
     "vision_quote": "The fear of the LORD is the beginning of wisdom, and the knowledge of the Holy One is insight.",
     "vision_quote_ref": "— Proverbs 9:10",
     "vision_subtitle": "We nurture a genuine walk with God: from knowledge, to practice, to shared experience.",
+    "vision_spark_knowledge": "SPARK KNOWLEDGE",
+    "vision_truth": "Truth",
+    "vision_inspire_practice": "INSPIRE PRACTICE",
+    "vision_practice": "Practice",
+    "vision_cultivate_experience": "CULTIVATE EXPERIENCE",
+    "vision_experience": "Experience",
+    "vision_deepen_fellowship": "DEEPEN FELLOWSHIP",
+    "vision_fellowship": "Fellowship",
     "vision_conclusion": "Knowledge → Practice → Shared Experience",
     "pathway_title": "Our 8-Step Transformation Pathway",
     "pathway_subtitle": "Guiding users from cultural curiosity to genuine discipleship.",
     "cta_title": "Join Us in This Mission",
     "cta_subtitle": "Help us transform passive knowledge into active, vibrant faith.",
     "cta_button_1": "Get Started",
-    "cta_button_2": "Explore Modules"
+    "cta_button_2": "Explore Modules",
+    "download_plan": "Download the Development Plan",
+    "get_in_touch": "Get in Touch"
   }
 }
