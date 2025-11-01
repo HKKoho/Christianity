@@ -77,7 +77,7 @@ export function Landing() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              Why We Do This
+              {t('landing.why_we_do_this')}
             </Link>
             {/* Language Switcher Button */}
             <button
