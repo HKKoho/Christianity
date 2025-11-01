@@ -10,19 +10,15 @@ interface SubscriptionCardProps {
 export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
   const { t } = useTranslation();
   const cardClasses = plan.isFeatured
-    ? 'border-2 shadow-2xl scale-100 md:scale-105'
+    ? 'border-2 border-indigo-600 shadow-2xl scale-100 md:scale-105'
     : 'border border-slate-200 shadow-lg';
 
   return (
     <div
       className={`relative bg-white rounded-2xl p-8 flex flex-col transition-all duration-300 hover:shadow-2xl hover:scale-105 ${cardClasses}`}
-      style={{ borderColor: plan.isFeatured ? '#ff6b6b' : undefined }}
     >
       {plan.isFeatured && (
-        <div
-          className="absolute top-0 right-8 -translate-y-1/2 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"
-          style={{ backgroundColor: '#ff6b6b' }}
-        >
+        <div className="absolute top-0 right-8 -translate-y-1/2 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
           {t('subscription.most_popular')}
         </div>
       )}
@@ -37,24 +33,18 @@ export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
       <ul className="mt-8 space-y-4 flex-grow">
         {plan.features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <CheckIcon style={{ color: '#10b981', flexShrink: 0, marginRight: '0.75rem' }} />
+            <CheckIcon className="h-6 w-6 text-purple-600 flex-shrink-0 mr-3" />
             <span className="text-slate-600">{feature}</span>
           </li>
         ))}
       </ul>
       <button
         onClick={onSelect}
-        className="w-full mt-10 py-3 px-6 rounded-lg font-semibold text-lg transition-all duration-300"
-        style={{
-          backgroundColor: plan.isFeatured ? '#ff6b6b' : '#fecaca',
-          color: plan.isFeatured ? '#ffffff' : '#ff6b6b',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = plan.isFeatured ? '#ff5252' : '#fca5a5';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = plan.isFeatured ? '#ff6b6b' : '#fecaca';
-        }}
+        className={`w-full mt-10 py-3 px-6 rounded-lg font-semibold text-lg transition-all duration-300 ${
+          plan.isFeatured
+            ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+            : 'bg-indigo-100 text-indigo-600 hover:bg-indigo-200'
+        }`}
       >
         {plan.billingInterval === 'one-time' ? t('subscription.donate_now') : t('subscription.select_plan')}
       </button>

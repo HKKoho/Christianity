@@ -15,18 +15,16 @@ export function PlanTypeToggle({ selectedType, onSelectType }: PlanTypeTogglePro
       <button
         onClick={() => onSelectType(PlanType.Individual)}
         className={`px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300 relative z-10 ${
-          isIndividual ? 'text-brand-primary' : 'text-slate-600 hover:text-slate-800'
+          isIndividual ? 'text-indigo-600' : 'text-slate-600 hover:text-slate-800'
         }`}
-        style={{ color: isIndividual ? '#ff6b6b' : undefined }}
       >
         {t('subscription.individual')}
       </button>
       <button
         onClick={() => onSelectType(PlanType.Organization)}
         className={`px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300 relative z-10 ${
-          !isIndividual ? 'text-brand-primary' : 'text-slate-600 hover:text-slate-800'
+          !isIndividual ? 'text-indigo-600' : 'text-slate-600 hover:text-slate-800'
         }`}
-        style={{ color: !isIndividual ? '#ff6b6b' : undefined }}
       >
         {t('subscription.organization')}
       </button>

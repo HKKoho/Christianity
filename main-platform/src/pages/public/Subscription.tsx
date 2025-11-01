@@ -19,7 +19,7 @@ export function Subscription() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-slate-100/50">
       {/* Header */}
       <header className="bg-white fixed w-full top-0 z-50 shadow-sm">
         <nav className="container mx-auto px-6 py-5 flex justify-between items-center max-w-7xl">
