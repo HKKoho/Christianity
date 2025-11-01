@@ -65,12 +65,14 @@ export function ModuleButtons({ modules }: ModuleButtonsProps) {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 mt-12">
+    <div className="w-full flex justify-center px-4 mt-8">
       <div
-        className="grid gap-5"
+        className="flex gap-4"
         style={{
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          display: 'grid'
+          display: 'flex',
+          gap: '16px',
+          justifyContent: 'center',
+          alignItems: 'center'
         }}
       >
         {modules.map((module) => {
@@ -82,54 +84,41 @@ export function ModuleButtons({ modules }: ModuleButtonsProps) {
               key={module.id}
               onClick={() => handleModuleClick(module.id, module.path)}
               className="transform transition-all duration-300"
+              title={`${getButtonLabel(module.id)}${underConstruction ? ' (Under Construction)' : ''}`}
               style={{
                 backgroundColor: underConstruction ? '#999999' : colors.bg,
                 color: colors.text,
                 border: 'none',
-                borderRadius: '10px',
-                padding: '18px 16px',
-                fontSize: '20px',
-                fontWeight: '700',
+                borderRadius: '50%',
+                padding: '0',
+                fontSize: '36px',
                 cursor: underConstruction ? 'not-allowed' : 'pointer',
                 textAlign: 'center',
                 boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
-                minHeight: '100px',
+                width: '80px',
+                height: '80px',
                 display: 'flex',
-                flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '6px',
                 opacity: underConstruction ? 0.7 : 1,
                 position: 'relative'
               }}
               onMouseEnter={(e) => {
                 if (!underConstruction) {
                   e.currentTarget.style.backgroundColor = colors.hoverBg;
-                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.transform = 'translateY(-6px) scale(1.1)';
                   e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.25)';
                 }
               }}
               onMouseLeave={(e) => {
                 if (!underConstruction) {
                   e.currentTarget.style.backgroundColor = colors.bg;
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
                   e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
                 }
               }}
             >
-              <span style={{ fontSize: '32px' }}>{module.icon}</span>
-              <span>{getButtonLabel(module.id)}</span>
-              {underConstruction && (
-                <span style={{
-                  fontSize: '10px',
-                  fontWeight: '600',
-                  marginTop: '2px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px'
-                }}>
-                  Under Construction
-                </span>
-              )}
+              <span style={{ fontSize: '40px' }}>{module.icon}</span>
             </button>
           );
         })}
