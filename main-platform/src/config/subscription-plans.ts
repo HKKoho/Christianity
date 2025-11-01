@@ -3,21 +3,6 @@ import type { SubscriptionPlan } from '../types/subscription';
 
 export const INDIVIDUAL_PLANS: SubscriptionPlan[] = [
   {
-    id: 'ind_free',
-    name: 'Individual Free',
-    type: PlanType.Individual,
-    price: 0,
-    priceText: 'Free',
-    billingInterval: BillingInterval.Free,
-    description: 'For individuals starting out with basic AI needs.',
-    features: [
-      'Basic AI Access',
-      'Community Support',
-      '1 Service Module',
-      'Limited API Calls',
-    ],
-  },
-  {
     id: 'ind_donation',
     name: 'Individual Supporter',
     type: PlanType.Individual,
