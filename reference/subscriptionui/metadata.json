@@ -1,0 +1,5 @@
+{
+  "name": "Subscription Management UI",
+  "description": "A user-friendly interface for selecting and managing individual or organizational subscription plans with tiered services. This component demonstrates a clean, responsive UI for a subscription lifecycle within a single-page application.",
+  "requestFramePermissions": []
+}

@@ -114,10 +114,8 @@ export function Subscription() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <SubscriptionSelector onSelectPlan={handleSelectPlan} />
-        </div>
+      <main className="pt-32 pb-20 px-4">
+        <SubscriptionSelector onSelectPlan={handleSelectPlan} />
       </main>
 
       {/* Footer */}

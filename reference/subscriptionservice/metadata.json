@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Subscription Service",
+  "description": "A modern, sleek frontend for a subscription service sign-up and sign-in page. It provides options for authentication via Google, GitHub, and WhatsApp and leads to a user subscription confirmation page. This is a UI/UX demonstration and does not include a real backend or database.",
+  "requestFramePermissions": []
+}

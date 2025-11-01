@@ -76,7 +76,7 @@ export const modules: ModuleConfig[] = [
     id: 'church-admin',
     name: 'AIChurchAdmin',
     displayName: 'Church Administration & Ministry',
-    description: 'Church management includes sermon generation and attendance tracking',
+    description: 'Church management with AI Assistant and Secretary',
     url: import.meta.env.VITE_CHURCH_ADMIN_MODULE_URL || 'http://localhost:5177',
     icon: '⚙️',
     path: 'https://ai-admin-sunday-school.vercel.app/',
