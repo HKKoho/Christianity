@@ -17,19 +17,24 @@ export function SubscriptionSelector({ onSelectPlan }: SubscriptionSelectorProps
   const plansToShow = selectedPlanType === PlanType.Individual ? INDIVIDUAL_PLANS : ORGANIZATION_PLANS;
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+    <div className="max-w-6xl mx-auto px-6">
+      {/* Title */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
           {t('subscription.title')}
-        </h2>
-        <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+        </h1>
+        <p className="text-lg text-gray-600">
           {t('subscription.subtitle')}
         </p>
       </div>
 
-      <PlanTypeToggle selectedType={selectedPlanType} onSelectType={setSelectedPlanType} />
+      {/* Plan Type Toggle */}
+      <div className="flex justify-center mb-12">
+        <PlanTypeToggle selectedType={selectedPlanType} onSelectType={setSelectedPlanType} />
+      </div>
 
-      <div className="mt-10 w-full grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4">
+      {/* Subscription Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {plansToShow.map((plan) => (
           <SubscriptionCard key={plan.id} plan={plan} onSelect={() => onSelectPlan(plan)} />
         ))}
