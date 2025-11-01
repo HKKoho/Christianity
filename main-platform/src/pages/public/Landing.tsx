@@ -49,8 +49,36 @@ export function Landing() {
               {t('landing.brand_name')}
             </span>
           </div>
-          {/* Right side - Language switcher and Join Us button */}
+          {/* Right side - Why We Do This, Language switcher and Join Us button */}
           <div className="flex items-center gap-4">
+            {/* Why We Do This Button */}
+            <Link
+              to="/pitch"
+              className="px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+              style={{
+                backgroundColor: '#ffffff',
+                color: '#9b59b6',
+                border: '2px solid #9b59b6',
+                padding: '10px 20px',
+                borderRadius: '8px',
+                fontSize: '16px',
+                fontWeight: '600',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#9b59b6';
+                e.currentTarget.style.color = '#ffffff';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#ffffff';
+                e.currentTarget.style.color = '#9b59b6';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Why We Do This
+            </Link>
             {/* Language Switcher Button */}
             <button
               onClick={toggleLanguage}

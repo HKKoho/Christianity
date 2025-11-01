@@ -5,6 +5,7 @@ import { Landing } from './pages/public/Landing';
 import { Login } from './pages/public/Login';
 import { Register } from './pages/public/Register';
 import { Subscription } from './pages/public/Subscription';
+import { Pitch } from './pages/public/Pitch';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { ModuleFrame } from './components/modules/ModuleFrame';
 import { modules } from './config/modules';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/subscription" element={<Subscription />} />
+        <Route path="/pitch" element={<Pitch />} />
 
         {/* Protected routes */}
         <Route element={<Layout />}>
