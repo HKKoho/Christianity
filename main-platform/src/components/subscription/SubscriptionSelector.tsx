@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PlanType } from '../../types/subscription';
 import type { SubscriptionPlan } from '../../types/subscription';
-import { INDIVIDUAL_PLANS, ORGANIZATION_PLANS } from '../../config/subscription-plans';
+import { getIndividualPlans, getOrganizationPlans } from '../../config/subscription-plans';
 import { SubscriptionCard } from './SubscriptionCard';
 import { PlanTypeToggle } from './PlanTypeToggle';
 
@@ -14,7 +14,9 @@ export function SubscriptionSelector({ onSelectPlan }: SubscriptionSelectorProps
   const { t } = useTranslation();
   const [selectedPlanType, setSelectedPlanType] = useState<PlanType>(PlanType.Individual);
 
-  const plansToShow = selectedPlanType === PlanType.Individual ? INDIVIDUAL_PLANS : ORGANIZATION_PLANS;
+  const plansToShow = selectedPlanType === PlanType.Individual
+    ? getIndividualPlans(t)
+    : getOrganizationPlans(t);
 
   return (
     <div className="max-w-6xl mx-auto px-6">

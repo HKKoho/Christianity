@@ -1,58 +1,59 @@
 import { PlanType, BillingInterval } from '../types/subscription';
 import type { SubscriptionPlan } from '../types/subscription';
+import type { TFunction } from 'i18next';
 
-export const INDIVIDUAL_PLANS: SubscriptionPlan[] = [
+export const getIndividualPlans = (t: TFunction): SubscriptionPlan[] => [
   {
     id: 'ind_donation',
-    name: 'Individual Supporter',
+    name: t('subscription.plans.ind_donation.name'),
     type: PlanType.Individual,
     price: null,
-    priceText: 'Donate',
+    priceText: t('subscription.donate_now'),
     billingInterval: BillingInterval.OneTime,
-    description: 'Support the platform and get a few extra perks.',
+    description: t('subscription.plans.ind_donation.description'),
     features: [
-      'Everything in Free',
-      'Priority Community Support',
-      '3 Service Modules',
-      'Supporter Badge',
+      t('subscription.plans.ind_donation.features.0'),
+      t('subscription.plans.ind_donation.features.1'),
+      t('subscription.plans.ind_donation.features.2'),
+      t('subscription.plans.ind_donation.features.3'),
     ],
     isFeatured: true,
   },
 ];
 
-export const ORGANIZATION_PLANS: SubscriptionPlan[] = [
+export const getOrganizationPlans = (t: TFunction): SubscriptionPlan[] => [
   {
     id: 'org_trial',
-    name: 'Organization Trial',
+    name: t('subscription.plans.org_trial.name'),
     type: PlanType.Organization,
     price: 0,
     priceText: 'Free for 3 months',
     billingInterval: BillingInterval.Trial,
     trialPeriodDays: 90,
-    description: 'Explore all our premium features for your organization, free for 90 days.',
+    description: t('subscription.plans.org_trial.description'),
     features: [
-      'Basic AI access',
-      'Email Support',
-      'Limited Prompt Design',
-      'One Analytics Report',
-      'General Christianity Content',
+      t('subscription.plans.org_trial.features.0'),
+      t('subscription.plans.org_trial.features.1'),
+      t('subscription.plans.org_trial.features.2'),
+      t('subscription.plans.org_trial.features.3'),
+      t('subscription.plans.org_trial.features.4'),
     ],
   },
   {
     id: 'org_paid',
-    name: 'Organization Pro',
+    name: t('subscription.plans.org_paid.name'),
     type: PlanType.Organization,
     price: 499,
     priceText: 'HK$499 / month',
     billingInterval: BillingInterval.Monthly,
-    description: 'The complete suite of tools for professional teams.',
+    description: t('subscription.plans.org_paid.description'),
     features: [
-      'Advanced AI access',
-      'Dedicated Support',
-      'System Prompt Design',
-      'Usage-Based Ai Options',
-      'Monthly Analytics Report',
-      'Designated Christianity Content',
+      t('subscription.plans.org_paid.features.0'),
+      t('subscription.plans.org_paid.features.1'),
+      t('subscription.plans.org_paid.features.2'),
+      t('subscription.plans.org_paid.features.3'),
+      t('subscription.plans.org_paid.features.4'),
+      t('subscription.plans.org_paid.features.5'),
     ],
     isFeatured: true,
   },

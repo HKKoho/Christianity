@@ -145,7 +145,42 @@
     "no_credit_card": "No credit card required",
     "donate_now": "Donate Now",
     "select_plan": "Select Plan",
-    "back_to_home": "Back to Home"
+    "back_to_home": "Back to Home",
+    "plans": {
+      "ind_donation": {
+        "name": "Individual Supporter",
+        "description": "Support the platform and get a few extra perks.",
+        "features": {
+          "0": "Everything in Free",
+          "1": "Priority Community Support",
+          "2": "3 Service Modules",
+          "3": "Supporter Badge"
+        }
+      },
+      "org_trial": {
+        "name": "Organization Trial",
+        "description": "Explore all our premium features for your organization, free for 90 days.",
+        "features": {
+          "0": "Basic AI access",
+          "1": "Email Support",
+          "2": "Limited Prompt Design",
+          "3": "One Analytics Report",
+          "4": "General Christianity Content"
+        }
+      },
+      "org_paid": {
+        "name": "Organization Pro",
+        "description": "The complete suite of tools for professional teams.",
+        "features": {
+          "0": "Advanced AI access",
+          "1": "Dedicated Support",
+          "2": "System Prompt Design",
+          "3": "Usage-Based Ai Options",
+          "4": "Monthly Analytics Report",
+          "5": "Designated Christianity Content"
+        }
+      }
+    }
   },
   "pitch": {
     "hero_title_1": "Let's Stop Making",
