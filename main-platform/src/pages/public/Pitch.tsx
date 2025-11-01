@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, CheckCircle, AlertCircle, ArrowRight, Palette, HelpCircle, Edit3, Link as LinkIcon, Layers, BrainCircuit, Users, CheckSquare } from 'lucide-react';
+import { PuzzleAnimation } from '../../components/PuzzleAnimation';
 
 export function Pitch() {
   const { t } = useTranslation();
@@ -8,51 +9,51 @@ export function Pitch() {
   const features = [
     {
       icon: Palette,
-      title: '1. Cultural Entry Point',
-      content: 'Engage with beautiful art, music, and history as a non-threatening entry point.',
-      benefit: 'Low-Friction Entry'
+      titleKey: 'pitch.step_1_title',
+      contentKey: 'pitch.step_1_content',
+      benefitKey: 'pitch.step_1_benefit'
     },
     {
       icon: HelpCircle,
-      title: '2. The "Why" Question',
-      content: 'Shift focus from "what" to "why" to spark deeper, reflective thought.',
-      benefit: 'Sparks Active Reflection'
+      titleKey: 'pitch.step_2_title',
+      contentKey: 'pitch.step_2_content',
+      benefitKey: 'pitch.step_2_benefit'
     },
     {
       icon: Edit3,
-      title: '3. Guided Reflection',
-      content: 'Optional prompts connect truths to personal life, bridging knowledge and experience.',
-      benefit: 'Personalizes Truth'
+      titleKey: 'pitch.step_3_title',
+      contentKey: 'pitch.step_3_content',
+      benefitKey: 'pitch.step_3_benefit'
     },
     {
       icon: LinkIcon,
-      title: '4. Progressive Disclosure',
-      content: 'Users naturally click their way from aesthetics to doctrine.',
-      benefit: 'User-Led Path to Depth'
+      titleKey: 'pitch.step_4_title',
+      contentKey: 'pitch.step_4_content',
+      benefitKey: 'pitch.step_4_benefit'
     },
     {
       icon: Layers,
-      title: '5. Layered Content',
-      content: 'Each topic has levels: Surface, Intermediate, and Deep. Users choose their depth.',
-      benefit: 'Empowers User Choice'
+      titleKey: 'pitch.step_5_title',
+      contentKey: 'pitch.step_5_content',
+      benefitKey: 'pitch.step_5_benefit'
     },
     {
       icon: BrainCircuit,
-      title: '6. Active Retrieval',
-      content: 'Quizzes and spaced repetition ensure users actively learn and retain core truths.',
-      benefit: 'Builds Lasting Knowledge'
+      titleKey: 'pitch.step_6_title',
+      contentKey: 'pitch.step_6_content',
+      benefitKey: 'pitch.step_6_benefit'
     },
     {
       icon: Users,
-      title: '7. Community Discussion',
-      content: 'Users discuss what they\'re learning, asking real questions to solidify understanding.',
-      benefit: 'Deepens Through Fellowship'
+      titleKey: 'pitch.step_7_title',
+      contentKey: 'pitch.step_7_content',
+      benefitKey: 'pitch.step_7_benefit'
     },
     {
       icon: CheckSquare,
-      title: '8. Gentle Accountability',
-      content: 'Follow-ups on personal application goals provide encouragement to turn intention into action.',
-      benefit: 'Turns Intention into Action'
+      titleKey: 'pitch.step_8_title',
+      contentKey: 'pitch.step_8_content',
+      benefitKey: 'pitch.step_8_benefit'
     }
   ];
 
@@ -279,6 +280,9 @@ export function Pitch() {
             </p>
           </div>
 
+          {/* Puzzle Animation */}
+          <PuzzleAnimation />
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
@@ -315,10 +319,10 @@ export function Pitch() {
                           fontSize: '1.5rem'
                         }}
                       >
-                        {feature.title}
+                        {t(feature.titleKey)}
                       </h3>
                       <p style={{ fontSize: '1.125rem', color: '#57534e', marginBottom: '0.75rem' }}>
-                        {feature.content}
+                        {t(feature.contentKey)}
                       </p>
                       <span
                         className="px-4 py-1 rounded-full inline-block text-base font-semibold"
@@ -327,7 +331,7 @@ export function Pitch() {
                           color: '#92400e'
                         }}
                       >
-                        {feature.benefit}
+                        {t(feature.benefitKey)}
                       </span>
                     </div>
                   </div>
