@@ -216,30 +216,30 @@ export function Pitch() {
               borderColor: '#86efac'
             }}
           >
-            <div className="flex flex-col items-center justify-center gap-y-6">
-              {/* First Row */}
-              <div className="flex flex-col sm:flex-row items-center justify-around text-center font-semibold flex-wrap gap-y-6">
-                <div className="flex flex-col items-center px-4">
-                  <span className="text-2xl" style={{ color: '#5b21b6' }}>{t('pitch.vision_spark_knowledge')}</span>
-                  <span className="text-lg text-stone-500 mt-1">{t('pitch.vision_truth')}</span>
+            <div className="flex flex-col items-center justify-center gap-y-8">
+              {/* First Row - Three Steps */}
+              <div className="flex flex-col sm:flex-row items-center justify-center text-center font-semibold flex-wrap gap-x-6 gap-y-8">
+                <div className="flex flex-col items-center px-6">
+                  <span className="text-4xl font-bold" style={{ color: '#5b21b6', fontSize: '2.5rem' }}>{t('pitch.vision_spark_knowledge')}</span>
+                  <span className="text-2xl text-stone-600 mt-2" style={{ fontSize: '1.75rem' }}>{t('pitch.vision_truth')}</span>
                 </div>
-                <ArrowRight className="text-stone-300 mx-4 hidden sm:block" size={28} />
-                <div className="flex flex-col items-center px-4">
-                  <span className="text-2xl" style={{ color: '#1d4ed8' }}>{t('pitch.vision_inspire_practice')}</span>
-                  <span className="text-lg text-stone-500 mt-1">{t('pitch.vision_practice')}</span>
+                <ArrowRight className="text-stone-400 mx-4 hidden sm:block" size={36} />
+                <div className="flex flex-col items-center px-6">
+                  <span className="text-4xl font-bold" style={{ color: '#1d4ed8', fontSize: '2.5rem' }}>{t('pitch.vision_inspire_practice')}</span>
+                  <span className="text-2xl text-stone-600 mt-2" style={{ fontSize: '1.75rem' }}>{t('pitch.vision_practice')}</span>
                 </div>
-                <ArrowRight className="text-stone-300 mx-4 hidden sm:block" size={28} />
-                <div className="flex flex-col items-center px-4">
-                  <span className="text-2xl" style={{ color: '#c2410c' }}>{t('pitch.vision_cultivate_experience')}</span>
-                  <span className="text-lg text-stone-500 mt-1">{t('pitch.vision_experience')}</span>
+                <ArrowRight className="text-stone-400 mx-4 hidden sm:block" size={36} />
+                <div className="flex flex-col items-center px-6">
+                  <span className="text-4xl font-bold" style={{ color: '#c2410c', fontSize: '2.5rem' }}>{t('pitch.vision_cultivate_experience')}</span>
+                  <span className="text-2xl text-stone-600 mt-2" style={{ fontSize: '1.75rem' }}>{t('pitch.vision_experience')}</span>
                 </div>
               </div>
 
-              {/* Second Row */}
-              <div className="flex flex-col items-center text-center font-semibold mt-4">
+              {/* Second Row - Fellowship */}
+              <div className="flex flex-col items-center text-center font-semibold mt-6">
                 <div className="flex flex-col items-center">
-                  <span className="text-2xl" style={{ color: '#b91c1c' }}>{t('pitch.vision_deepen_fellowship')}</span>
-                  <span className="text-lg text-stone-500 mt-1">{t('pitch.vision_fellowship')}</span>
+                  <span className="text-4xl font-bold" style={{ color: '#b91c1c', fontSize: '2.5rem' }}>{t('pitch.vision_deepen_fellowship')}</span>
+                  <span className="text-2xl text-stone-600 mt-2" style={{ fontSize: '1.75rem' }}>{t('pitch.vision_fellowship')}</span>
                 </div>
               </div>
             </div>
