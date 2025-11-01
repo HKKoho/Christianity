@@ -29,7 +29,7 @@ export function SubscriptionSelector({ onSelectPlan }: SubscriptionSelectorProps
 
       <PlanTypeToggle selectedType={selectedPlanType} onSelectType={setSelectedPlanType} />
 
-      <div className="mt-10 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl">
+      <div className="mt-10 w-full grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
         {plansToShow.map((plan) => (
           <SubscriptionCard key={plan.id} plan={plan} onSelect={() => onSelectPlan(plan)} />
         ))}
