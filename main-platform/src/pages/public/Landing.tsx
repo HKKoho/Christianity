@@ -398,7 +398,7 @@ export function Landing() {
               <span className="text-3xl">{t('common.cross')}</span>
               <span className="text-2xl font-bold tracking-tight">{t('landing.footer_brand')}</span>
             </div>
-            <p className="text-gray-300 mb-6 text-lg font-light max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-6 text-lg font-light max-w-2xl mx-auto text-center">
               {t('landing.footer_tagline')}
             </p>
             <div className="w-16 h-px bg-gray-700 mx-auto mb-6"></div>

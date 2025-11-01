@@ -18,31 +18,31 @@ export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
         hover:shadow-xl hover:-translate-y-1
         flex flex-col
         ${plan.isFeatured
-          ? 'border-indigo-600 shadow-lg'
+          ? 'border-orange-500 shadow-lg'
           : 'border-gray-200 shadow-md'
         }
       `}
     >
       {/* Featured Badge */}
       {plan.isFeatured && (
-        <div className="inline-block bg-indigo-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase mb-4">
+        <div className="inline-block bg-orange-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase mb-4">
           {t('subscription.most_popular')}
         </div>
       )}
 
       {/* Plan Name */}
-      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+      <h3 className="text-2xl font-semibold text-gray-900 mb-2 tracking-tight">
         {plan.name}
       </h3>
 
       {/* Description */}
-      <p className="text-gray-600 mb-6">
+      <p className="text-gray-600 mb-6 leading-relaxed">
         {plan.description}
       </p>
 
       {/* Price */}
       <div className="mb-6">
-        <span className="text-4xl font-extrabold text-gray-900">
+        <span className="text-4xl font-bold text-gray-900 tracking-tight">
           {plan.priceText}
         </span>
         {plan.trialPeriodDays && (
@@ -56,7 +56,7 @@ export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
       <ul className="space-y-4 mb-8 flex-grow">
         {plan.features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <CheckIcon className="w-5 h-5 text-indigo-600 mr-3 flex-shrink-0 mt-0.5" />
+            <CheckIcon className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0 mt-0.5" />
             <span className="text-gray-700">{feature}</span>
           </li>
         ))}
@@ -69,7 +69,7 @@ export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
           w-full py-3 px-6 rounded-lg font-semibold
           transition-all duration-300
           ${plan.isFeatured
-            ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-md hover:shadow-lg'
+            ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-md hover:shadow-lg'
             : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
           }
         `}
