@@ -27,6 +27,10 @@
     "ai_caution": "您的 AI 選擇可能會受到所在地區的限制",
     "modules_title": "理解基督教的四條路徑",
     "modules_subtitle": "為尋道者、學者、學生和教會領袖量身打造的 AI 工具",
+    "module_button_culture": "文化領域",
+    "module_button_bible": "聖經學習",
+    "module_button_theology": "神學研究",
+    "module_button_church": "教會管理",
     "footer_brand": "基督教社群",
     "footer_tagline": "透過科技與恩典，賦能信仰、連結人心、轉化生命",
     "footer_copyright": "© 2025 基督教社群平台。用愛與目的打造。"

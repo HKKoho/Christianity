@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 interface Module {
   id: string;
   icon: string;
@@ -37,16 +39,18 @@ const colorMap: Record<string, { bg: string; hoverBg: string; text: string }> = 
 };
 
 export function ModuleButtons({ modules }: ModuleButtonsProps) {
+  const { t } = useTranslation();
+
   const getButtonLabel = (moduleId: string): string => {
     switch (moduleId) {
       case 'culture':
-        return 'Culture';
+        return t('landing.module_button_culture');
       case 'bible-know':
-        return 'Bible';
+        return t('landing.module_button_bible');
       case 'christianity':
-        return 'Theology';
+        return t('landing.module_button_theology');
       case 'church-admin':
-        return 'Church';
+        return t('landing.module_button_church');
       default:
         return moduleId;
     }

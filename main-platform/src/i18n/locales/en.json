@@ -27,6 +27,10 @@
     "ai_caution": "Your choices of AI may be limited to the region you located",
     "modules_title": "Four Paths to Understand Christianity",
     "modules_subtitle": "Tailored AI-powered tools designed for seekers, scholars, students, and church leaders",
+    "module_button_culture": "Culture Area",
+    "module_button_bible": "Bible Study",
+    "module_button_theology": "Theology Matter",
+    "module_button_church": "Church Admin",
     "footer_brand": "Christian Community",
     "footer_tagline": "Empowering faith, connecting hearts, transforming lives through technology and grace",
     "footer_copyright": "© 2025 Christian Community Platform. Built with love and purpose."
