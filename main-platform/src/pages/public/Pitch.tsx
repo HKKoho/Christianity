@@ -365,23 +365,25 @@ export function Pitch() {
           <p style={{ fontSize: '1.25rem', color: '#ddd6fe', marginBottom: '2rem' }}>
             {t('pitch.cta_subtitle')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/subscription"
-              className="px-8 py-4 rounded-lg font-bold text-lg transition-transform transform hover:scale-105"
+              className="px-8 py-4 rounded-lg font-bold text-lg transition-transform transform hover:scale-105 inline-block"
               style={{
                 background: '#fbbf24',
-                color: '#2e1065'
+                color: '#2e1065',
+                textDecoration: 'none'
               }}
             >
               {t('pitch.cta_button_1')}
             </Link>
             <Link
               to="/"
-              className="px-8 py-4 rounded-lg font-bold text-lg border-2 border-white transition-all"
+              className="px-8 py-4 rounded-lg font-bold text-lg border-2 border-white transition-all inline-block"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
-                color: 'white'
+                color: 'white',
+                textDecoration: 'none'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
@@ -395,11 +397,11 @@ export function Pitch() {
           </div>
 
           {/* Additional Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
             <a
               href="/Development_Plan.pdf"
               download
-              className="px-8 py-4 rounded-lg font-bold text-lg transition-transform transform hover:scale-105"
+              className="px-8 py-4 rounded-lg font-bold text-lg transition-transform transform hover:scale-105 inline-block"
               style={{
                 background: '#10b981',
                 color: 'white',
@@ -410,7 +412,7 @@ export function Pitch() {
             </a>
             <a
               href="mailto:victor.hung@aibyml.com?subject=Inquiry about Christian Platform"
-              className="px-8 py-4 rounded-lg font-bold text-lg border-2 border-white transition-all"
+              className="px-8 py-4 rounded-lg font-bold text-lg border-2 border-white transition-all inline-block"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
                 color: 'white',
