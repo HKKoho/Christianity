@@ -117,27 +117,24 @@ export function Landing() {
             {/* Join Us Button */}
             <Link
               to="/subscription"
-              className="px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              className="px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300"
               style={{
                 backgroundColor: '#ff6b6b',
                 color: '#ffffff',
-                padding: '12px 28px',
+                padding: '10px 20px',
                 borderRadius: '8px',
-                fontSize: '18px',
+                fontSize: '16px',
                 fontWeight: '600',
                 textDecoration: 'none',
-                boxShadow: '0 4px 6px -1px rgb(255 107 107 / 0.3)',
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#ff5252';
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 8px 12px -2px rgb(255 107 107 / 0.4)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = '#ff6b6b';
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgb(255 107 107 / 0.3)';
               }}
             >
               {t('landing.join_us')}
