@@ -322,7 +322,7 @@ export function Landing() {
               {t('landing.modules_title')}
             </h2>
             <p
-              className="text-2xl md:text-3xl max-w-4xl mx-auto font-light leading-relaxed mb-8"
+              className="text-2xl md:text-3xl max-w-4xl mx-auto font-light leading-relaxed mb-8 text-center"
               style={{
                 fontSize: 'clamp(20px, 3vw, 28px)',
                 color: '#ffffff',

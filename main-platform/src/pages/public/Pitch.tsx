@@ -85,7 +85,7 @@ export function Pitch() {
           paddingBottom: '8rem'
         }}
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h1
             className="font-bold leading-snug mb-6"
             style={{
@@ -113,7 +113,7 @@ export function Pitch() {
 
       {/* Introduction - The Crisis */}
       <section style={{ background: '#f5f5f4', paddingTop: '4rem', paddingBottom: '6rem' }} className="px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <h2
             style={{
               fontFamily: 'Georgia, serif',
@@ -261,7 +261,7 @@ export function Pitch() {
 
       {/* 8-Step Transformation */}
       <section style={{ background: '#f5f5f4', paddingTop: '4rem', paddingBottom: '6rem' }} className="px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2
               style={{
