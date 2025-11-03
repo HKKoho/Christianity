@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, CheckCircle, AlertCircle, ArrowRight, Palette, HelpCircle, Edit3, Link as LinkIcon, Layers, BrainCircuit, Users, CheckSquare } from 'lucide-react';
-import { PuzzleAnimation } from '../../components/PuzzleAnimation';
+import { ArrowLeft, AlertCircle, CheckCircle, Palette, HelpCircle, Edit3, Link as LinkIcon, Layers, BrainCircuit, Users, CheckSquare } from 'lucide-react';
 
 export function Pitch() {
   const { t } = useTranslation();
@@ -11,57 +10,116 @@ export function Pitch() {
       icon: Palette,
       titleKey: 'pitch.step_1_title',
       contentKey: 'pitch.step_1_content',
-      benefitKey: 'pitch.step_1_benefit'
+      benefitKey: 'pitch.step_1_benefit',
+      color: 'yellow'
     },
     {
       icon: HelpCircle,
       titleKey: 'pitch.step_2_title',
       contentKey: 'pitch.step_2_content',
-      benefitKey: 'pitch.step_2_benefit'
+      benefitKey: 'pitch.step_2_benefit',
+      color: 'blue'
     },
     {
       icon: Edit3,
       titleKey: 'pitch.step_3_title',
       contentKey: 'pitch.step_3_content',
-      benefitKey: 'pitch.step_3_benefit'
+      benefitKey: 'pitch.step_3_benefit',
+      color: 'purple'
     },
     {
       icon: LinkIcon,
       titleKey: 'pitch.step_4_title',
       contentKey: 'pitch.step_4_content',
-      benefitKey: 'pitch.step_4_benefit'
+      benefitKey: 'pitch.step_4_benefit',
+      color: 'green'
     },
     {
       icon: Layers,
       titleKey: 'pitch.step_5_title',
       contentKey: 'pitch.step_5_content',
-      benefitKey: 'pitch.step_5_benefit'
+      benefitKey: 'pitch.step_5_benefit',
+      color: 'orange'
     },
     {
       icon: BrainCircuit,
       titleKey: 'pitch.step_6_title',
       contentKey: 'pitch.step_6_content',
-      benefitKey: 'pitch.step_6_benefit'
+      benefitKey: 'pitch.step_6_benefit',
+      color: 'indigo'
     },
     {
       icon: Users,
       titleKey: 'pitch.step_7_title',
       contentKey: 'pitch.step_7_content',
-      benefitKey: 'pitch.step_7_benefit'
+      benefitKey: 'pitch.step_7_benefit',
+      color: 'pink'
     },
     {
       icon: CheckSquare,
       titleKey: 'pitch.step_8_title',
       contentKey: 'pitch.step_8_content',
-      benefitKey: 'pitch.step_8_benefit'
+      benefitKey: 'pitch.step_8_benefit',
+      color: 'red'
     }
   ];
 
+  const colorClasses = {
+    yellow: {
+      bg: 'bg-yellow-50',
+      border: 'border-yellow-600',
+      text: 'text-yellow-900',
+      subtext: 'text-yellow-800'
+    },
+    blue: {
+      bg: 'bg-blue-50',
+      border: 'border-blue-600',
+      text: 'text-blue-900',
+      subtext: 'text-blue-800'
+    },
+    purple: {
+      bg: 'bg-purple-50',
+      border: 'border-purple-600',
+      text: 'text-purple-900',
+      subtext: 'text-purple-800'
+    },
+    green: {
+      bg: 'bg-green-50',
+      border: 'border-green-600',
+      text: 'text-green-900',
+      subtext: 'text-green-800'
+    },
+    orange: {
+      bg: 'bg-orange-50',
+      border: 'border-orange-600',
+      text: 'text-orange-900',
+      subtext: 'text-orange-800'
+    },
+    indigo: {
+      bg: 'bg-indigo-50',
+      border: 'border-indigo-600',
+      text: 'text-indigo-900',
+      subtext: 'text-indigo-800'
+    },
+    pink: {
+      bg: 'bg-pink-50',
+      border: 'border-pink-600',
+      text: 'text-pink-900',
+      subtext: 'text-pink-800'
+    },
+    red: {
+      bg: 'bg-red-50',
+      border: 'border-red-600',
+      text: 'text-red-900',
+      subtext: 'text-red-800'
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-white font-sans text-stone-700" style={{ lineHeight: 1.8 }}>
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
+        <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link
             to="/"
             className="flex items-center gap-2 text-gray-700 hover:text-purple-700 transition-colors font-semibold"
@@ -71,365 +129,122 @@ export function Pitch() {
           </Link>
           <div className="flex items-center gap-3">
             <span className="text-3xl">✝️</span>
-            <span className="text-2xl font-bold" style={{ color: '#4c1d95' }}>{t('landing.brand_name')}</span>
+            <span className="text-2xl font-bold text-purple-900">{t('landing.brand_name')}</span>
           </div>
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section
-        className="text-white text-center px-4 relative"
-        style={{
-          background: '#4c1d95',
-          paddingTop: '5rem',
-          paddingBottom: '8rem'
-        }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <h1
-            className="font-bold leading-snug mb-6"
-            style={{
-              fontSize: 'clamp(2.25rem, 5vw, 5rem)',
-              fontFamily: 'Georgia, serif',
-              letterSpacing: '-0.025em'
-            }}
-          >
-            {t('pitch.hero_title_1')}<br/>
-            <span style={{ color: '#fbbf24', fontSize: 'clamp(2.5rem, 6vw, 6rem)' }}>
-              {t('pitch.hero_title_2')}
-            </span>
+      <div className="max-w-7xl mx-auto p-8">
+        {/* Hero Header */}
+        <div className="text-center mb-8 pb-6 border-b-2 border-purple-600">
+          <div className="text-4xl mb-2">✝️</div>
+          <h1 className="text-3xl md:text-4xl font-bold text-purple-900 mb-2">
+            {t('pitch.hero_title_1')}
           </h1>
-          <p
-            className="mt-6 font-light"
-            style={{
-              fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-              color: '#ddd6fe',
-              lineHeight: 1.8
-            }}
-            dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }}
-          />
+          <p className="text-xl md:text-2xl text-purple-700 font-semibold mb-2">
+            {t('pitch.hero_title_2')}
+          </p>
+          <div className="text-sm text-gray-600 mt-2" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
         </div>
-      </section>
 
-      {/* Introduction - The Crisis */}
-      <section style={{ background: '#f5f5f4', paddingTop: '4rem', paddingBottom: '6rem' }} className="px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2
-            style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-              fontWeight: 'bold',
-              color: '#4c1d95',
-              letterSpacing: '-0.025em',
-              marginBottom: '1.5rem'
-            }}
-          >
+        {/* The Problem */}
+        <section className="mb-8 bg-red-50 p-6 rounded-lg border-l-4 border-red-600">
+          <h2 className="text-xl font-bold text-red-900 mb-3 flex items-center">
+            <AlertCircle className="mr-2" size={24} />
             {t('pitch.crisis_title')}
           </h2>
-          <p
-            style={{ fontSize: '2rem', color: '#57534e', marginBottom: '3rem', lineHeight: 1.8 }}
-            dangerouslySetInnerHTML={{ __html: t('pitch.crisis_subtitle') }}
-          />
+          <div className="space-y-2 text-gray-800">
+            <div dangerouslySetInnerHTML={{ __html: t('pitch.crisis_subtitle') }} className="mb-4" />
+            <p className="font-semibold">{t('pitch.danger_title')}</p>
+            <ul className="list-disc ml-6 space-y-1">
+              <li>{t('pitch.danger_point_1')}</li>
+              <li>{t('pitch.danger_point_2')}</li>
+              <li>{t('pitch.danger_point_3')}</li>
+              <li>{t('pitch.danger_point_4')}</li>
+            </ul>
+          </div>
+        </section>
 
-          <div
-            className="p-6 rounded-xl border max-w-3xl mx-auto"
-            style={{
-              background: 'rgba(254, 202, 202, 0.8)',
-              borderColor: '#fecaca'
-            }}
-          >
-            <h3
-              className="flex items-center justify-center mb-4"
-              style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: '1.875rem',
-                fontWeight: 'bold',
-                color: '#7f1d1d'
-              }}
-            >
-              <AlertCircle className="mr-3 flex-shrink-0" size={32} style={{ color: '#ef4444' }} />
-              {t('pitch.danger_title')}
-            </h3>
-            <div className="text-center">
-              <ul className="list-none space-y-2 text-stone-600 inline-block text-left" style={{ fontSize: '1.25rem' }}>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>{t('pitch.danger_point_1')}</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>{t('pitch.danger_point_2')}</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>{t('pitch.danger_point_3')}</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>{t('pitch.danger_point_4')}</span>
-                </li>
-              </ul>
+        {/* Our Solution */}
+        <section className="mb-8 bg-green-50 p-6 rounded-lg border-l-4 border-green-600">
+          <h2 className="text-xl font-bold text-green-900 mb-3 flex items-center">
+            <CheckCircle className="mr-2" size={24} />
+            {t('pitch.solution_title')}
+          </h2>
+          <div className="bg-white p-4 rounded border-2 border-green-300 mb-4">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-semibold">
+              <span className="text-purple-700">{t('pitch.journey_step_1')}</span>
+              <span className="text-gray-400">→</span>
+              <span className="text-blue-700">{t('pitch.journey_step_2')}</span>
+              <span className="text-gray-400">→</span>
+              <span className="text-indigo-700">{t('pitch.journey_step_3')}</span>
+              <span className="text-gray-400">→</span>
+              <span className="text-orange-700">{t('pitch.journey_step_4')}</span>
+              <span className="text-gray-400">→</span>
+              <span className="text-red-700">{t('pitch.journey_step_5')}</span>
             </div>
           </div>
-        </div>
-      </section>
+          <p className="text-gray-800 font-semibold" dangerouslySetInnerHTML={{ __html: t('pitch.solution_subtitle') }} />
+        </section>
 
-      {/* Vision Section */}
-      <section style={{ background: 'white', paddingTop: '4rem', paddingBottom: '6rem' }} className="px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <CheckCircle className="mx-auto mb-4" size={52} style={{ color: '#16a34a' }} />
-          <h2
-            style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(2.25rem, 4.5vw, 4.5rem)',
-              fontWeight: 'bold',
-              color: '#14532d',
-              letterSpacing: '-0.025em',
-              marginBottom: '1rem',
-              lineHeight: 1.2
-            }}
-            dangerouslySetInnerHTML={{ __html: t('pitch.vision_title') }}
-          />
+        {/* Key Features */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold text-purple-900 mb-4">
+            {t('pitch.features_title')}
+          </h2>
 
-          <div className="mb-8">
-            <blockquote
-              style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: '2rem',
-                color: '#57534e',
-                fontStyle: 'italic'
-              }}
-            >
-              "{t('pitch.vision_quote')}"
-            </blockquote>
-            <p style={{ fontSize: '1.125rem', color: '#78716c', marginTop: '0.5rem' }}>{t('pitch.vision_quote_ref')}</p>
-          </div>
-
-          <p style={{ fontSize: '1.875rem', color: '#57534e', marginBottom: '3rem', lineHeight: 1.8 }} className="max-w-4xl mx-auto">
-            {t('pitch.vision_subtitle')}
-          </p>
-
-          <div
-            className="p-8 rounded-xl border-2 shadow-inner"
-            style={{
-              background: 'rgba(220, 252, 231, 0.8)',
-              borderColor: '#86efac'
-            }}
-          >
-            <div className="flex flex-col items-center justify-center gap-y-8">
-              {/* First Row - Three Steps */}
-              <div className="flex flex-col sm:flex-row items-center justify-center text-center font-semibold flex-wrap gap-x-6 gap-y-8">
-                <div className="flex flex-col items-center px-6">
-                  <span className="text-4xl font-bold" style={{ color: '#5b21b6', fontSize: '2.5rem' }}>{t('pitch.vision_spark_knowledge')}</span>
-                  <span className="text-2xl text-stone-600 mt-2" style={{ fontSize: '1.75rem' }}>{t('pitch.vision_truth')}</span>
-                </div>
-                <ArrowRight className="text-stone-400 mx-4 hidden sm:block" size={36} />
-                <div className="flex flex-col items-center px-6">
-                  <span className="text-4xl font-bold" style={{ color: '#1d4ed8', fontSize: '2.5rem' }}>{t('pitch.vision_inspire_practice')}</span>
-                  <span className="text-2xl text-stone-600 mt-2" style={{ fontSize: '1.75rem' }}>{t('pitch.vision_practice')}</span>
-                </div>
-                <ArrowRight className="text-stone-400 mx-4 hidden sm:block" size={36} />
-                <div className="flex flex-col items-center px-6">
-                  <span className="text-4xl font-bold" style={{ color: '#c2410c', fontSize: '2.5rem' }}>{t('pitch.vision_cultivate_experience')}</span>
-                  <span className="text-2xl text-stone-600 mt-2" style={{ fontSize: '1.75rem' }}>{t('pitch.vision_experience')}</span>
-                </div>
-              </div>
-
-              {/* Second Row - Fellowship */}
-              <div className="flex flex-col items-center text-center font-semibold mt-6">
-                <div className="flex flex-col items-center">
-                  <span className="text-4xl font-bold" style={{ color: '#b91c1c', fontSize: '2.5rem' }}>{t('pitch.vision_deepen_fellowship')}</span>
-                  <span className="text-2xl text-stone-600 mt-2" style={{ fontSize: '1.75rem' }}>{t('pitch.vision_fellowship')}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <p
-            style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '2.5rem',
-              color: '#15803d',
-              fontStyle: 'italic',
-              marginTop: '2.5rem'
-            }}
-          >
-            {t('pitch.vision_conclusion')}
-          </p>
-        </div>
-      </section>
-
-      {/* 8-Step Transformation */}
-      <section style={{ background: '#f5f5f4', paddingTop: '4rem', paddingBottom: '6rem' }} className="px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2
-              style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: 'clamp(2.25rem, 4.5vw, 4.5rem)',
-                fontWeight: 'bold',
-                color: '#4c1d95',
-                letterSpacing: '-0.025em',
-                marginBottom: '1rem'
-              }}
-            >
-              {t('pitch.pathway_title')}
-            </h2>
-            <p style={{ fontSize: '1.25rem', color: '#57534e' }} className="max-w-3xl mx-auto">
-              {t('pitch.pathway_subtitle')}
-            </p>
-          </div>
-
-          {/* Puzzle Animation */}
-          <PuzzleAnimation />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-4">
             {features.map((feature, index) => {
               const Icon = feature.icon;
+              const colors = colorClasses[feature.color];
+
               return (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-xl border hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                  style={{
-                    borderColor: '#e7e5e4',
-                    cursor: 'pointer'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#c4b5fd';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e7e5e4';
-                  }}
-                >
-                  <div className="flex items-start">
-                    <div
-                      className="p-4 rounded-full mr-5"
-                      style={{
-                        background: '#ede9fe',
-                        color: '#6d28d9'
-                      }}
-                    >
-                      <Icon size={28} />
-                    </div>
-                    <div className="flex-1">
-                      <h3
-                        className="font-bold mb-1"
-                        style={{
-                          color: '#4c1d95',
-                          fontSize: '1.5rem'
-                        }}
-                      >
-                        {t(feature.titleKey)}
-                      </h3>
-                      <p style={{ fontSize: '1.125rem', color: '#57534e', marginBottom: '0.75rem' }}>
-                        {t(feature.contentKey)}
-                      </p>
-                      <span
-                        className="px-4 py-1 rounded-full inline-block text-base font-semibold"
-                        style={{
-                          background: '#fef3c7',
-                          color: '#92400e'
-                        }}
-                      >
-                        {t(feature.benefitKey)}
-                      </span>
-                    </div>
-                  </div>
+                <div key={index} className={`${colors.bg} p-4 rounded-lg border-l-4 ${colors.border}`}>
+                  <h3 className={`font-bold ${colors.text} mb-2 flex items-center`}>
+                    <Icon className="mr-2" size={20} />
+                    {index + 1}. {t(feature.titleKey)}
+                  </h3>
+                  <p className="text-sm text-gray-700 mb-2">
+                    {t(feature.contentKey)}
+                  </p>
+                  <p className={`text-xs ${colors.subtext} font-semibold`}>
+                    ✓ {t(feature.benefitKey)}
+                  </p>
                 </div>
               );
             })}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Call to Action */}
-      <section
-        className="text-white px-4"
-        style={{
-          background: '#4c1d95',
-          paddingTop: '4rem',
-          paddingBottom: '6rem'
-        }}
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <h2
-            style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              marginBottom: '1.5rem'
-            }}
-          >
+        {/* Call to Action */}
+        <section className="mb-8 bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg border-2 border-purple-300">
+          <h2 className="text-2xl font-bold text-center text-purple-900 mb-4">
             {t('pitch.cta_title')}
           </h2>
-          <p style={{ fontSize: '1.25rem', color: '#ddd6fe', marginBottom: '2rem' }}>
-            {t('pitch.cta_subtitle')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <p className="text-center text-gray-700 mb-6" dangerouslySetInnerHTML={{ __html: t('pitch.cta_subtitle') }} />
+          <div className="flex justify-center">
             <Link
               to="/subscription"
-              className="px-8 py-4 rounded-lg font-bold text-lg transition-transform transform hover:scale-105 inline-block"
-              style={{
-                background: '#fbbf24',
-                color: '#2e1065',
-                textDecoration: 'none'
-              }}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              {t('pitch.cta_button_1')}
-            </Link>
-            <Link
-              to="/"
-              className="px-8 py-4 rounded-lg font-bold text-lg border-2 border-white transition-all inline-block"
-              style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                color: 'white',
-                textDecoration: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-              }}
-            >
-              {t('pitch.cta_button_2')}
+              {t('pitch.cta_button')}
+              <ArrowLeft className="rotate-180" size={20} />
             </Link>
           </div>
+        </section>
 
-          {/* Additional Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-            <a
-              href="/Development_Plan.pdf"
-              download
-              className="px-8 py-4 rounded-lg font-bold text-lg transition-transform transform hover:scale-105 inline-block"
-              style={{
-                background: '#10b981',
-                color: 'white',
-                textDecoration: 'none'
-              }}
-            >
-              {t('pitch.download_plan')}
-            </a>
-            <a
-              href="mailto:victor.hung@aibyml.com?subject=Inquiry about Christian Platform"
-              className="px-8 py-4 rounded-lg font-bold text-lg border-2 border-white transition-all inline-block"
-              style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                color: 'white',
-                textDecoration: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-              }}
-            >
-              {t('pitch.get_in_touch')}
-            </a>
-          </div>
-        </div>
-      </section>
+        {/* Closing */}
+        <section className="text-center py-6 border-t-2 border-purple-600">
+          <div className="text-4xl mb-3">✝️</div>
+          <p className="text-lg font-bold text-purple-900 mb-2">
+            {t('pitch.closing_quote')}
+          </p>
+          <p className="text-sm text-gray-600 mb-4">{t('pitch.closing_reference')}</p>
+          <p className="text-base font-semibold text-gray-800 italic">
+            {t('pitch.closing_message')}
+          </p>
+        </section>
+      </div>
 
       {/* Footer */}
       <footer className="bg-black text-white py-16 border-t border-gray-800">
