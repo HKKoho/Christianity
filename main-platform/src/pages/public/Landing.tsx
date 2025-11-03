@@ -197,11 +197,10 @@ export function Landing() {
             }}
           >
             <p
-              className="text-xl md:text-2xl mb-4 leading-relaxed font-light"
+              className="text-xl md:text-2xl mb-4 leading-relaxed font-light text-center"
               style={{
                 fontSize: 'clamp(16px, 2.5vw, 24px)',
                 lineHeight: '1.6',
-                textAlign: 'center',
                 width: '100%',
                 color: '#ffffff',
                 textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)'
@@ -210,11 +209,10 @@ export function Landing() {
               {t('landing.hero_subtitle_1')}
             </p>
             <p
-              className="text-xl md:text-2xl leading-relaxed font-light"
+              className="text-xl md:text-2xl leading-relaxed font-light text-center"
               style={{
                 fontSize: 'clamp(16px, 2.5vw, 24px)',
                 lineHeight: '1.6',
-                textAlign: 'center',
                 width: '100%',
                 color: '#ffffff',
                 textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)'
