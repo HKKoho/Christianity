@@ -6,10 +6,21 @@ import { ArrowLeft, AlertCircle, CheckCircle, ArrowDown, ArrowRight, Check, Thum
 export function Pitch() {
   const { t, i18n } = useTranslation();
   const [checkedSteps, setCheckedSteps] = useState<number[]>([]);
+  const [showContent, setShowContent] = useState(false);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'zh-TW' ? 'en' : 'zh-TW';
     i18n.changeLanguage(newLang);
+  };
+
+  const handleDiscoverClick = () => {
+    setShowContent(true);
+    setTimeout(() => {
+      const introSection = document.getElementById('introduction');
+      if (introSection) {
+        introSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   const features = [
@@ -39,7 +50,7 @@ export function Pitch() {
   return (
     <div className="min-h-screen bg-white font-sans text-stone-700">
       {/* Hero Section */}
-      <section className="bg-purple-900 text-white text-center py-20 sm:py-32 px-4 relative">
+      <section className="bg-purple-900 text-white text-center py-20 sm:py-32 px-4 relative min-h-screen flex items-center">
         <div className="absolute top-4 left-4">
           <Link
             to="/"
@@ -60,26 +71,29 @@ export function Pitch() {
             {i18n.language === 'zh-TW' ? 'EN' : '中文'}
           </button>
         </div>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="mb-16"></div>
           <h1 className="font-serif text-5xl sm:text-7xl font-bold leading-snug mb-2">
             {t('pitch.hero_title_1')}
           </h1>
           <p className="text-3xl sm:text-5xl font-bold text-yellow-400 mb-6">
             {t('pitch.hero_title_2')}
           </p>
-          <p className="text-2xl sm:text-3xl text-purple-200 font-light mx-auto" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
+          <p className="text-2xl sm:text-3xl text-purple-200 font-light mx-auto mb-16" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
           <div className="mt-10">
-            <a
-              href="#introduction"
-              className="inline-block bg-yellow-400 text-purple-950 font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-yellow-300 transition-transform transform hover:scale-105"
+            <button
+              onClick={handleDiscoverClick}
+              className="inline-block bg-yellow-400 text-purple-950 font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-yellow-300 transition-transform transform hover:scale-105 cursor-pointer"
             >
               {t('pitch.discover_vision')}
               <ArrowDown className="inline-block ml-2" size={24} />
-            </a>
+            </button>
           </div>
         </div>
       </section>
 
+      {showContent && (
+        <>
       {/* Introduction Section - The Crisis */}
       <section id="introduction" className="bg-stone-100 py-16 sm:py-24 px-4">
         <div className="max-w-7xl mx-auto text-center">
@@ -302,6 +316,8 @@ export function Pitch() {
           </div>
         </div>
       </section>
+        </>
+      )}
 
       {/* Footer */}
       <footer className="bg-black text-white py-16 border-t border-gray-800">
