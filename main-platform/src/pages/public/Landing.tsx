@@ -310,9 +310,9 @@ export function Landing() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="text-center" style={{ marginBottom: '80px' }}>
             <h2
-              className="text-4xl md:text-5xl font-bold mb-8 tracking-tight"
+              className="text-3xl md:text-4xl font-bold mb-8 tracking-tight text-center"
               style={{
-                fontSize: 'clamp(36px, 6vw, 48px)',
+                fontSize: 'clamp(30px, 5vw, 40px)',
                 color: '#ffffff',
                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)'
               }}
@@ -320,9 +320,9 @@ export function Landing() {
               {t('landing.modules_title')}
             </h2>
             <p
-              className="text-2xl md:text-3xl w-full font-light leading-relaxed mb-8 text-center"
+              className="text-xl md:text-2xl w-full font-light leading-relaxed mb-8 text-center"
               style={{
-                fontSize: 'clamp(20px, 3vw, 28px)',
+                fontSize: 'clamp(18px, 2.5vw, 24px)',
                 color: '#ffffff',
                 textShadow: '1px 1px 3px rgba(0, 0, 0, 0.4)'
               }}
