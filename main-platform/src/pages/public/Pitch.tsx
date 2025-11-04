@@ -174,8 +174,8 @@ export function Pitch() {
                       <Icon size={28} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-purple-900 text-2xl mb-1">{t(feature.titleKey)}</h3>
-                      <p className="text-lg text-stone-600 mb-3">{t(feature.contentKey)}</p>
+                      <h3 className="font-bold text-purple-900 text-2xl mb-2">{t(feature.titleKey)}</h3>
+                      <p className="text-lg text-stone-600 mb-5">{t(feature.contentKey)}</p>
                       <p className="text-base text-yellow-800 font-semibold bg-yellow-100 px-4 py-1 rounded-full inline-block">
                         {t(feature.benefitKey)}
                       </p>
@@ -206,7 +206,7 @@ export function Pitch() {
                 <ThumbsDown className="mr-3 flex-shrink-0" size={28}/>
                 <h3 className="font-serif text-3xl font-bold">{t('pitch.path1_title')}</h3>
               </div>
-              <p className="text-base text-stone-600 mb-4 font-semibold">{t('pitch.path1_subtitle')}</p>
+              <p className="text-base text-stone-600 mb-6 font-semibold">{t('pitch.path1_subtitle')}</p>
               <ul className="text-base text-stone-600 space-y-2">
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2 mt-1">✓</span>
@@ -240,7 +240,7 @@ export function Pitch() {
                 <ThumbsUp className="mr-3 flex-shrink-0" size={28}/>
                 <h3 className="font-serif text-3xl font-bold">{t('pitch.path2_title')}</h3>
               </div>
-              <p className="text-base text-stone-600 mb-4 font-semibold">{t('pitch.path2_subtitle')}</p>
+              <p className="text-base text-stone-600 mb-6 font-semibold">{t('pitch.path2_subtitle')}</p>
               <ul className="text-base text-stone-600 space-y-2">
                 <li className="flex items-start font-bold text-green-800">
                   <span className="text-green-600 mr-2 mt-1">✓</span>
@@ -274,10 +274,10 @@ export function Pitch() {
           <h2 className="font-serif text-5xl sm:text-6xl font-bold mb-4">
             {t('pitch.cta_title')}
           </h2>
-          <blockquote className="font-serif text-3xl text-purple-200 mb-2 max-w-3xl mx-auto italic">
+          <blockquote className="font-serif text-3xl text-purple-200 mb-4 max-w-3xl mx-auto italic">
             {t('pitch.closing_quote')}
           </blockquote>
-          <p className="text-lg text-purple-300 mb-12">{t('pitch.closing_reference')}</p>
+          <p className="text-lg text-purple-300 mb-16">{t('pitch.closing_reference')}</p>
 
           <div className="bg-white/10 p-6 sm:p-8 rounded-xl border border-purple-700 max-w-3xl mx-auto">
             <h3 className="font-serif text-3xl font-bold mb-6 text-white text-center">{t('pitch.next_steps_title')}</h3>
