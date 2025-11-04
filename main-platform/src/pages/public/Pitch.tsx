@@ -73,14 +73,14 @@ export function Pitch() {
         </div>
         <div className="max-w-7xl mx-auto w-full">
           <div className="mb-16"></div>
-          <h1 className="font-serif text-5xl sm:text-7xl font-bold leading-snug mb-8">
+          <h1 className="font-serif text-5xl sm:text-7xl font-bold leading-snug mb-4">
             {t('pitch.hero_title_1')}
           </h1>
           <p className="text-3xl sm:text-5xl font-bold text-yellow-400 mb-12">
             {t('pitch.hero_title_2')}
           </p>
-          <p className="text-2xl sm:text-3xl text-purple-200 font-light mx-auto mb-20" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
-          <div className="mt-12">
+          <p className="text-2xl sm:text-3xl text-purple-200 font-light mx-auto mb-12" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
+          <div className="mt-24">
             <button
               onClick={handleDiscoverClick}
               className="inline-block bg-yellow-400 text-purple-950 font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-yellow-300 transition-transform transform hover:scale-105 cursor-pointer"
@@ -107,7 +107,7 @@ export function Pitch() {
                 <AlertCircle className="mr-3 text-red-500 flex-shrink-0" size={32} />
                 {t('pitch.danger_title')}
               </h3>
-              <ul className="list-disc space-y-2 text-stone-600 text-xl text-left inline-block mx-auto">
+              <ul className="list-disc space-y-3 text-stone-600 text-xl text-left inline-block mx-auto">
                 <li>{t('pitch.danger_point_1')}</li>
                 <li>{t('pitch.danger_point_2')}</li>
                 <li>{t('pitch.danger_point_3')}</li>
@@ -122,7 +122,7 @@ export function Pitch() {
       <section className="bg-white py-16 sm:py-24 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <CheckCircle className="mx-auto text-green-600 mb-4" size={52} />
-          <h2 className="font-serif text-5xl sm:text-6xl font-bold text-green-900 mb-4 leading-tight" dangerouslySetInnerHTML={{ __html: t('pitch.solution_title') }} />
+          <h2 className="font-serif text-5xl sm:text-6xl font-bold text-green-900 mb-6 leading-tight" dangerouslySetInnerHTML={{ __html: t('pitch.solution_title') }} />
           <p className="text-3xl text-stone-600 mb-12 leading-relaxed text-center" dangerouslySetInnerHTML={{ __html: t('pitch.solution_subtitle') }} />
           <div className="bg-green-50/80 p-8 rounded-xl border-2 border-green-200 shadow-inner">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center font-semibold flex-wrap">
@@ -147,7 +147,7 @@ export function Pitch() {
               </div>
             </div>
           </div>
-          <p className="font-serif text-4xl text-green-800 italic mt-10">
+          <p className="font-serif text-4xl text-green-800 italic mt-8">
             {t('pitch.journey_step_5')}
           </p>
         </div>
@@ -157,10 +157,10 @@ export function Pitch() {
       <section className="bg-stone-100 py-16 sm:py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mt-12 mb-4">
+            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mt-12 mb-6">
               {t('pitch.features_title')}
             </h2>
-            <p className="text-xl text-stone-600 max-w-3xl mx-auto text-center">
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto text-center mb-12">
               {t('pitch.features_subtitle')}
             </p>
           </div>
@@ -174,8 +174,8 @@ export function Pitch() {
                       <Icon size={28} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-purple-900 text-2xl mb-2">{t(feature.titleKey)}</h3>
-                      <p className="text-lg text-stone-600 mb-5">{t(feature.contentKey)}</p>
+                      <h3 className="font-bold text-purple-900 text-2xl mb-4">{t(feature.titleKey)}</h3>
+                      <p className="text-lg text-stone-600 mb-12">{t(feature.contentKey)}</p>
                       <p className="text-base text-yellow-800 font-semibold bg-yellow-100 px-4 py-1 rounded-full inline-block">
                         {t(feature.benefitKey)}
                       </p>
@@ -192,10 +192,10 @@ export function Pitch() {
       <section className="bg-white py-16 sm:py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mt-12 mb-4">
+            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mt-12 mb-6">
               {t('pitch.choice_title')}
             </h2>
-            <p className="text-xl text-stone-600 max-w-3xl mx-auto text-center">
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto text-center mb-12">
               {t('pitch.choice_subtitle')}
             </p>
           </div>
@@ -271,16 +271,16 @@ export function Pitch() {
       {/* Call to Action Section */}
       <section className="bg-purple-900 text-white py-16 sm:py-24 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="font-serif text-5xl sm:text-6xl font-bold mb-4">
+          <h2 className="font-serif text-5xl sm:text-6xl font-bold mb-6">
             {t('pitch.cta_title')}
           </h2>
-          <blockquote className="font-serif text-3xl text-purple-200 mb-4 max-w-3xl mx-auto italic">
+          <blockquote className="font-serif text-3xl text-purple-200 mb-8 max-w-3xl mx-auto italic">
             {t('pitch.closing_quote')}
           </blockquote>
-          <p className="text-lg text-purple-300 mb-16">{t('pitch.closing_reference')}</p>
+          <p className="text-lg text-purple-300 mb-12">{t('pitch.closing_reference')}</p>
 
           <div className="bg-white/10 p-6 sm:p-8 rounded-xl border border-purple-700 max-w-3xl mx-auto">
-            <h3 className="font-serif text-3xl font-bold mb-6 text-white text-center">{t('pitch.next_steps_title')}</h3>
+            <h3 className="font-serif text-3xl font-bold mb-4 text-white text-center">{t('pitch.next_steps_title')}</h3>
             <div className="space-y-4">
               {nextSteps.map((step, index) => (
                 <label

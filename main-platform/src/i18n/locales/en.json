@@ -5,7 +5,7 @@
     "email_address": "Email address",
     "password": "Password",
     "or": "OR",
-    "truth": "Truth",
+    "truth": "Knowing",
     "practice": "Practice",
     "experience": "Experience",
     "fellowship": "Fellowship"
@@ -145,7 +145,7 @@
     "subtitle": "Whether you're an individual or a large organization, we have a plan that's right for you.",
     "individual": "Individual",
     "organization": "Organization",
-    "most_popular": "Most Popular",
+    "most_popular": "Not Apply Now",
     "no_credit_card": "No credit card required",
     "free": "Free",
     "donate_now": "Donate Now",

@@ -22,10 +22,10 @@ export function SubscriptionSelector({ onSelectPlan }: SubscriptionSelectorProps
     <div className="max-w-7xl mx-auto px-6">
       {/* Title */}
       <div className="text-center mb-4">
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 tracking-tight">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 tracking-tight">
           {t('subscription.title')}
         </h1>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-lg text-gray-600 leading-relaxed mb-12">
           {t('subscription.subtitle')}
         </p>
       </div>

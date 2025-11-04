@@ -31,17 +31,17 @@ export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
       )}
 
       {/* Plan Name */}
-      <h3 className="text-2xl font-semibold text-gray-900 mb-2 tracking-tight">
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4 tracking-tight">
         {plan.name}
       </h3>
 
       {/* Description */}
-      <p className="text-gray-600 mb-6 leading-relaxed">
+      <p className="text-gray-600 mb-12 leading-relaxed">
         {plan.description}
       </p>
 
       {/* Price */}
-      <div className="mb-6">
+      <div className="mb-12">
         <span className="text-4xl font-bold text-gray-900 tracking-tight">
           {plan.priceText}
         </span>
@@ -53,7 +53,7 @@ export function SubscriptionCard({ plan, onSelect }: SubscriptionCardProps) {
       </div>
 
       {/* Features */}
-      <ul className="space-y-4 mb-8 flex-grow">
+      <ul className="space-y-4 mb-12 flex-grow">
         {plan.features.map((feature, index) => (
           <li key={index} className="flex items-start">
             <CheckIcon className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0 mt-0.5" />
