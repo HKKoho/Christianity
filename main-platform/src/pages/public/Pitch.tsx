@@ -134,7 +134,7 @@ export function Pitch() {
         </nav>
       </header>
 
-      <div className="max-w-7xl mx-auto p-8">
+      <div className="max-w-4xl mx-auto p-8">
         {/* Hero Header */}
         <div className="text-center mb-8 pb-6 border-b-2 border-purple-600">
           <div className="text-4xl mb-2">✝️</div>
