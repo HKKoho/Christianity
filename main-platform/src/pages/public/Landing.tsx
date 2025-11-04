@@ -164,7 +164,7 @@ export function Landing() {
         <div
           className="relative z-10 w-full px-6"
           style={{
-            maxWidth: '1024px',
+            maxWidth: '1280px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -307,7 +307,7 @@ export function Landing() {
             animation: 'fadeIn 0.5s ease-in'
           }}
         >
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="text-center" style={{ marginBottom: '80px' }}>
             <h2
               className="text-3xl md:text-4xl font-bold mb-8 tracking-tight text-center"
