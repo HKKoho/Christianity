@@ -87,12 +87,12 @@ export function Pitch() {
             {t('pitch.crisis_title')}
           </h2>
           <p className="text-2xl text-stone-600 mb-12 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('pitch.crisis_subtitle') }} />
-          <div className="bg-red-50/80 p-6 rounded-xl border border-red-200 text-left max-w-3xl mx-auto">
-            <h3 className="font-serif text-4xl font-bold text-red-900 mb-4 flex items-center">
+          <div className="bg-red-50/80 p-6 rounded-xl border border-red-200 text-center max-w-3xl mx-auto">
+            <h3 className="font-serif text-4xl font-bold text-red-900 mb-4 flex items-center justify-center">
               <AlertCircle className="mr-3 text-red-500 flex-shrink-0" size={32} />
               {t('pitch.danger_title')}
             </h3>
-            <ul className="list-disc ml-14 space-y-2 text-stone-600 text-xl">
+            <ul className="list-disc space-y-2 text-stone-600 text-xl text-left inline-block">
               <li>{t('pitch.danger_point_1')}</li>
               <li>{t('pitch.danger_point_2')}</li>
               <li>{t('pitch.danger_point_3')}</li>
@@ -263,7 +263,7 @@ export function Pitch() {
           </blockquote>
           <p className="text-lg text-purple-300 mb-12">{t('pitch.closing_reference')}</p>
 
-          <div className="bg-white/10 p-6 sm:p-8 rounded-xl border border-purple-700 text-left">
+          <div className="bg-white/10 p-6 sm:p-8 rounded-xl border border-purple-700 max-w-3xl mx-auto">
             <h3 className="font-serif text-3xl font-bold mb-6 text-white text-center">{t('pitch.next_steps_title')}</h3>
             <div className="space-y-4">
               {nextSteps.map((step, index) => (
