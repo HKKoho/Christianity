@@ -107,7 +107,7 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
         >
           {modules.map((module, index) => {
             const angle = (360 / modules.length) * index;
-            const radius = 400; // Distance from center (reduced from 450)
+            const radius = 450; // Distance from center
 
             return (
               <div
@@ -117,8 +117,8 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
                   position: 'absolute',
                   left: '50%',
                   top: '50%',
-                  width: '240px',
-                  height: '380px',
+                  width: '300px',
+                  height: '420px',
                   transformStyle: 'preserve-3d',
                   transform: `
                     translate(-50%, -50%)
@@ -181,18 +181,6 @@ export function ModuleCarousel({ modules }: ModuleCarouselProps) {
         })}
       </div>
 
-      {/* Instructions */}
-      <div className="text-center mt-6">
-        <p
-          className="text-sm font-medium"
-          style={{
-            color: '#ffffff',
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)'
-          }}
-        >
-          Drag to rotate • Auto-rotates every 4 seconds
-        </p>
-      </div>
     </div>
   );
 }

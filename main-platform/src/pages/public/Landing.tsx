@@ -9,7 +9,11 @@ import { MockLogin } from '../../components/MockLogin';
 
 export function Landing() {
   const { t, i18n } = useTranslation();
-  const modules = getTranslatedModules(t);
+  const allModules = getTranslatedModules(t);
+  // Filter out Church Admin and Theology modules
+  const modules = allModules.filter(module =>
+    module.id !== 'church-admin' && module.id !== 'christianity'
+  );
   const [showMockLogin, setShowMockLogin] = useState(false);
   const [showModules, setShowModules] = useState(false);
 
