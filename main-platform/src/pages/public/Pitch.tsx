@@ -73,14 +73,14 @@ export function Pitch() {
         </div>
         <div className="max-w-7xl mx-auto w-full">
           <div className="mb-16"></div>
-          <h1 className="font-serif text-5xl sm:text-7xl font-bold leading-snug mb-2">
+          <h1 className="font-serif text-5xl sm:text-7xl font-bold leading-snug mb-8">
             {t('pitch.hero_title_1')}
           </h1>
-          <p className="text-3xl sm:text-5xl font-bold text-yellow-400 mb-6">
+          <p className="text-3xl sm:text-5xl font-bold text-yellow-400 mb-12">
             {t('pitch.hero_title_2')}
           </p>
-          <p className="text-2xl sm:text-3xl text-purple-200 font-light mx-auto mb-16" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
-          <div className="mt-10">
+          <p className="text-2xl sm:text-3xl text-purple-200 font-light mx-auto mb-20" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
+          <div className="mt-12">
             <button
               onClick={handleDiscoverClick}
               className="inline-block bg-yellow-400 text-purple-950 font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-yellow-300 transition-transform transform hover:scale-105 cursor-pointer"
