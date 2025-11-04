@@ -19,7 +19,7 @@ export function SubscriptionSelector({ onSelectPlan }: SubscriptionSelectorProps
     : getOrganizationPlans(t);
 
   return (
-    <div className="max-w-2xl mx-auto px-6">
+    <div className="max-w-5xl mx-auto px-6">
       {/* Title */}
       <div className="text-center mb-4">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 tracking-tight">
