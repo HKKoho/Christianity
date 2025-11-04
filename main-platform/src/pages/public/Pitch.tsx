@@ -97,13 +97,13 @@ export function Pitch() {
       {/* Introduction Section - The Crisis */}
       <section id="introduction" className="bg-stone-100 py-16 sm:py-24 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mb-6">
+          <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mt-12 mb-6">
             {t('pitch.crisis_title')}
           </h2>
           <p className="text-2xl text-stone-600 mb-12 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('pitch.crisis_subtitle') }} />
           <div className="flex justify-center">
             <div className="bg-red-50/80 p-6 rounded-xl border border-red-200 text-center max-w-4xl w-full">
-              <h3 className="font-serif text-4xl font-bold text-red-900 mb-4 flex items-center justify-center">
+              <h3 className="font-serif text-4xl font-bold text-red-900 mt-12 mb-4 flex items-center justify-center">
                 <AlertCircle className="mr-3 text-red-500 flex-shrink-0" size={32} />
                 {t('pitch.danger_title')}
               </h3>
@@ -157,7 +157,7 @@ export function Pitch() {
       <section className="bg-stone-100 py-16 sm:py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mb-4">
+            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mt-12 mb-4">
               {t('pitch.features_title')}
             </h2>
             <p className="text-xl text-stone-600 max-w-3xl mx-auto">
@@ -192,7 +192,7 @@ export function Pitch() {
       <section className="bg-white py-16 sm:py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mb-4">
+            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mt-12 mb-4">
               {t('pitch.choice_title')}
             </h2>
             <p className="text-xl text-stone-600 max-w-3xl mx-auto">
