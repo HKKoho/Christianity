@@ -1,250 +1,305 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, AlertCircle, CheckCircle, Palette, HelpCircle, Edit3, Link as LinkIcon, Layers, BrainCircuit, Users, CheckSquare } from 'lucide-react';
+import { ArrowLeft, AlertCircle, CheckCircle, ArrowDown, ArrowRight, Check, ThumbsUp, ThumbsDown, ShieldCheck, Palette, HelpCircle, Edit3, Link as LinkIcon, Layers, BrainCircuit, Users, CheckSquare } from 'lucide-react';
 
 export function Pitch() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [checkedSteps, setCheckedSteps] = useState<number[]>([]);
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'zh-TW' ? 'en' : 'zh-TW';
+    i18n.changeLanguage(newLang);
+  };
 
   const features = [
-    {
-      icon: Palette,
-      titleKey: 'pitch.step_1_title',
-      contentKey: 'pitch.step_1_content',
-      benefitKey: 'pitch.step_1_benefit',
-      color: 'yellow'
-    },
-    {
-      icon: HelpCircle,
-      titleKey: 'pitch.step_2_title',
-      contentKey: 'pitch.step_2_content',
-      benefitKey: 'pitch.step_2_benefit',
-      color: 'blue'
-    },
-    {
-      icon: Edit3,
-      titleKey: 'pitch.step_3_title',
-      contentKey: 'pitch.step_3_content',
-      benefitKey: 'pitch.step_3_benefit',
-      color: 'purple'
-    },
-    {
-      icon: LinkIcon,
-      titleKey: 'pitch.step_4_title',
-      contentKey: 'pitch.step_4_content',
-      benefitKey: 'pitch.step_4_benefit',
-      color: 'green'
-    },
-    {
-      icon: Layers,
-      titleKey: 'pitch.step_5_title',
-      contentKey: 'pitch.step_5_content',
-      benefitKey: 'pitch.step_5_benefit',
-      color: 'orange'
-    },
-    {
-      icon: BrainCircuit,
-      titleKey: 'pitch.step_6_title',
-      contentKey: 'pitch.step_6_content',
-      benefitKey: 'pitch.step_6_benefit',
-      color: 'indigo'
-    },
-    {
-      icon: Users,
-      titleKey: 'pitch.step_7_title',
-      contentKey: 'pitch.step_7_content',
-      benefitKey: 'pitch.step_7_benefit',
-      color: 'pink'
-    },
-    {
-      icon: CheckSquare,
-      titleKey: 'pitch.step_8_title',
-      contentKey: 'pitch.step_8_content',
-      benefitKey: 'pitch.step_8_benefit',
-      color: 'red'
-    }
+    { icon: Palette, titleKey: 'pitch.step_1_title', contentKey: 'pitch.step_1_content', benefitKey: 'pitch.step_1_benefit' },
+    { icon: HelpCircle, titleKey: 'pitch.step_2_title', contentKey: 'pitch.step_2_content', benefitKey: 'pitch.step_2_benefit' },
+    { icon: Edit3, titleKey: 'pitch.step_3_title', contentKey: 'pitch.step_3_content', benefitKey: 'pitch.step_3_benefit' },
+    { icon: LinkIcon, titleKey: 'pitch.step_4_title', contentKey: 'pitch.step_4_content', benefitKey: 'pitch.step_4_benefit' },
+    { icon: Layers, titleKey: 'pitch.step_5_title', contentKey: 'pitch.step_5_content', benefitKey: 'pitch.step_5_benefit' },
+    { icon: BrainCircuit, titleKey: 'pitch.step_6_title', contentKey: 'pitch.step_6_content', benefitKey: 'pitch.step_6_benefit' },
+    { icon: Users, titleKey: 'pitch.step_7_title', contentKey: 'pitch.step_7_content', benefitKey: 'pitch.step_7_benefit' },
+    { icon: CheckSquare, titleKey: 'pitch.step_8_title', contentKey: 'pitch.step_8_content', benefitKey: 'pitch.step_8_benefit' },
   ];
 
-  const colorClasses = {
-    yellow: {
-      bg: 'bg-yellow-50',
-      border: 'border-yellow-600',
-      text: 'text-yellow-900',
-      subtext: 'text-yellow-800'
-    },
-    blue: {
-      bg: 'bg-blue-50',
-      border: 'border-blue-600',
-      text: 'text-blue-900',
-      subtext: 'text-blue-800'
-    },
-    purple: {
-      bg: 'bg-purple-50',
-      border: 'border-purple-600',
-      text: 'text-purple-900',
-      subtext: 'text-purple-800'
-    },
-    green: {
-      bg: 'bg-green-50',
-      border: 'border-green-600',
-      text: 'text-green-900',
-      subtext: 'text-green-800'
-    },
-    orange: {
-      bg: 'bg-orange-50',
-      border: 'border-orange-600',
-      text: 'text-orange-900',
-      subtext: 'text-orange-800'
-    },
-    indigo: {
-      bg: 'bg-indigo-50',
-      border: 'border-indigo-600',
-      text: 'text-indigo-900',
-      subtext: 'text-indigo-800'
-    },
-    pink: {
-      bg: 'bg-pink-50',
-      border: 'border-pink-600',
-      text: 'text-pink-900',
-      subtext: 'text-pink-800'
-    },
-    red: {
-      bg: 'bg-red-50',
-      border: 'border-red-600',
-      text: 'text-red-900',
-      subtext: 'text-red-800'
-    }
+  const nextSteps = [
+    t('pitch.next_step_1'),
+    t('pitch.next_step_2'),
+    t('pitch.next_step_3'),
+    t('pitch.next_step_4'),
+  ];
+
+  const toggleStep = (index: number) => {
+    setCheckedSteps(prev =>
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div className="min-h-screen bg-white font-sans text-stone-700">
+      {/* Hero Section */}
+      <section className="bg-purple-900 text-white text-center py-20 sm:py-32 px-4 relative">
+        <div className="absolute top-4 left-4">
           <Link
             to="/"
-            className="flex items-center gap-2 text-gray-700 hover:text-purple-700 transition-colors font-semibold"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg"
           >
             <ArrowLeft size={20} />
             <span>{t('common.back_to_home')}</span>
           </Link>
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">✝️</span>
-            <span className="text-2xl font-bold text-purple-900">{t('landing.brand_name')}</span>
-          </div>
-        </nav>
-      </header>
-
-      <div className="max-w-7xl mx-auto p-8">
-        {/* Hero Header */}
-        <div className="text-center mb-8 pb-6 border-b-2 border-purple-600">
-          <div className="text-4xl mb-2">✝️</div>
-          <h1 className="text-3xl md:text-4xl font-bold text-purple-900 mb-2">
+        </div>
+        <div className="absolute top-4 right-4">
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+            {i18n.language === 'zh-TW' ? 'EN' : '中文'}
+          </button>
+        </div>
+        <div className="max-w-4xl mx-auto">
+          <h1 className="font-serif text-5xl sm:text-7xl font-bold leading-snug mb-2">
             {t('pitch.hero_title_1')}
           </h1>
-          <p className="text-xl md:text-2xl text-purple-700 font-semibold mb-2">
+          <p className="text-6xl sm:text-8xl font-bold text-yellow-400 mb-6">
             {t('pitch.hero_title_2')}
           </p>
-          <div className="text-sm text-gray-600 mt-2" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
+          <p className="text-2xl sm:text-3xl text-purple-200 font-light max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
+          <div className="mt-10">
+            <a
+              href="#introduction"
+              className="inline-block bg-yellow-400 text-purple-950 font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-yellow-300 transition-transform transform hover:scale-105"
+            >
+              {t('pitch.discover_vision')}
+              <ArrowDown className="inline-block ml-2" size={24} />
+            </a>
+          </div>
         </div>
+      </section>
 
-        {/* The Problem */}
-        <section className="mb-8 bg-red-50 p-6 rounded-lg border-l-4 border-red-600">
-          <h2 className="text-xl font-bold text-red-900 mb-3 flex items-center">
-            <AlertCircle className="mr-2" size={24} />
+      {/* Introduction Section - The Crisis */}
+      <section id="introduction" className="bg-stone-100 py-16 sm:py-24 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mb-6">
             {t('pitch.crisis_title')}
           </h2>
-          <div className="space-y-2 text-gray-800">
-            <div dangerouslySetInnerHTML={{ __html: t('pitch.crisis_subtitle') }} className="mb-4" />
-            <p className="font-semibold">{t('pitch.danger_title')}</p>
-            <ul className="list-disc ml-6 space-y-1">
+          <p className="text-2xl text-stone-600 mb-12 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('pitch.crisis_subtitle') }} />
+          <div className="bg-red-50/80 p-6 rounded-xl border border-red-200 text-left max-w-3xl mx-auto">
+            <h3 className="font-serif text-4xl font-bold text-red-900 mb-4 flex items-center">
+              <AlertCircle className="mr-3 text-red-500 flex-shrink-0" size={32} />
+              {t('pitch.danger_title')}
+            </h3>
+            <ul className="list-disc ml-14 space-y-2 text-stone-600 text-xl">
               <li>{t('pitch.danger_point_1')}</li>
               <li>{t('pitch.danger_point_2')}</li>
               <li>{t('pitch.danger_point_3')}</li>
               <li>{t('pitch.danger_point_4')}</li>
             </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Our Solution */}
-        <section className="mb-8 bg-green-50 p-6 rounded-lg border-l-4 border-green-600">
-          <h2 className="text-xl font-bold text-green-900 mb-3 flex items-center">
-            <CheckCircle className="mr-2" size={24} />
-            {t('pitch.solution_title')}
-          </h2>
-          <div className="bg-white p-4 rounded border-2 border-green-300 mb-4">
-            <div className="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-semibold">
-              <span className="text-purple-700">{t('pitch.journey_step_1')}</span>
-              <span className="text-gray-400">→</span>
-              <span className="text-blue-700">{t('pitch.journey_step_2')}</span>
-              <span className="text-gray-400">→</span>
-              <span className="text-indigo-700">{t('pitch.journey_step_3')}</span>
-              <span className="text-gray-400">→</span>
-              <span className="text-orange-700">{t('pitch.journey_step_4')}</span>
-              <span className="text-gray-400">→</span>
-              <span className="text-red-700">{t('pitch.journey_step_5')}</span>
+      {/* Vision Section */}
+      <section className="bg-white py-16 sm:py-24 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <CheckCircle className="mx-auto text-green-600 mb-4" size={52} />
+          <h2 className="font-serif text-5xl sm:text-6xl font-bold text-green-900 mb-4 leading-tight" dangerouslySetInnerHTML={{ __html: t('pitch.solution_title') }} />
+          <p className="text-3xl text-stone-600 mb-12 leading-relaxed max-w-4xl mx-auto" dangerouslySetInnerHTML={{ __html: t('pitch.solution_subtitle') }} />
+          <div className="bg-green-50/80 p-8 rounded-xl border-2 border-green-200 shadow-inner">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center font-semibold flex-wrap">
+              <div className="flex flex-col items-center px-4">
+                <span className="text-2xl text-purple-700">{t('pitch.journey_step_1')}</span>
+                <span className="text-lg text-stone-500 mt-1">{t('common.truth')}</span>
+              </div>
+              <ArrowRight className="text-stone-300 mx-4 hidden sm:block" size={28}/>
+              <div className="flex flex-col items-center px-4">
+                <span className="text-2xl text-blue-700">{t('pitch.journey_step_2')}</span>
+                <span className="text-lg text-stone-500 mt-1">{t('common.practice')}</span>
+              </div>
+              <ArrowRight className="text-stone-300 mx-4 hidden sm:block" size={28}/>
+              <div className="flex flex-col items-center px-4">
+                <span className="text-2xl text-indigo-700">{t('pitch.journey_step_3')}</span>
+                <span className="text-lg text-stone-500 mt-1">{t('common.experience')}</span>
+              </div>
+              <ArrowRight className="text-stone-300 mx-4 hidden sm:block" size={28}/>
+              <div className="flex flex-col items-center px-4">
+                <span className="text-2xl text-orange-700">{t('pitch.journey_step_4')}</span>
+                <span className="text-lg text-stone-500 mt-1">{t('common.fellowship')}</span>
+              </div>
             </div>
           </div>
-          <p className="text-gray-800 font-semibold" dangerouslySetInnerHTML={{ __html: t('pitch.solution_subtitle') }} />
-        </section>
+          <p className="font-serif text-4xl text-green-800 italic mt-10">
+            {t('pitch.journey_step_5')}
+          </p>
+        </div>
+      </section>
 
-        {/* Key Features */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-purple-900 mb-4">
-            {t('pitch.features_title')}
-          </h2>
-
-          <div className="space-y-4">
+      {/* Features Section - 8-Step Transformation */}
+      <section className="bg-stone-100 py-16 sm:py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mb-4">
+              {t('pitch.features_title')}
+            </h2>
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+              {t('pitch.features_subtitle')}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
-              const colors = colorClasses[feature.color];
-
               return (
-                <div key={index} className={`${colors.bg} p-4 rounded-lg border-l-4 ${colors.border}`}>
-                  <h3 className={`font-bold ${colors.text} mb-2 flex items-center`}>
-                    <Icon className="mr-2" size={20} />
-                    {index + 1}. {t(feature.titleKey)}
-                  </h3>
-                  <p className="text-sm text-gray-700 mb-2">
-                    {t(feature.contentKey)}
-                  </p>
-                  <p className={`text-xs ${colors.subtext} font-semibold`}>
-                    ✓ {t(feature.benefitKey)}
-                  </p>
+                <div key={index} className="bg-white p-6 rounded-xl border border-stone-200 hover:shadow-xl hover:border-purple-300 transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="flex items-start">
+                    <div className="bg-purple-100 text-purple-700 p-4 rounded-full mr-5 flex-shrink-0">
+                      <Icon size={28} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-purple-900 text-2xl mb-1">{t(feature.titleKey)}</h3>
+                      <p className="text-lg text-stone-600 mb-3">{t(feature.contentKey)}</p>
+                      <p className="text-base text-yellow-800 font-semibold bg-yellow-100 px-4 py-1 rounded-full inline-block">
+                        {t(feature.benefitKey)}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Call to Action */}
-        <section className="mb-8 bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg border-2 border-purple-300">
-          <h2 className="text-2xl font-bold text-center text-purple-900 mb-4">
+      {/* The Choice Section */}
+      <section className="bg-white py-16 sm:py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mb-4">
+              {t('pitch.choice_title')}
+            </h2>
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+              {t('pitch.choice_subtitle')}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* Path 1 */}
+            <div className="bg-white/70 p-8 rounded-xl border border-stone-300 shadow-lg relative opacity-80 hover:opacity-100 transition-opacity">
+              <div className="flex items-center text-red-700 mb-3">
+                <ThumbsDown className="mr-3 flex-shrink-0" size={28}/>
+                <h3 className="font-serif text-3xl font-bold">{t('pitch.path1_title')}</h3>
+              </div>
+              <p className="text-base text-stone-600 mb-4 font-semibold">{t('pitch.path1_subtitle')}</p>
+              <ul className="text-base text-stone-600 space-y-2">
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2 mt-1">✓</span>
+                  {t('pitch.path1_point_1')}
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2 mt-1">✓</span>
+                  {t('pitch.path1_point_2')}
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2 mt-1">✓</span>
+                  {t('pitch.path1_point_3')}
+                </li>
+                <li className="flex items-start font-bold text-red-800">
+                  <span className="text-red-600 mr-2 mt-1">✗</span>
+                  {t('pitch.path1_point_4')}
+                </li>
+                <li className="flex items-start font-bold text-red-800">
+                  <span className="text-red-600 mr-2 mt-1">✗</span>
+                  {t('pitch.path1_point_5')}
+                </li>
+              </ul>
+            </div>
+
+            {/* Path 2 */}
+            <div className="bg-white p-8 rounded-xl border-2 border-yellow-500 shadow-2xl relative transform lg:scale-105">
+              <div className="absolute -top-4 -right-4 bg-yellow-500 text-white px-4 py-2 rounded-full text-base font-bold shadow-lg flex items-center">
+                <ShieldCheck className="mr-2" size={16}/> {t('pitch.path2_badge')}
+              </div>
+              <div className="flex items-center text-green-700 mb-3">
+                <ThumbsUp className="mr-3 flex-shrink-0" size={28}/>
+                <h3 className="font-serif text-3xl font-bold">{t('pitch.path2_title')}</h3>
+              </div>
+              <p className="text-base text-stone-600 mb-4 font-semibold">{t('pitch.path2_subtitle')}</p>
+              <ul className="text-base text-stone-600 space-y-2">
+                <li className="flex items-start font-bold text-green-800">
+                  <span className="text-green-600 mr-2 mt-1">✓</span>
+                  {t('pitch.path2_point_1')}
+                </li>
+                <li className="flex items-start font-bold text-green-800">
+                  <span className="text-green-600 mr-2 mt-1">✓</span>
+                  {t('pitch.path2_point_2')}
+                </li>
+                <li className="flex items-start font-bold text-green-800">
+                  <span className="text-green-600 mr-2 mt-1">✓</span>
+                  {t('pitch.path2_point_3')}
+                </li>
+                <li className="flex items-start text-yellow-700">
+                  <span className="text-yellow-600 mr-2 mt-1">⚠</span>
+                  {t('pitch.path2_point_4')}
+                </li>
+                <li className="flex items-start text-yellow-700">
+                  <span className="text-yellow-600 mr-2 mt-1">⚠</span>
+                  {t('pitch.path2_point_5')}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="bg-purple-900 text-white py-16 sm:py-24 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="font-serif text-5xl sm:text-6xl font-bold mb-4">
             {t('pitch.cta_title')}
           </h2>
-          <p className="text-center text-gray-700 mb-6" dangerouslySetInnerHTML={{ __html: t('pitch.cta_subtitle') }} />
-          <div className="flex justify-center">
+          <blockquote className="font-serif text-3xl text-purple-200 mb-2 max-w-3xl mx-auto italic">
+            {t('pitch.closing_quote')}
+          </blockquote>
+          <p className="text-lg text-purple-300 mb-12">{t('pitch.closing_reference')}</p>
+
+          <div className="bg-white/10 p-6 sm:p-8 rounded-xl border border-purple-700 text-left">
+            <h3 className="font-serif text-3xl font-bold mb-6 text-white text-center">{t('pitch.next_steps_title')}</h3>
+            <div className="space-y-4">
+              {nextSteps.map((step, index) => (
+                <label
+                  key={index}
+                  className={`flex items-start p-4 rounded-lg transition-all duration-300 cursor-pointer border ${checkedSteps.includes(index) ? 'bg-green-500/30 border-green-400' : 'bg-purple-800/50 hover:bg-purple-700/50 border-purple-700'}`}
+                >
+                  <div
+                    className={`w-7 h-7 rounded-md mr-4 mt-0.5 flex-shrink-0 flex items-center justify-center border-2 transition-all ${checkedSteps.includes(index) ? 'bg-yellow-400 border-yellow-400' : 'border-purple-400'}`}
+                  >
+                    {checkedSteps.includes(index) && <Check className="text-purple-950" size={18} />}
+                  </div>
+                  <input
+                    type="checkbox"
+                    className="hidden"
+                    checked={checkedSteps.includes(index)}
+                    onChange={() => toggleStep(index)}
+                  />
+                  <span className={`flex-1 text-lg ${checkedSteps.includes(index) ? 'line-through text-purple-300' : 'text-purple-100'}`}>
+                    {step}
+                  </span>
+                </label>
+              ))}
+            </div>
+          </div>
+          <div className="mt-12">
             <Link
               to="/subscription"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-block bg-yellow-400 text-purple-950 font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-yellow-300 transition-transform transform hover:scale-105"
             >
               {t('pitch.cta_button')}
-              <ArrowLeft className="rotate-180" size={20} />
+              <ArrowRight className="inline-block ml-2" size={24} />
             </Link>
           </div>
-        </section>
-
-        {/* Closing */}
-        <section className="text-center py-6 border-t-2 border-purple-600">
-          <div className="text-4xl mb-3">✝️</div>
-          <p className="text-lg font-bold text-purple-900 mb-2">
-            {t('pitch.closing_quote')}
-          </p>
-          <p className="text-sm text-gray-600 mb-4">{t('pitch.closing_reference')}</p>
-          <p className="text-base font-semibold text-gray-800 italic">
-            {t('pitch.closing_message')}
-          </p>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-black text-white py-16 border-t border-gray-800">
