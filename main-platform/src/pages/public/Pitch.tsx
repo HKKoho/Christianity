@@ -64,7 +64,7 @@ export function Pitch() {
           <h1 className="font-serif text-5xl sm:text-7xl font-bold leading-snug mb-2">
             {t('pitch.hero_title_1')}
           </h1>
-          <p className="text-6xl sm:text-8xl font-bold text-yellow-400 mb-6">
+          <p className="text-3xl sm:text-5xl font-bold text-yellow-400 mb-6">
             {t('pitch.hero_title_2')}
           </p>
           <p className="text-2xl sm:text-3xl text-purple-200 font-light max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
