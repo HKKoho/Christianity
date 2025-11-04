@@ -60,14 +60,14 @@ export function Pitch() {
             {i18n.language === 'zh-TW' ? 'EN' : '中文'}
           </button>
         </div>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h1 className="font-serif text-5xl sm:text-7xl font-bold leading-snug mb-2">
             {t('pitch.hero_title_1')}
           </h1>
           <p className="text-3xl sm:text-5xl font-bold text-yellow-400 mb-6">
             {t('pitch.hero_title_2')}
           </p>
-          <p className="text-2xl sm:text-3xl text-purple-200 font-light max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
+          <p className="text-2xl sm:text-3xl text-purple-200 font-light mx-auto" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
           <div className="mt-10">
             <a
               href="#introduction"
@@ -82,7 +82,7 @@ export function Pitch() {
 
       {/* Introduction Section - The Crisis */}
       <section id="introduction" className="bg-stone-100 py-16 sm:py-24 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mb-6">
             {t('pitch.crisis_title')}
           </h2>
@@ -104,10 +104,10 @@ export function Pitch() {
 
       {/* Vision Section */}
       <section className="bg-white py-16 sm:py-24 px-4">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <CheckCircle className="mx-auto text-green-600 mb-4" size={52} />
           <h2 className="font-serif text-5xl sm:text-6xl font-bold text-green-900 mb-4 leading-tight" dangerouslySetInnerHTML={{ __html: t('pitch.solution_title') }} />
-          <p className="text-3xl text-stone-600 mb-12 leading-relaxed max-w-4xl mx-auto" dangerouslySetInnerHTML={{ __html: t('pitch.solution_subtitle') }} />
+          <p className="text-3xl text-stone-600 mb-12 leading-relaxed text-center" dangerouslySetInnerHTML={{ __html: t('pitch.solution_subtitle') }} />
           <div className="bg-green-50/80 p-8 rounded-xl border-2 border-green-200 shadow-inner">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center font-semibold flex-wrap">
               <div className="flex flex-col items-center px-4">
@@ -254,7 +254,7 @@ export function Pitch() {
 
       {/* Call to Action Section */}
       <section className="bg-purple-900 text-white py-16 sm:py-24 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <h2 className="font-serif text-5xl sm:text-6xl font-bold mb-4">
             {t('pitch.cta_title')}
           </h2>
