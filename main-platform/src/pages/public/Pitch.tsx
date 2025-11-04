@@ -160,7 +160,7 @@ export function Pitch() {
             <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mt-12 mb-4">
               {t('pitch.features_title')}
             </h2>
-            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto text-center">
               {t('pitch.features_subtitle')}
             </p>
           </div>
@@ -195,7 +195,7 @@ export function Pitch() {
             <h2 className="font-serif text-5xl sm:text-6xl font-bold text-purple-900 mt-12 mb-4">
               {t('pitch.choice_title')}
             </h2>
-            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto text-center">
               {t('pitch.choice_subtitle')}
             </p>
           </div>
