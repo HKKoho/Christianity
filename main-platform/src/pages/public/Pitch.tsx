@@ -87,17 +87,19 @@ export function Pitch() {
             {t('pitch.crisis_title')}
           </h2>
           <p className="text-2xl text-stone-600 mb-12 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('pitch.crisis_subtitle') }} />
-          <div className="bg-red-50/80 p-6 rounded-xl border border-red-200 text-center max-w-3xl mx-auto">
-            <h3 className="font-serif text-4xl font-bold text-red-900 mb-4 flex items-center justify-center">
-              <AlertCircle className="mr-3 text-red-500 flex-shrink-0" size={32} />
-              {t('pitch.danger_title')}
-            </h3>
-            <ul className="list-disc space-y-2 text-stone-600 text-xl text-left inline-block">
-              <li>{t('pitch.danger_point_1')}</li>
-              <li>{t('pitch.danger_point_2')}</li>
-              <li>{t('pitch.danger_point_3')}</li>
-              <li>{t('pitch.danger_point_4')}</li>
-            </ul>
+          <div className="flex justify-center">
+            <div className="bg-red-50/80 p-6 rounded-xl border border-red-200 text-center max-w-4xl w-full">
+              <h3 className="font-serif text-4xl font-bold text-red-900 mb-4 flex items-center justify-center">
+                <AlertCircle className="mr-3 text-red-500 flex-shrink-0" size={32} />
+                {t('pitch.danger_title')}
+              </h3>
+              <ul className="list-disc space-y-2 text-stone-600 text-xl text-left inline-block mx-auto">
+                <li>{t('pitch.danger_point_1')}</li>
+                <li>{t('pitch.danger_point_2')}</li>
+                <li>{t('pitch.danger_point_3')}</li>
+                <li>{t('pitch.danger_point_4')}</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
