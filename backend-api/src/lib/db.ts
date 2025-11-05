@@ -7,9 +7,9 @@ export async function connectDB(): Promise<Db> {
   if (db) return db;
 
   try {
-    const uri = process.env.MONGODB_URI;
+    const uri = process.env.DATABASE_URL || process.env.MONGODB_URI;
     if (!uri) {
-      console.warn('⚠️  MONGODB_URI is not defined - running without database');
+      console.warn('⚠️  DATABASE_URL is not defined - running without database');
       return null as any;
     }
 
