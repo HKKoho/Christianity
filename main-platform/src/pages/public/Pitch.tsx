@@ -67,11 +67,11 @@ export function Pitch() {
     }
   ];
 
-  // Auto-rotate slides every 15 seconds
+  // Auto-rotate slides every 20 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 15000); // Change slide every 15 seconds
+    }, 20000); // Change slide every 20 seconds
 
     return () => clearInterval(timer);
   }, [heroSlides.length]);
