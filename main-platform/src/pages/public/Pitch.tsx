@@ -48,30 +48,30 @@ export function Pitch() {
     );
   };
 
-  // Rotating hero slides - You can edit these texts later
+  // Rotating hero slides - Translated via i18n
   const heroSlides = [
     {
-      title: "Baptisted by Internet, Social Media and AI",
-      subtitle: "We consume 'shadow knowledge' enjoyed being a know-thing 'shadow' believer",
-      highlight: "But Knowing is not Experiencing"
+      title: t('pitch.hero_slide_1_title'),
+      subtitle: t('pitch.hero_slide_1_subtitle'),
+      highlight: t('pitch.hero_slide_1_highlight')
     },
     {
-      title: "What is 'Shadow Knowledge'",
-      subtitle: "You have a sketch of knowing the thing, you never know the details, you do not have fulfiment and frustration in experiencing",
-      highlight: "Shadow Knowledge Doesn't Create Intelligence"
+      title: t('pitch.hero_slide_2_title'),
+      subtitle: t('pitch.hero_slide_2_subtitle'),
+      highlight: t('pitch.hero_slide_2_highlight')
     },
     {
-      title: "Let's Stop Making",
-      subtitle: "From knowing about God to truely experience Him together",
-      highlight: "Shadow Believers"
+      title: t('pitch.hero_slide_3_title'),
+      subtitle: t('pitch.hero_slide_3_subtitle'),
+      highlight: t('pitch.hero_slide_3_highlight')
     }
   ];
 
-  // Auto-rotate slides every 5 seconds
+  // Auto-rotate slides every 10 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 10000); // Change slide every 10 seconds
 
     return () => clearInterval(timer);
   }, [heroSlides.length]);
@@ -204,7 +204,7 @@ export function Pitch() {
               onClick={handleDiscoverClick}
               className="inline-block bg-purple-700 text-white font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-purple-800 transition-all transform hover:scale-105 cursor-pointer"
             >
-              Discover our Vision, Explore More Practical Tools for Modern Christian Living
+              {t('pitch.discover_button')}
               <ArrowDown className="inline-block ml-2" size={24} />
             </button>
           </div>
