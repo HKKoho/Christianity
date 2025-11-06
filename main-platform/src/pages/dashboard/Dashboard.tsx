@@ -90,12 +90,12 @@ export function Dashboard() {
                 </div>
 
                 {/* Module title */}
-                <h3 className={`text-3xl font-bold ${color.text} mb-4 group-hover:scale-105 transition-transform duration-500 leading-tight`}>
+                <h3 className={`text-2xl md:text-3xl lg:text-4xl font-bold ${color.text} mb-4 group-hover:scale-105 transition-transform duration-500 leading-tight`}>
                   {module.displayName}
                 </h3>
 
                 {/* Description */}
-                <p className="text-base text-gray-600 mb-8 line-clamp-3 leading-relaxed min-h-[4.5rem]">
+                <p className="text-lg md:text-lg lg:text-xl text-gray-600 mb-8 line-clamp-3 leading-relaxed min-h-[4.5rem]">
                   {module.description}
                 </p>
 
@@ -108,7 +108,7 @@ export function Dashboard() {
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <span className="text-sm text-gray-700 font-medium flex-1">{feature}</span>
+                      <span className="text-base md:text-base lg:text-lg text-gray-700 font-medium flex-1">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -133,21 +133,21 @@ export function Dashboard() {
       {/* Quick Stats */}
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white shadow rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dashboard.your_progress')}</h3>
-          <p className="text-3xl font-bold text-indigo-600">0%</p>
-          <p className="text-sm text-gray-600 mt-1">{t('dashboard.progress_hint')}</p>
+          <h3 className="text-xl md:text-2xl lg:text-2xl font-semibold text-gray-900 mb-2">{t('dashboard.your_progress')}</h3>
+          <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-600">0%</p>
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 mt-1">{t('dashboard.progress_hint')}</p>
         </div>
 
         <div className="bg-white shadow rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dashboard.available_modules')}</h3>
-          <p className="text-3xl font-bold text-indigo-600">{modules.length}</p>
-          <p className="text-sm text-gray-600 mt-1">{t('dashboard.specialized_tools')}</p>
+          <h3 className="text-xl md:text-2xl lg:text-2xl font-semibold text-gray-900 mb-2">{t('dashboard.available_modules')}</h3>
+          <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-600">{modules.length}</p>
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 mt-1">{t('dashboard.specialized_tools')}</p>
         </div>
 
         <div className="bg-white shadow rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dashboard.account_type')}</h3>
-          <p className="text-3xl font-bold text-indigo-600">{t('dashboard.free')}</p>
-          <p className="text-sm text-gray-600 mt-1">{t('dashboard.full_access')}</p>
+          <h3 className="text-xl md:text-2xl lg:text-2xl font-semibold text-gray-900 mb-2">{t('dashboard.account_type')}</h3>
+          <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-600">{t('dashboard.free')}</p>
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 mt-1">{t('dashboard.full_access')}</p>
         </div>
       </div>
     </div>

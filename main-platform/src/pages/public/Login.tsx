@@ -49,7 +49,7 @@ export function Login() {
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
             {t('login.title')}
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-base md:text-base lg:text-lg text-gray-600">
             {t('login.no_account')}{' '}
             <Link to="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
               {t('login.sign_up_free')}
@@ -72,7 +72,7 @@ export function Login() {
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-base md:text-base lg:text-lg font-medium text-gray-700 mb-2">
                 {t('common.email_address')}
               </label>
               <input
@@ -89,7 +89,7 @@ export function Login() {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-base md:text-base lg:text-lg font-medium text-gray-700 mb-2">
                 {t('common.password')}
               </label>
               <input
@@ -127,7 +127,7 @@ export function Login() {
           </form>
 
           <div className="mt-6 text-center">
-            <Link to="/" className="text-sm text-gray-600 hover:text-indigo-600 transition-colors">
+            <Link to="/" className="text-base md:text-base lg:text-lg text-gray-600 hover:text-indigo-600 transition-colors">
               {t('common.back_to_home')}
             </Link>
           </div>
