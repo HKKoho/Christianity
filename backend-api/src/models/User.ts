@@ -6,6 +6,10 @@ export interface User {
   email: string;
   password: string;
   role?: string;
+  authProvider?: 'google' | 'github' | 'whatsapp' | 'email';
+  authProviderId?: string;
+  profilePicture?: string;
+  phoneNumber?: string; // For WhatsApp authentication
   createdAt: Date;
   updatedAt: Date;
 }
@@ -15,6 +19,8 @@ export interface UserResponse {
   name: string;
   email: string;
   role?: string;
+  authProvider?: string;
+  profilePicture?: string;
   createdAt: Date;
 }
 
@@ -24,6 +30,8 @@ export function sanitizeUser(user: User): UserResponse {
     name: user.name,
     email: user.email,
     role: user.role,
+    authProvider: user.authProvider,
+    profilePicture: user.profilePicture,
     createdAt: user.createdAt,
   };
 }

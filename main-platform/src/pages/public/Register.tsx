@@ -47,13 +47,23 @@ export function Register() {
     setViewState('details');
   };
 
-  const handleSocialAuth = (provider: string) => {
+  const handleSocialAuth = (provider: 'google' | 'github' | 'whatsapp') => {
     if (!acceptedTerms) {
       setError(t('register.accept_terms_error'));
       return;
     }
-    // Social auth would be implemented here
-    console.log(`Authenticating with ${provider}`);
+
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+
+    if (provider === 'whatsapp') {
+      // WhatsApp requires phone number - show modal or redirect to special flow
+      console.log('WhatsApp auth requires phone number');
+      // TODO: Implement WhatsApp OTP flow
+      return;
+    }
+
+    // Redirect to OAuth provider
+    window.location.href = `${API_URL}/api/auth/${provider}`;
   };
 
   const handleRegister = async (e: FormEvent) => {
@@ -214,13 +224,13 @@ export function Register() {
                 />
                 <label htmlFor="accept-terms" className="ml-3 block text-sm text-gray-600">
                   {t('register.accept_terms')}{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                  <Link to="/terms-of-service" target="_blank" className="text-indigo-600 hover:text-indigo-500">
                     {t('register.terms_of_service')}
-                  </a>{' '}
+                  </Link>{' '}
                   {t('register.and')}{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                  <Link to="/privacy-policy" target="_blank" className="text-indigo-600 hover:text-indigo-500">
                     {t('register.privacy_policy')}
-                  </a>
+                  </Link>
                 </label>
               </div>
 

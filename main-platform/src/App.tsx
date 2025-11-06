@@ -9,6 +9,7 @@ import { Pitch } from './pages/public/Pitch';
 import { TermsOfService } from './pages/public/TermsOfService';
 import { PrivacyPolicy } from './pages/public/PrivacyPolicy';
 import { UnderConstruction } from './pages/public/UnderConstruction';
+import { AuthCallback } from './pages/public/AuthCallback';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { ModuleFrame } from './components/modules/ModuleFrame';
 import { modules } from './config/modules';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/pitch" element={<Pitch />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/auth/callback" element={<AuthCallback />} />
 
         {/* Protected routes */}
         <Route element={<Layout />}>
