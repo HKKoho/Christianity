@@ -93,6 +93,7 @@
     "welcome": "歡迎回來，{{name}}！",
     "subtitle": "選擇下方的模組開始您的基督教學習之旅。",
     "launch_module": "啟動模組",
+    "launch_module_unavailable": "啟動模組（抱歉，尚未推出）",
     "your_progress": "您的進度",
     "progress_hint": "完成您的個人資料以追蹤進度",
     "available_modules": "可用模組",

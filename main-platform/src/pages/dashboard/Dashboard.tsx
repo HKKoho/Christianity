@@ -114,13 +114,22 @@ export function Dashboard() {
                 </div>
 
                 {/* CTA Button - larger and more prominent with white overlay on hover */}
-                <Link
-                  to={module.path}
-                  className={`block w-full text-center py-4 px-6 rounded-2xl bg-gradient-to-r ${color.from} ${color.to} text-white font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-500 relative overflow-hidden group/btn`}
-                >
-                  <span className="relative z-10">{t('dashboard.launch_module')}</span>
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-500"></div>
-                </Link>
+                {module.disabled ? (
+                  <button
+                    disabled
+                    className={`block w-full text-center py-4 px-6 rounded-2xl bg-gradient-to-r ${color.from} ${color.to} text-white font-bold text-lg shadow-xl opacity-60 cursor-not-allowed relative overflow-hidden`}
+                  >
+                    <span className="relative z-10">{t('dashboard.launch_module_unavailable')}</span>
+                  </button>
+                ) : (
+                  <Link
+                    to={module.path}
+                    className={`block w-full text-center py-4 px-6 rounded-2xl bg-gradient-to-r ${color.from} ${color.to} text-white font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-500 relative overflow-hidden group/btn`}
+                  >
+                    <span className="relative z-10">{t('dashboard.launch_module')}</span>
+                    <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-500"></div>
+                  </Link>
+                )}
               </div>
 
               {/* Hover glow effect - multiple gradient layers */}
@@ -140,7 +149,7 @@ export function Dashboard() {
 
         <div className="bg-white shadow rounded-lg p-6">
           <h3 className="text-xl md:text-2xl lg:text-2xl font-semibold text-gray-900 mb-2">{t('dashboard.available_modules')}</h3>
-          <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-600">{modules.length}</p>
+          <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-600">{modules.filter(m => !m.disabled).length}</p>
           <p className="text-sm md:text-base lg:text-lg text-gray-600 mt-1">{t('dashboard.specialized_tools')}</p>
         </div>
 

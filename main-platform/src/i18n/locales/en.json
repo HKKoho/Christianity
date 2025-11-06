@@ -93,6 +93,7 @@
     "welcome": "Welcome back, {{name}}!",
     "subtitle": "Choose a module below to get started with your Christian learning journey.",
     "launch_module": "Launch Module",
+    "launch_module_unavailable": "Launch Module (Apologise, Not Available Yet)",
     "your_progress": "Your Progress",
     "progress_hint": "Complete your profile to track progress",
     "available_modules": "Available Modules",

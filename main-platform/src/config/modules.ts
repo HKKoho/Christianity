@@ -10,6 +10,7 @@ export interface ModuleConfig {
   roles: string[];
   features: string[];
   targetAudience: string;
+  disabled?: boolean;
 }
 
 export const modules: ModuleConfig[] = [
@@ -52,6 +53,7 @@ export const modules: ModuleConfig[] = [
       'Theologian Journal',
     ],
     targetAudience: 'Scholars',
+    disabled: true,
   },
   {
     id: 'bible-know',
@@ -91,6 +93,7 @@ export const modules: ModuleConfig[] = [
       'WhatsApp Assistant and Bookkeeper'
     ],
     targetAudience: 'Leaders',
+    disabled: true,
   },
 ];
 
