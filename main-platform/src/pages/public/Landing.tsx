@@ -118,6 +118,35 @@ export function Landing() {
               </span>
             </button>
 
+            {/* Login Button */}
+            <Link
+              to="/login"
+              className="px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+              style={{
+                backgroundColor: '#ffffff',
+                color: '#3498db',
+                border: '2px solid #3498db',
+                padding: '10px 20px',
+                borderRadius: '8px',
+                fontSize: '16px',
+                fontWeight: '600',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#3498db';
+                e.currentTarget.style.color = '#ffffff';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#ffffff';
+                e.currentTarget.style.color = '#3498db';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              {t('landing.login')}
+            </Link>
+
             {/* Join Us Button */}
             <Link
               to="/subscription"
