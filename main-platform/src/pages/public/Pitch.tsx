@@ -159,7 +159,17 @@ export function Pitch() {
             }}
           >
             <p
-              className="text-xl md:text-2xl mb-4 leading-relaxed font-light text-center"
+              className="text-2xl md:text-3xl font-bold text-purple-700 mb-4"
+              style={{
+                fontSize: 'clamp(20px, 3vw, 28px)',
+                textShadow: '1px 1px 2px rgba(255, 255, 255, 0.9)'
+              }}
+            >
+              {heroSlides[currentSlide].highlight}
+            </p>
+
+            <p
+              className="text-xl md:text-2xl leading-relaxed font-light text-center mt-4"
               style={{
                 fontSize: 'clamp(16px, 2.5vw, 24px)',
                 lineHeight: '1.6',
@@ -169,16 +179,6 @@ export function Pitch() {
               }}
             >
               {heroSlides[currentSlide].subtitle}
-            </p>
-
-            <p
-              className="text-2xl md:text-3xl font-bold text-purple-700 mt-4"
-              style={{
-                fontSize: 'clamp(20px, 3vw, 28px)',
-                textShadow: '1px 1px 2px rgba(255, 255, 255, 0.9)'
-              }}
-            >
-              {heroSlides[currentSlide].highlight}
             </p>
           </div>
 
