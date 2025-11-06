@@ -51,19 +51,19 @@ export function Pitch() {
   // Rotating hero slides - You can edit these texts later
   const heroSlides = [
     {
-      title: "Transform Your Christian Journey",
-      subtitle: "Experience authentic faith in the digital age",
-      highlight: "Start Today"
+      title: "Baptisted by Internet, Social Media and AI",
+      subtitle: "We consume 'shadow knowledge' enjoyed being a know-thing 'shadow' believer",
+      highlight: "But Knowing is not Experiencing"
     },
     {
-      title: "Discover Deeper Faith",
-      subtitle: "Connect with centuries of Christian wisdom",
-      highlight: "Begin Learning"
+      title: "What is 'Shadow Knowledge'",
+      subtitle: "You have a sketch of knowing the thing, you never know the details, you do not have fulfiment and frustration in experiencing",
+      highlight: "Shadow Knowledge Doesn't Create Intelligence"
     },
     {
-      title: "Grow in Community",
-      subtitle: "Join believers worldwide on a journey of faith",
-      highlight: "Join Now"
+      title: "Let's Stop Making",
+      subtitle: "From knowing about God to truely experience Him together",
+      highlight: "Shadow Believers"
     },
     {
       title: "Live Out Your Calling",
