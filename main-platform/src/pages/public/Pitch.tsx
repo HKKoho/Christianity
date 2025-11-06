@@ -64,11 +64,6 @@ export function Pitch() {
       title: "Let's Stop Making",
       subtitle: "From knowing about God to truely experience Him together",
       highlight: "Shadow Believers"
-    },
-    {
-      title: "Live Out Your Calling",
-      subtitle: "Practical tools for modern Christian living",
-      highlight: "Explore More"
     }
   ];
 
@@ -209,7 +204,7 @@ export function Pitch() {
               onClick={handleDiscoverClick}
               className="inline-block bg-purple-700 text-white font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-purple-800 transition-all transform hover:scale-105 cursor-pointer"
             >
-              {t('pitch.discover_vision')}
+              Discover our Vision, Explore More Practical Tools for Modern Christian Living
               <ArrowDown className="inline-block ml-2" size={24} />
             </button>
           </div>
