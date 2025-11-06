@@ -6,6 +6,9 @@ import { Login } from './pages/public/Login';
 import { Register } from './pages/public/Register';
 import { Subscription } from './pages/public/Subscription';
 import { Pitch } from './pages/public/Pitch';
+import { TermsOfService } from './pages/public/TermsOfService';
+import { PrivacyPolicy } from './pages/public/PrivacyPolicy';
+import { UnderConstruction } from './pages/public/UnderConstruction';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { ModuleFrame } from './components/modules/ModuleFrame';
 import { modules } from './config/modules';
@@ -22,6 +25,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/subscription" element={<Subscription />} />
         <Route path="/pitch" element={<Pitch />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         {/* Protected routes */}
         <Route element={<Layout />}>
@@ -32,7 +37,11 @@ function App() {
             <Route
               key={module.id}
               path={`${module.path}/*`}
-              element={isAuthenticated ? <ModuleFrame module={module} /> : <Navigate to="/login" />}
+              element={
+                isAuthenticated
+                  ? (module.disabled ? <UnderConstruction /> : <ModuleFrame module={module} />)
+                  : <Navigate to="/login" />
+              }
             />
           ))}
         </Route>

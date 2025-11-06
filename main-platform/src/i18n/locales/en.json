@@ -10,6 +10,11 @@
     "experience": "Experience",
     "fellowship": "Fellowship"
   },
+  "under_construction": {
+    "title": "Under Construction",
+    "subtitle": "We will inform you when the module is available",
+    "back_to_dashboard": "← Back to Dashboard"
+  },
   "layout": {
     "brand_name": "Christian Platform",
     "dashboard": "Dashboard",
@@ -101,7 +106,7 @@
     "specialized_tools": "Specialized learning tools",
     "account_type": "Account Type",
     "free": "Free",
-    "full_access": "Full access to all modules"
+    "full_access": "Full access to some modules"
   },
   "modules": {
     "culture_display_name": "Christian Culture Explorer",

@@ -10,6 +10,11 @@
     "experience": "經歷",
     "fellowship": "團契"
   },
+  "under_construction": {
+    "title": "建設中",
+    "subtitle": "模組準備就緒時，我們會通知您",
+    "back_to_dashboard": "← 返回儀表板"
+  },
   "layout": {
     "brand_name": "基督教平台",
     "dashboard": "儀表板",
