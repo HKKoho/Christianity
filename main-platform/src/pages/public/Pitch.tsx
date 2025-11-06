@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, AlertCircle, CheckCircle, ArrowDown, ArrowRight, Check, ThumbsUp, ThumbsDown, ShieldCheck, Palette, HelpCircle, Edit3, Link as LinkIcon, Layers, BrainCircuit, Users, CheckSquare } from 'lucide-react';
@@ -7,6 +7,7 @@ export function Pitch() {
   const { t, i18n } = useTranslation();
   const [checkedSteps, setCheckedSteps] = useState<number[]>([]);
   const [showContent, setShowContent] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'zh-TW' ? 'en' : 'zh-TW';
@@ -47,23 +48,75 @@ export function Pitch() {
     );
   };
 
+  // Rotating hero slides - You can edit these texts later
+  const heroSlides = [
+    {
+      title: "Transform Your Christian Journey",
+      subtitle: "Experience authentic faith in the digital age",
+      highlight: "Start Today"
+    },
+    {
+      title: "Discover Deeper Faith",
+      subtitle: "Connect with centuries of Christian wisdom",
+      highlight: "Begin Learning"
+    },
+    {
+      title: "Grow in Community",
+      subtitle: "Join believers worldwide on a journey of faith",
+      highlight: "Join Now"
+    },
+    {
+      title: "Live Out Your Calling",
+      subtitle: "Practical tools for modern Christian living",
+      highlight: "Explore More"
+    }
+  ];
+
+  // Auto-rotate slides every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
   return (
     <div className="min-h-screen bg-white font-sans text-stone-700">
-      {/* Hero Section */}
-      <section className="bg-purple-900 text-white text-center py-20 sm:py-32 px-4 relative min-h-screen flex items-center">
-        <div className="absolute top-4 left-4">
+      {/* Rotating Hero Section - Landing Page Style */}
+      <section
+        className="min-h-screen flex items-center justify-center text-center pb-10 relative overflow-hidden"
+        style={{
+          paddingTop: '120px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundImage: 'url(/LoveFaithHope.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Subtle overlay for better text readability */}
+        <div className="absolute inset-0 bg-white/60"></div>
+
+        {/* Back button */}
+        <div className="absolute top-4 left-4 z-20">
           <Link
             to="/"
-            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg"
+            className="flex items-center gap-2 text-gray-800 hover:text-gray-900 transition-colors font-semibold bg-white/80 hover:bg-white px-4 py-2 rounded-lg shadow-md"
           >
             <ArrowLeft size={20} />
             <span>{t('common.back_to_home')}</span>
           </Link>
         </div>
-        <div className="absolute top-4 right-4">
+
+        {/* Language toggle */}
+        <div className="absolute top-4 right-4 z-20">
           <button
             onClick={toggleLanguage}
-            className="flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+            className="flex items-center bg-white/80 hover:bg-white text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors shadow-md"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
@@ -71,19 +124,90 @@ export function Pitch() {
             {i18n.language === 'zh-TW' ? 'EN' : '中文'}
           </button>
         </div>
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="mb-16"></div>
-          <h1 className="font-serif text-5xl sm:text-7xl font-bold leading-snug mb-4">
-            {t('pitch.hero_title_1')}
+
+        {/* Rotating content */}
+        <div
+          className="relative z-10 w-full px-6 transition-opacity duration-1000"
+          style={{
+            maxWidth: '1280px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            opacity: 1
+          }}
+        >
+          <h1
+            className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight"
+            style={{
+              fontSize: 'clamp(36px, 7vw, 50px)',
+              lineHeight: '1.1',
+              textAlign: 'center',
+              width: '100%',
+              color: '#1f2937',
+              textShadow: '2px 2px 4px rgba(255, 255, 255, 0.8)'
+            }}
+          >
+            {heroSlides[currentSlide].title}
           </h1>
-          <p className="text-3xl sm:text-5xl font-bold text-yellow-400 mb-12">
-            {t('pitch.hero_title_2')}
-          </p>
-          <p className="text-2xl sm:text-3xl text-purple-200 font-light mx-auto mb-12" dangerouslySetInnerHTML={{ __html: t('pitch.hero_subtitle') }} />
-          <div className="mt-24">
+
+          <div
+            className="mb-12"
+            style={{
+              maxWidth: '900px',
+              width: '100%',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+            <p
+              className="text-xl md:text-2xl mb-4 leading-relaxed font-light text-center"
+              style={{
+                fontSize: 'clamp(16px, 2.5vw, 24px)',
+                lineHeight: '1.6',
+                width: '100%',
+                color: '#374151',
+                textShadow: '1px 1px 3px rgba(255, 255, 255, 0.8)'
+              }}
+            >
+              {heroSlides[currentSlide].subtitle}
+            </p>
+
+            <p
+              className="text-2xl md:text-3xl font-bold text-purple-700 mt-4"
+              style={{
+                fontSize: 'clamp(20px, 3vw, 28px)',
+                textShadow: '1px 1px 2px rgba(255, 255, 255, 0.9)'
+              }}
+            >
+              {heroSlides[currentSlide].highlight}
+            </p>
+          </div>
+
+          {/* Slide indicators */}
+          <div className="flex gap-2 mb-8">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? 'bg-purple-700 w-8'
+                    : 'bg-gray-400 hover:bg-gray-600'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Discover button */}
+          <div className="mt-8">
             <button
               onClick={handleDiscoverClick}
-              className="inline-block bg-yellow-400 text-purple-950 font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-yellow-300 transition-transform transform hover:scale-105 cursor-pointer"
+              className="inline-block bg-purple-700 text-white font-bold text-xl px-10 py-5 rounded-lg shadow-lg hover:bg-purple-800 transition-all transform hover:scale-105 cursor-pointer"
             >
               {t('pitch.discover_vision')}
               <ArrowDown className="inline-block ml-2" size={24} />
