@@ -150,6 +150,7 @@
   "subscription": {
     "title": "靈活的方案滿足所有需求",
     "subtitle": "無論您是個人還是大型組織，我們都有適合您的方案。",
+    "not_ready_notice": "訂閱尚未準備好，有興趣的人士可點擊<0>返回首頁</0>瀏覽草稿",
     "individual": "個人",
     "organization": "組織",
     "most_popular": "暫未實行",

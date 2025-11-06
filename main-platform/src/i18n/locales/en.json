@@ -150,6 +150,7 @@
   "subscription": {
     "title": "Flexible Plans for Everyone",
     "subtitle": "Whether you're an individual or a large organization, we have a plan that's right for you.",
+    "not_ready_notice": "Subscription not ready, interested parties please click <0>Back to Home</0> browse the DRAFT",
     "individual": "Individual",
     "organization": "Organization",
     "most_popular": "Not Apply Now",
