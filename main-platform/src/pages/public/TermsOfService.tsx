@@ -152,14 +152,22 @@ export function TermsOfService() {
           </section>
         </div>
 
-        {/* Back Button */}
-        <div className="mt-8 text-center">
+        {/* Back Buttons */}
+        <div className="mt-8 text-center flex flex-wrap justify-center gap-4">
           <Link
             to="/"
             className="inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
           >
             {t('common.back_to_home')}
           </Link>
+          <a
+            href="https://christianplatform.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+          >
+            {t('common.platform_home')}
+          </a>
         </div>
       </div>
     </div>
